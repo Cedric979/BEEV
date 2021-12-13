@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[4]:
 
 
 import numpy as np
@@ -14,8 +14,8 @@ from PIL import Image
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 #Graphics
-import matplotlib.pyplot as plt
-import seaborn as sns
+#import matplotlib.pyplot as plt
+#import seaborn as sns
 #KNeighbors
 from sklearn.neighbors import NearestNeighbors
 #Scalers
@@ -43,26 +43,26 @@ df_new['Main Price'].fillna(df_new['Main Price'].mean(), inplace = True)
 X = df_new[['Main Price']]          
 distanceKNN = NearestNeighbors(n_neighbors=3).fit(X)
 distanceKNN.kneighbors([[60000]], 3, return_distance = False)
-df[['Full Name', 'Main Price']].iloc[[148, 16, 57]]
+#df[['Full Name', 'Main Price']].iloc[[148, 16, 57]]
+categories = list(df['Category'].unique())
+categories.insert(0,"ALL")
 
 image = Image.open('BEEV_image.png')
 st.image(image)
 st.title("Let's check which EV cars would suit to you")
-lyrics_one = st.text_area("Paste the Lyrics")
+value_one = st.text_area("text box")
 
-
-st.write("The closest lyrical song contains",song2_len,"words")
-st.write(df_lyrics['equal'].sum(),"words are at the exact same position")
+#Code below to check
+if category_choosen!= "ALL":
+    df['Category'] == category_choosen
+else: category_choosen = "" # to check if we can filter the DF if category_choosen ==""
+        
 # st.write("similar unique words",dict2)
-st.write(round((df_lyrics['equal'].sum()/song2_len)*100,2), "% of your song is exactly the same")
-st.write(round((len(dict3)/len(list_song2)) * 100, 2),"% of same words are used")
-#st.write("please find below the list of the words present in your song with the number of appearence")
-#st.write(value_dict_lyrics1,value_dict_lyrics2)
-return similar_w_unique, similar_w_not_unique, max_similar, value_dict_lyrics1, value_dict_lyrics2
-
-
+label1 = "please select the category of the car you would like"
+category_choosen = st.selectbox(label1,categories)
+st.write(category_choosen)
 if st.button('Get info'):
-  
+  st.write(value_one)
   #  for i in range(1, 1000): #len(df_lyrics_final['Lyric'])):
    #   
     #    lyrics_comparator(punct(lyrics_one), punct(df_lyrics_final['Lyric'][i]))
@@ -77,4 +77,10 @@ if st.button('Get info'):
     #st.write(link1)
    # url = f"https://www.vagalume.com.br{link1}"
    # st.write(url)
+
+
+# In[ ]:
+
+
+
 
