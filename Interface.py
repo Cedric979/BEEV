@@ -76,14 +76,16 @@ if st.button('Get EV Cars recommendation'):
     distanceKNN_cars = NearestNeighbors()
     result = np.array([])
     if category_choosen != "ALL":
-        X = df_model[df_model['Category'] == category_choosen][['Price', 'Range']].copy()
-        distanceKNN_cars = NearestNeighbors(n_neighbors=5).fit(X)
+        X_select = df_model[df_model['Category'] == category_choosen].copy()
+        st.write(X_select['Category'].value_counts())
+        distanceKNN_cars = NearestNeighbors(n_neighbors=5).fit(X_select[['Price', 'Range']])
+        result = distanceKNN_cars.kneighbors([[price_slider,range_slider]], 5, return_distance = False)
+        #st.write(
     else: 
-        X = df_model[['Price','Range']].copy() 
-        
+        #X = df_model[['Price','Range']].copy()     
     #st.write(X['Category'])    
-        distanceKNN_cars = NearestNeighbors(n_neighbors=5).fit(X)
-    result = distanceKNN_cars.kneighbors([[price_slider,range_slider]], 5, return_distance = False)
+        distanceKNN_cars = NearestNeighbors(n_neighbors=5).fit(df_model[['Price', 'Range']])
+        result = distanceKNN_cars.kneighbors([[price_slider,range_slider]], 5, return_distance = False)
     #st.write(result)
     for i in range(5):
         st.write(df_model[['Full Name', 'Price','Range','Category','Price with Incentive']].iloc[[result[0][i]]])
