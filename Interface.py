@@ -40,9 +40,12 @@ df = pd.read_csv("Beev Electric Vehicle Specs Data.csv")
 df['Main Price'].fillna(62000.0, inplace = True)
 df['Range (km)'].fillna(235.0, inplace = True)
 df_new = pd.DataFrame(zip(df['Full Name'],df['Main Price'],df['Range (km)'], df['Category']))
-df_new.rename(columns = {0:'Full Name', 1:'Price',2:'Range',3:'Category'}, inplace = True)
+df_new.rename(columns = {0:'Full Name', 1:'Price (€)',2:'Range (Km)',3:'Category'}, inplace = True)
 df_model = df_new
-df_model['Price with Incentive'] = df_model['Price'].apply(lambda item: item - 6000)
+df_model['Price with Incentive (€)'] = df_model['Price (€)'].apply(lambda item: item - 6000)
+df_model['Price (€)'] = df_model['Price (€)'].astype(int)
+df_model['Price with Incentive (€)'] = df_model['Price with Incentive (€)'].astype(int)
+df_model['Range (Km)'] = df_model['Range (Km)'].astype(int)
 
 #distanceKNN.kneighbors([[60000]], 3, return_distance = False)
 #df[['Full Name', 'Main Price']].iloc[[148, 16, 57]]
@@ -73,24 +76,18 @@ price_slider = st.sidebar.slider('Select a desired price for the EV car',10000, 
 #X = pd.DataFrame()
 #Define the validation button
 if st.button('Get EV Cars recommendation'):
+    df_model.style.format({'Price (€)': '{:.0f}', 'Range (Km)': '{:.0f}', 'Price with Incentive (€)': '{:.0f}'})
     #distanceKNN_cars = NearestNeighbors()
     #result = np.array([])
     if category_choosen != "ALL":
         df_model = df_model[df_model['Category'] == category_choosen].copy()
-        X = df_model[['Price', 'Range']]
+        X = df_model[['Price (€)', 'Range (Km)']]
         distanceKNN_cars = NearestNeighbors(n_neighbors=5).fit(X)
         result = distanceKNN_cars.kneighbors([[price_slider,range_slider]], 5, return_distance = False)
         #st.write(
-    else: 
-        #X = df_model[['Price','Range']].copy()     
-    #st.write(X['Category'])    
-        distanceKNN_cars = NearestNeighbors(n_neighbors=5).fit(df_model[['Price', 'Range']])
+    else:   
+        distanceKNN_cars = NearestNeighbors(n_neighbors=5).fit(df_model[['Price (€)', 'Range (Km)']])
         result = distanceKNN_cars.kneighbors([[price_slider,range_slider]], 5, return_distance = False)
-    #st.write(result)
-    for i in range(5):
-        st.write(df_model[['Full Name', 'Price','Range','Category','Price with Incentive']].iloc[[result[0][i]]])
-
-
-
-
-
+    
+    st.write(df_model[['Full Name', 'Price (€)','Range (Km)','Category','Price with Incentive (€)']].iloc[result[0]].set_index('Full Name'))
+    
