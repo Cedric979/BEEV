@@ -70,15 +70,15 @@ category_choosen = st.selectbox(label1,categories)
 range_slider = st.sidebar.slider('Select a desired range in Kilometers',200, 800, (250))
 price_slider = st.sidebar.slider('Select a desired price for the EV car',10000, 100000, (15000))
 
-X = pd.DataFrame()
+#X = pd.DataFrame()
 #Define the validation button
 if st.button('Get EV Cars recommendation'):
-    distanceKNN_cars = NearestNeighbors()
-    result = np.array([])
+    #distanceKNN_cars = NearestNeighbors()
+    #result = np.array([])
     if category_choosen != "ALL":
-        X_select = df_model[df_model['Category'] == category_choosen].copy()
-        st.write(X_select['Category'].value_counts())
-        distanceKNN_cars = NearestNeighbors(n_neighbors=5).fit(X_select[['Price', 'Range']])
+        df_model = df_model[df_model['Category'] == category_choosen].copy()
+        X = df_model[['Price', 'Range']]
+        distanceKNN_cars = NearestNeighbors(n_neighbors=5).fit(X)
         result = distanceKNN_cars.kneighbors([[price_slider,range_slider]], 5, return_distance = False)
         #st.write(
     else: 
