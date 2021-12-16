@@ -34,6 +34,7 @@ import random as rd
 
 #global link1
 
+#Changing the background with an image that has to be in the same folder
 import base64
 main_bg = "images_background.jpeg"
 main_bg_ext = "jpeg"
