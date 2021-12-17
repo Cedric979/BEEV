@@ -36,10 +36,10 @@ import random as rd
 
 #Changing the background with an image that has to be in the same folder
 import base64
-main_bg = "images_background.jpeg"
+main_bg = "st_back_main.jpeg"
 main_bg_ext = "jpeg"
 
-side_bg = "images_background.jpeg"
+side_bg = "st_back_slider.jpeg"
 side_bg_ext = "jpeg"
 
 st.markdown(
@@ -49,7 +49,7 @@ st.markdown(
         background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()});
         background-size: 100% 100%
     }}
-   .sidebar .sidebar-content {{
+   .sidebar.sidebar-content {{
         background: url(data:image/{side_bg_ext};base64,{base64.b64encode(open(side_bg, "rb").read()).decode()});
         background-size: 100% 100%
     }}
