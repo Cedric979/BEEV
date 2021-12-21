@@ -31,12 +31,14 @@ from sklearn.metrics import precision_score, recall_score,accuracy_score
 from sklearn.metrics import mean_squared_error
 #RANDOM
 import random as rd
+#IMPORTING LIBRAY TO GET GOOGLE SPREADSHEETS
+import gspread
 
 #global link1
 
 #Changing the background with an image that has to be in the same folder
 import base64
-main_bg = "st_back_main.jpeg"
+main_bg = "st_back_main3.jpeg"
 main_bg_ext = "jpeg"
 
 side_bg = "st_back_slider.jpeg"
@@ -60,17 +62,35 @@ st.markdown(
 )
 
 
-#Code
+#Code for DF
 df = pd.read_csv("Beev Electric Vehicle Specs Data.csv")
 df['Main Price'].fillna(62000.0, inplace = True)
 df['Range (km)'].fillna(235.0, inplace = True)
-df_new = pd.DataFrame(zip(df['Full Name'],df['Main Price'],df['Range (km)'], df['Category']))
-df_new.rename(columns = {0:'Full Name', 1:'Price (€)',2:'Range (Km)',3:'Category'}, inplace = True)
+df_new = pd.DataFrame(zip(df['Full Name'],df['Main Price'],df['Range (km)'], df['Category'],df['Useable Battery Capacity']))
+df_new.rename(columns = {0:'Full Name', 1:'Price (€)',2:'Range (Km)',3:'Category',4:'Useable Battery Capacity'}, inplace = True)
 df_model = df_new
 df_model['Price with Incentive (€)'] = df_model['Price (€)'].apply(lambda item: item - 6000)
 df_model['Price (€)'] = df_model['Price (€)'].astype(int)
 df_model['Price with Incentive (€)'] = df_model['Price with Incentive (€)'].astype(int)
 df_model['Range (Km)'] = df_model['Range (Km)'].astype(int)
+df_model['cost/100Km (€)'] = df_model[['Range (Km)','Useable Battery Capacity']].apply(lambda item: (item[1]/item[0])*100*0.0125, axis = 1)
+
+#DF Filtered
+df_filtered = df[['Full Name', 'Model', 'Brand','Range (km)','Battery Capacity (kW)', 'Useable Battery Capacity','Category','Government Incentive Category for Help','Vehicle Consumption (Wh)','Charging Time 7,4 kW','Charging Time 11 kW','Main Price']].copy()
+df_filtered['cost/100Km (€)'] = df_filtered[['Range (km)','Useable Battery Capacity']].apply(lambda item: (item[1]/item[0])*100*0.0125, axis = 1)
+df_filtered['Price with Incentive'] = df_filtered['Main Price'].apply(lambda item: item - 6000)
+
+#Getting the title_tax_cv and build the list of regions for the choice in the interface
+gc = gspread.service_account(filename='beev-335814-13ad14e5392c.json')
+#sh = gc.open(name of file)
+#title_tax_cv_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
+title_tax_cv_url = "https://docs.google.com/spreadsheets/d/1cOj98R9fGT89rG4-TxAPIgOrvDbrzxlLPd4Y5mUBD0g/edit?usp=sharing"
+sht1 = gc.open_by_url(title_tax_cv_url)
+worksheet = sht1.sheet1
+
+title_tax_cv = pd.DataFrame(worksheet.get_all_records())
+#Building the list
+regions = list(title_tax_cv['Region'].unique())
 
 #distanceKNN.kneighbors([[60000]], 3, return_distance = False)
 #df[['Full Name', 'Main Price']].iloc[[148, 16, 57]]
@@ -88,6 +108,10 @@ st.title("Let's check which EV cars would suit to you")
 #Defining the selectbox
 label1 = "please select the category of the car you would like"
 category_choosen = st.selectbox(label1,categories)
+#Defining the selectbox for the region ########### be careful need to add the DF and the regions variable before here
+label2 = "please select the region you are from"
+region_choosen = st.selectbox(label2,regions)
+
 #st.write(category_choosen)
 
      
@@ -97,6 +121,8 @@ category_choosen = st.selectbox(label1,categories)
 # Add a slider to the sidebar:
 range_slider = st.sidebar.slider('Select a desired range in Kilometers',200, 800, (250))
 price_slider = st.sidebar.slider('Select a desired price for the EV car',10000, 100000, (15000))
+duration_slider = st.sidebar.slider('Select a desired duration for leasing or keeping EV car in months',1, 72, (12))
+km_slider = st.sidebar.slider('Select Km done per year',1000, 100000, (10000))
 
 #X = pd.DataFrame()
 #Define the validation button
@@ -115,4 +141,12 @@ if st.button('Get EV Cars recommendation'):
         result = distanceKNN_cars.kneighbors([[price_slider,range_slider]], 5, return_distance = False)
     
     st.write(df_model[['Full Name', 'Price (€)','Range (Km)','Category','Price with Incentive (€)']].iloc[result[0]].set_index('Full Name'))
-    
+    #Building the TCO
+    df_TCO = df_model[['Full Name', 'Price (€)','Range (Km)','Category','Price with Incentive (€)','cost/100Km (€)']].iloc[result[0]].set_index('Full Name').copy()
+    df_TCO['title_cost (€)'] = df_TCO['cost/100Km (€)'].apply(lambda item: title_tax_cv[title_tax_cv['Region'] == region_choosen]['Title Cost (€ / CV)']*1)
+    df_TCO['consumption_cost (month)'] = df_TCO['cost/100Km (€)'].apply(lambda item: item/100*km_slider/12)
+    df_TCO['maintenance_cost (month)'] = df_TCO['cost/100Km (€)'].apply(lambda item: km_slider/12*0.208)
+    df_TCO['TCO_month'] = df_TCO[['title_cost (€)','consumption_cost (month)','maintenance_cost (month)']].apply(lambda item: item[0] + item[1] + item[2],axis=1)
+    df_TCO['TCO_year'] = df_TCO[['title_cost (€)','consumption_cost (month)','maintenance_cost (month)']].apply(lambda item: item[0] + item[1]*12 + item[2]*12,axis=1)
+    df_TCO['TCO_duration'] = df_TCO[['title_cost (€)','consumption_cost (month)','maintenance_cost (month)']].apply(lambda item: item[0] + item[1]*duration_slider + item[2]*duration_slider,axis=1)
+    st.write(df_TCO)
