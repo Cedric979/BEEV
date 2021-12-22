@@ -61,8 +61,17 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+#importing the googlesheet document named fuel prices
+gc = gspread.service_account(filename='../../Wild_Code_School/keys/beev-335814-edfca510cf50.json')
+fuel_prices_url = 'https://docs.google.com/spreadsheets/d/1M_e1ENe40v-G_HYYH7YTZT5yPMoxgk36FFNamtg12f8/edit?usp=sharing'
+sht4 = gc.open_by_url(fuel_prices_url)
+#sht4.sheet1
+worksheet = sht4.sheet1
+fuel_prices = pd.DataFrame(worksheet.get_all_records())
+elec_price = float(fuel_prices[fuel_prices['Fuel type'] == 'Electricity']['Price France (€/litres) - KWh'])
 
-#Code for DF
+
+#Code for EV DF
 df = pd.read_csv("Beev Electric Vehicle Specs Data.csv")
 df['Main Price'].fillna(62000.0, inplace = True)
 df['Range (km)'].fillna(235.0, inplace = True)
@@ -73,33 +82,28 @@ df_model['Price with Incentive (€)'] = df_model['Price (€)'].apply(lambda it
 df_model['Price (€)'] = df_model['Price (€)'].astype(int)
 df_model['Price with Incentive (€)'] = df_model['Price with Incentive (€)'].astype(int)
 df_model['Range (Km)'] = df_model['Range (Km)'].astype(int)
-df_model['cost/100Km (€)'] = df_model[['Range (Km)','Useable Battery Capacity']].apply(lambda item: (item[1]/item[0])*100*0.0125, axis = 1)
+df_model['cost/100Km (€)'] = df_model[['Range (Km)','Useable Battery Capacity']].apply(lambda item: (item[1]/item[0])*100*elec_price, axis = 1)
+#Building the categories for the choice in selectbox
+categories = list(df['Category'].unique())
+categories.insert(0,"ALL")
 
 #DF Filtered
 df_filtered = df[['Full Name', 'Model', 'Brand','Range (km)','Battery Capacity (kW)', 'Useable Battery Capacity','Category','Government Incentive Category for Help','Vehicle Consumption (Wh)','Charging Time 7,4 kW','Charging Time 11 kW','Main Price']].copy()
-df_filtered['cost/100Km (€)'] = df_filtered[['Range (km)','Useable Battery Capacity']].apply(lambda item: (item[1]/item[0])*100*0.0125, axis = 1)
+df_filtered['cost/100Km (€)'] = df_filtered[['Range (km)','Useable Battery Capacity']].apply(lambda item: (item[1]/item[0])*100*elec_price, axis = 1)
 df_filtered['Price with Incentive'] = df_filtered['Main Price'].apply(lambda item: item - 6000)
 
 #Getting the title_tax_cv and build the list of regions for the choice in the interface
 
-#gc = gspread.service_account_from_dict(my_dict)
-gc = gspread.service_account(filename='../../Wild_Code_School/keys/beev-335814-edfca510cf50.json')
 #sh = gc.open(name of file)
 #title_tax_cv_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
 title_tax_cv_url = "https://docs.google.com/spreadsheets/d/1cOj98R9fGT89rG4-TxAPIgOrvDbrzxlLPd4Y5mUBD0g/edit?usp=sharing"
 sht1 = gc.open_by_url(title_tax_cv_url)
 worksheet = sht1.sheet1
-
+#Building the DF
 title_tax_cv = pd.DataFrame(worksheet.get_all_records())
-#Building the list
+#Building the list of regions for the selectbox
 regions = list(title_tax_cv['Region'].unique())
 
-#distanceKNN.kneighbors([[60000]], 3, return_distance = False)
-#df[['Full Name', 'Main Price']].iloc[[148, 16, 57]]
-categories = list(df['Category'].unique())
-categories.insert(0,"ALL")
-
-#df_new[['Full Name', 'Price', 'Range', 'Category']].iloc[[66, 36, 47, 37, 64]]# result to display
 
 ### start streamlit
 image = Image.open('BEEV_image.png')
