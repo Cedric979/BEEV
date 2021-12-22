@@ -27,3 +27,5 @@ price of electricity
 table with values to calculate the bonus malus of EV or GEV cars
 the formula to calculate the TCO
 The data for GEV cars have been scrapped on websites provided by the client because it satisfyied their needs
+## For all these googlesheet, all the columns must have a name and all float values must be with a point and not a comma.
+When updating these files, the values will be updated if we re-run the code.
