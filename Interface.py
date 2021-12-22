@@ -81,20 +81,9 @@ df_filtered['cost/100Km (€)'] = df_filtered[['Range (km)','Useable Battery Cap
 df_filtered['Price with Incentive'] = df_filtered['Main Price'].apply(lambda item: item - 6000)
 
 #Getting the title_tax_cv and build the list of regions for the choice in the interface
-my_dict = {
-  "type": "service_account",
-  "project_id": "beev-335814",
-  "private_key_id": "13ad14e5392c7c17ac87d2876f4ea3290b3b1b8e",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDJBOCGTm1HA0VS\nK0tBTWlq1B7ZfAG2exmGFjdXYCtqsfp8f2kShWpC9oy5AZKJc+4gaEQAJX+DpBwD\nGdes2soWwctzHKLdQ93AYW9YGpRfvtVsj0H7KDqzvMAqG+MVeosyWGatbuyhDB24\nPHNsaO9B0uEO9laL1o5Lm6x/qI50bvbz3q9mFiirbioqY7CEvjRGhAb2VCGpXRsX\nQH1TA8wj1Tlvv3ub77fxj3Hwey9rJCQlDqy3Wri54dPmssc7UK9zIKdGkQfxyL6J\nX9Iv7HKFOfa7BiylxuiSAjh0yxr+2slyn6uB8rJ154xCj6X8VSatvWvWr0nFdbAf\n3wJICqFhAgMBAAECggEAFkvzcIpB7jrDZWQWdpGU1AvfuR1bXkeEsv4DWO56mlzP\n7R+/wpVoTjGlNb8iJxtkChWulzqRjIM3NTPYW5ywBjqsK6I9QWAt+FEGZeYa14zm\nBOLV/Xr+meGhifoqY79CMc0i5HFVj1517HHOFrQD98/hdUSnIF8lzOahSU6jsG/M\n2hPn/QzSRquqMGZy5mEXi+WzT/gLHQL/H17rIokYQH/OOGscrk+OpUJU41LoPA6i\nxaAcXlOSI4QLPuIddASPR5RzKkzgg3Kg9VEpv3TAPOoVbinxiusyDBQWzRWxY0nx\n39/S9iMLNqfpRAW7oMRtCNXtg33+MtHgVJJsFzzc8QKBgQD8TmBZF50PshAK24W9\nabwovoWE0OsHSoFTyZrUGF40eC7nimaUSmCj0Pnu3GFifAzmVjcxFoZ273ylvH0+\nsFUTyVbL6ZR9spc+fbZUjvDUwO9dbJJhoyPXRHYEdpplJrWvDwt3Os/nttuz1iVm\nJurozPYa6cfOaWOCGgwBN0X1CQKBgQDL9kfYdfCw9iE6gIJSjJdkuiAdj5Xp3b/t\nE/pkfwnlwrJ0A1uhIBalup1OsCCc6IKCVux47XRNF5fJWbZ1jCvD8kY3bciOx0Qm\nmwIISntHf07SUFUBl6qPqPu/dEyIWEUJ+/tKKF+yKqxgFMKn6sEnsOcRxE7K5QkU\nacK+8LR3mQKBgQDosPgW8ro9sYEuIktz50JLaXsGhQ9diA9CURrkJR0s0vKfRHta\npEYAj0kSTFncVIApJrZ8JUQaCMEysWXpHQM53mSYZ3I1gzINxi8USUg/TzjzNqDC\nP41ciZ02fJPkWhERxJRUf/8iuvhhIU0YqyfXUMBhDd7itTu6z37m2C1C0QKBgHp9\n4zIVysKMXvJigWIQO0/sFCOMuyzj10MLj4JRZWFOZ5wS9DG1MsS/aX/7eOqjHNYo\nXAZYHVO7SpZLQbAgyZv5YcAiN6O/+qbwyuytxpHu3CikxBibvHxgsSiPMPNlh7jy\nUz17N9WpmTJu5WSxMOWkcXGTIvrpSGWxCptfthJpAoGAKqjqHGlnGxylsvfroRfM\nza47k1bXFl18bTZvuBXkVUNC2OUk4q9AQ7/XvnQ0xNpI4H8qxMMoKFo2mbDVAly0\n/tyIKkOWmELKXWx551HjILb2KwHpJ6c24GFWBq27YGrrRb9AD0PG566UoYiGlCm6\nGutckzc+FUFvpPxeaIkf92k=\n-----END PRIVATE KEY-----\n",
-  "client_email": "beev-350@beev-335814.iam.gserviceaccount.com",
-  "client_id": "109574148696554681492",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/beev-350%40beev-335814.iam.gserviceaccount.com"
-}
-gc = gspread.service_account_from_dict(my_dict)
-#gc = gspread.service_account(filename='http://localhost:8888/edit/Documents/GitHub/beev-335814-13ad14e5392c.json')
+
+#gc = gspread.service_account_from_dict(my_dict)
+gc = gspread.service_account(filename='../../Wild_Code_School/keys/beev-335814-edfca510cf50.json')
 #sh = gc.open(name of file)
 #title_tax_cv_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
 title_tax_cv_url = "https://docs.google.com/spreadsheets/d/1cOj98R9fGT89rG4-TxAPIgOrvDbrzxlLPd4Y5mUBD0g/edit?usp=sharing"
@@ -126,8 +115,6 @@ label2 = "please select the region you are from"
 region_choosen = st.selectbox(label2,regions)
 
 #st.write(category_choosen)
-
-     
 
 
 #Asking the user the Price and the Range
