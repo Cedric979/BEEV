@@ -1,14 +1,251 @@
-,brands_url,models,models_url,generations,generations_url,modifications,modifications_url
-211,https://www.auto-data.net/en/qiantu-brand-284,qiantu-k50-model-2725,https://www.auto-data.net/en/qiantu-k50-model-2725,qiantu-k50-generation-7301,https://www.auto-data.net/en/qiantu-k50-generation-7301,qiantu-k50-78.8-kwh-380hp-awd-electric-37729,https://www.auto-data.net/en/qiantu-k50-78.8-kwh-380hp-awd-electric-37729
-212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-gt-generation-6338,https://www.auto-data.net/en/qoros-3-gt-generation-6338,qoros-3-gt-1.6-156hp-dct-33431,https://www.auto-data.net/en/qoros-3-gt-1.6-156hp-dct-33431
-212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-gt-generation-6338,https://www.auto-data.net/en/qoros-3-gt-generation-6338,qoros-3-gt-1.6-156hp-33430,https://www.auto-data.net/en/qoros-3-gt-1.6-156hp-33430
-212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-hatch-generation-6337,https://www.auto-data.net/en/qoros-3-hatch-generation-6337,qoros-3-hatch-1.6-156hp-dct-33429,https://www.auto-data.net/en/qoros-3-hatch-1.6-156hp-dct-33429
-212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-hatch-generation-6337,https://www.auto-data.net/en/qoros-3-hatch-generation-6337,qoros-3-hatch-1.6-126hp-dct-33428,https://www.auto-data.net/en/qoros-3-hatch-1.6-126hp-dct-33428
-212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-sedan-generation-6331,https://www.auto-data.net/en/qoros-3-sedan-generation-6331,qoros-3-sedan-1.6-156hp-dct-33414,https://www.auto-data.net/en/qoros-3-sedan-1.6-156hp-dct-33414
-212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-sedan-generation-6331,https://www.auto-data.net/en/qoros-3-sedan-generation-6331,qoros-3-sedan-1.6-126hp-dct-33413,https://www.auto-data.net/en/qoros-3-sedan-1.6-126hp-dct-33413
-212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-sedan-generation-6331,https://www.auto-data.net/en/qoros-3-sedan-generation-6331,qoros-3-sedan-1.6-126hp-33412,https://www.auto-data.net/en/qoros-3-sedan-1.6-126hp-33412
-212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-city-suv-generation-6329,https://www.auto-data.net/en/qoros-3-city-suv-generation-6329,qoros-3-city-suv-1.6-156hp-dct-33411,https://www.auto-data.net/en/qoros-3-city-suv-1.6-156hp-dct-33411
-212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-city-suv-generation-6329,https://www.auto-data.net/en/qoros-3-city-suv-generation-6329,qoros-3-city-suv-1.6-156hp-33410,https://www.auto-data.net/en/qoros-3-city-suv-1.6-156hp-33410
-212,https://www.auto-data.net/en/qoros-brand-248,qoros-5-model-2457,https://www.auto-data.net/en/qoros-5-model-2457,qoros-5-suv-generation-6339,https://www.auto-data.net/en/qoros-5-suv-generation-6339,qoros-5-suv-1.6-156hp-dct-33438,https://www.auto-data.net/en/qoros-5-suv-1.6-156hp-dct-33438
-212,https://www.auto-data.net/en/qoros-brand-248,qoros-5-model-2457,https://www.auto-data.net/en/qoros-5-model-2457,qoros-5-suv-generation-6339,https://www.auto-data.net/en/qoros-5-suv-generation-6339,qoros-5-suv-1.6-156hp-33437,https://www.auto-data.net/en/qoros-5-suv-1.6-156hp-33437
-213,https://www.auto-data.net/en/qvale-brand-89,qvale-mangusta-model-978,https://www.auto-data.net/en/qvale-mangusta-model-978,qvale-mangusta-generation-2073,https://www.auto-data.net/en/qvale-mangusta-generation-2073,qvale-mangusta-4.6-i-v8-32v-322hp-10144,https://www.auto-data.net/en/qvale-mangusta-4.6-i-v8-32v-322hp-10144
+,Unnamed: 0,brands_url,models,models_url,generations,generations_url,modifications,modifications_url,dataframe
+0,211,https://www.auto-data.net/en/qiantu-brand-284,qiantu-k50-model-2725,https://www.auto-data.net/en/qiantu-k50-model-2725,qiantu-k50-generation-7301,https://www.auto-data.net/en/qiantu-k50-generation-7301,qiantu-k50-78.8-kwh-380hp-awd-electric-37729,https://www.auto-data.net/en/qiantu-k50-78.8-kwh-380hp-awd-electric-37729,"    Brand Model Generation           Modification (Engine)  \
+0  Qiantu   K50        K50  78.8 kWh (380 Hp) AWD Electric   
+
+  Start of production Powertrain Architecture Body type Seats Doors  \
+0           2017 year  BEV (Electric Vehicle)     Coupe     2     2   
+
+   Performance specs  ... Number of Gears (automatic transmission)  \
+0  Performance specs  ...                                        1   
+
+  Front suspension  Rear suspension              Front brakes  \
+0  Double wishbone  Double wishbone  Ventilated discs, 345 mm   
+
+                Rear brakes               Assisting systems  \
+0  Ventilated discs, 365 mm  ABS (Anti-lock braking system)   
+
+              Steering type     Power steering                Tires size  \
+0  Steering rack and pinion  Electric Steering  235/35 ZR19; 265/35 ZR19   
+
+        Wheel rims size  
+0  8.0J x 19; 9.5J x 19  
+
+[1 rows x 49 columns]"
+1,212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-gt-generation-6338,https://www.auto-data.net/en/qoros-3-gt-generation-6338,qoros-3-gt-1.6-156hp-dct-33431,https://www.auto-data.net/en/qoros-3-gt-1.6-156hp-dct-33431,"   Brand Model Generation Modification (Engine)  Start of production  \
+0  Qoros     3       3 GT      1.6 (156 Hp) DCT  November, 2016 year   
+
+      Powertrain Architecture Body type Seats Doors  Performance specs  ...  \
+0  Internal Combustion engine     Sedan     5     4  Performance specs  ...   
+
+  Number of Gears (automatic transmission)            Front suspension  \
+0                                    6 DCT  Independent type McPherson   
+
+                 Rear suspension      Front brakes Rear brakes  \
+0  Semi-independent, coil spring  Ventilated discs        Disc   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+      Power steering  Tires size Wheel rims size  
+0  Electric Steering  215/55 R18              18  
+
+[1 rows x 61 columns]"
+2,212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-gt-generation-6338,https://www.auto-data.net/en/qoros-3-gt-generation-6338,qoros-3-gt-1.6-156hp-33430,https://www.auto-data.net/en/qoros-3-gt-1.6-156hp-33430,"   Brand Model Generation Modification (Engine)  Start of production  \
+0  Qoros     3       3 GT          1.6 (156 Hp)  November, 2016 year   
+
+      Powertrain Architecture Body type Seats Doors  Performance specs  ...  \
+0  Internal Combustion engine     Sedan     5     4  Performance specs  ...   
+
+  Number of Gears (manual transmission)            Front suspension  \
+0                                     6  Independent type McPherson   
+
+                 Rear suspension      Front brakes Rear brakes  \
+0  Semi-independent, coil spring  Ventilated discs        Disc   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+      Power steering  Tires size Wheel rims size  
+0  Electric Steering  215/55 R18              18  
+
+[1 rows x 61 columns]"
+3,212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-hatch-generation-6337,https://www.auto-data.net/en/qoros-3-hatch-generation-6337,qoros-3-hatch-1.6-156hp-dct-33429,https://www.auto-data.net/en/qoros-3-hatch-1.6-156hp-dct-33429,"   Brand Model Generation Modification (Engine) Start of production  \
+0  Qoros     3    3 Hatch      1.6 (156 Hp) DCT     June, 2014 year   
+
+      Powertrain Architecture  Body type Seats Doors  Performance specs  ...  \
+0  Internal Combustion engine  Hatchback     5     5  Performance specs  ...   
+
+  Number of Gears (automatic transmission)            Front suspension  \
+0                                    6 DCT  Independent type McPherson   
+
+                 Rear suspension      Front brakes Rear brakes  \
+0  Semi-independent, coil spring  Ventilated discs        Disc   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+      Power steering  Tires size Wheel rims size  
+0  Electric Steering  225/45 R18              18  
+
+[1 rows x 57 columns]"
+4,212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-hatch-generation-6337,https://www.auto-data.net/en/qoros-3-hatch-generation-6337,qoros-3-hatch-1.6-126hp-dct-33428,https://www.auto-data.net/en/qoros-3-hatch-1.6-126hp-dct-33428,"   Brand Model Generation Modification (Engine) Start of production  \
+0  Qoros     3    3 Hatch      1.6 (126 Hp) DCT     June, 2014 year   
+
+      Powertrain Architecture  Body type Seats Doors  Performance specs  ...  \
+0  Internal Combustion engine  Hatchback     5     5  Performance specs  ...   
+
+  Number of Gears (automatic transmission)            Front suspension  \
+0                                    6 DCT  Independent type McPherson   
+
+                 Rear suspension      Front brakes Rear brakes  \
+0  Semi-independent, coil spring  Ventilated discs        Disc   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+      Power steering  Tires size Wheel rims size  
+0  Electric Steering  205/60 R16              16  
+
+[1 rows x 57 columns]"
+5,212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-sedan-generation-6331,https://www.auto-data.net/en/qoros-3-sedan-generation-6331,qoros-3-sedan-1.6-156hp-dct-33414,https://www.auto-data.net/en/qoros-3-sedan-1.6-156hp-dct-33414,"   Brand Model Generation Modification (Engine)  Start of production  \
+0  Qoros     3    3 Sedan      1.6 (156 Hp) DCT  November, 2013 year   
+
+      Powertrain Architecture Body type Seats Doors  Performance specs  ...  \
+0  Internal Combustion engine     Sedan     5     4  Performance specs  ...   
+
+  Number of Gears (automatic transmission)            Front suspension  \
+0                                    6 DCT  Independent type McPherson   
+
+                 Rear suspension      Front brakes Rear brakes  \
+0  Semi-independent, coil spring  Ventilated discs        Disc   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+      Power steering  Tires size Wheel rims size  
+0  Electric Steering  225/45 R18              18  
+
+[1 rows x 57 columns]"
+6,212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-sedan-generation-6331,https://www.auto-data.net/en/qoros-3-sedan-generation-6331,qoros-3-sedan-1.6-126hp-dct-33413,https://www.auto-data.net/en/qoros-3-sedan-1.6-126hp-dct-33413,"   Brand Model Generation Modification (Engine)  Start of production  \
+0  Qoros     3    3 Sedan      1.6 (126 Hp) DCT  November, 2013 year   
+
+      Powertrain Architecture Body type Seats Doors  Performance specs  ...  \
+0  Internal Combustion engine     Sedan     5     4  Performance specs  ...   
+
+  Number of Gears (automatic transmission)            Front suspension  \
+0                                    6 DCT  Independent type McPherson   
+
+                 Rear suspension      Front brakes Rear brakes  \
+0  Semi-independent, coil spring  Ventilated discs        Disc   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+      Power steering  Tires size Wheel rims size  
+0  Electric Steering  205/60 R16              16  
+
+[1 rows x 57 columns]"
+7,212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-sedan-generation-6331,https://www.auto-data.net/en/qoros-3-sedan-generation-6331,qoros-3-sedan-1.6-126hp-33412,https://www.auto-data.net/en/qoros-3-sedan-1.6-126hp-33412,"   Brand Model Generation Modification (Engine)  Start of production  \
+0  Qoros     3    3 Sedan          1.6 (126 Hp)  November, 2013 year   
+
+      Powertrain Architecture Body type Seats Doors  Performance specs  ...  \
+0  Internal Combustion engine     Sedan     5     4  Performance specs  ...   
+
+  Number of Gears (manual transmission)            Front suspension  \
+0                                     6  Independent type McPherson   
+
+                 Rear suspension      Front brakes Rear brakes  \
+0  Semi-independent, coil spring  Ventilated discs        Disc   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+      Power steering  Tires size Wheel rims size  
+0  Electric Steering  205/60 R16              16  
+
+[1 rows x 57 columns]"
+8,212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-city-suv-generation-6329,https://www.auto-data.net/en/qoros-3-city-suv-generation-6329,qoros-3-city-suv-1.6-156hp-dct-33411,https://www.auto-data.net/en/qoros-3-city-suv-1.6-156hp-dct-33411,"   Brand Model  Generation Modification (Engine)  Start of production  \
+0  Qoros     3  3 City SUV      1.6 (156 Hp) DCT  December, 2014 year   
+
+      Powertrain Architecture Body type Seats Doors  Performance specs  ...  \
+0  Internal Combustion engine       SUV     5     5  Performance specs  ...   
+
+  Number of Gears (automatic transmission)            Front suspension  \
+0                                    6 DCT  Independent type McPherson   
+
+                 Rear suspension      Front brakes Rear brakes  \
+0  Semi-independent, coil spring  Ventilated discs        Disc   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+      Power steering  Tires size Wheel rims size  
+0  Electric Steering  215/60 R17              17  
+
+[1 rows x 58 columns]"
+9,212,https://www.auto-data.net/en/qoros-brand-248,qoros-3-model-2456,https://www.auto-data.net/en/qoros-3-model-2456,qoros-3-city-suv-generation-6329,https://www.auto-data.net/en/qoros-3-city-suv-generation-6329,qoros-3-city-suv-1.6-156hp-33410,https://www.auto-data.net/en/qoros-3-city-suv-1.6-156hp-33410,"   Brand Model  Generation Modification (Engine)  Start of production  \
+0  Qoros     3  3 City SUV          1.6 (156 Hp)  December, 2014 year   
+
+      Powertrain Architecture Body type Seats Doors  Performance specs  ...  \
+0  Internal Combustion engine       SUV     5     5  Performance specs  ...   
+
+  Number of Gears (manual transmission)            Front suspension  \
+0                                     6  Independent type McPherson   
+
+                 Rear suspension      Front brakes Rear brakes  \
+0  Semi-independent, coil spring  Ventilated discs        Disc   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+      Power steering  Tires size Wheel rims size  
+0  Electric Steering  215/60 R17              17  
+
+[1 rows x 58 columns]"
+10,212,https://www.auto-data.net/en/qoros-brand-248,qoros-5-model-2457,https://www.auto-data.net/en/qoros-5-model-2457,qoros-5-suv-generation-6339,https://www.auto-data.net/en/qoros-5-suv-generation-6339,qoros-5-suv-1.6-156hp-dct-33438,https://www.auto-data.net/en/qoros-5-suv-1.6-156hp-dct-33438,"   Brand Model Generation Modification (Engine) Start of production  \
+0  Qoros     5      5 SUV      1.6 (156 Hp) DCT           2016 year   
+
+      Powertrain Architecture Body type Seats Doors  Performance specs  ...  \
+0  Internal Combustion engine       SUV     5     5  Performance specs  ...   
+
+  Number of Gears (automatic transmission)            Front suspension  \
+0                                    6 DCT  Independent type McPherson   
+
+          Rear suspension      Front brakes Rear brakes  \
+0  Multi-link independent  Ventilated discs        Disc   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+      Power steering                          Tires size Wheel rims size  
+0  Electric Steering  225/65 R17; 235/55 R18; 235/50 R19      17; 18; 19  
+
+[1 rows x 58 columns]"
+11,212,https://www.auto-data.net/en/qoros-brand-248,qoros-5-model-2457,https://www.auto-data.net/en/qoros-5-model-2457,qoros-5-suv-generation-6339,https://www.auto-data.net/en/qoros-5-suv-generation-6339,qoros-5-suv-1.6-156hp-33437,https://www.auto-data.net/en/qoros-5-suv-1.6-156hp-33437,"   Brand Model Generation Modification (Engine) Start of production  \
+0  Qoros     5      5 SUV          1.6 (156 Hp)           2016 year   
+
+      Powertrain Architecture Body type Seats Doors  Performance specs  ...  \
+0  Internal Combustion engine       SUV     5     5  Performance specs  ...   
+
+  Number of Gears (manual transmission)            Front suspension  \
+0                                     6  Independent type McPherson   
+
+          Rear suspension      Front brakes Rear brakes  \
+0  Multi-link independent  Ventilated discs        Disc   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+      Power steering  Tires size Wheel rims size  
+0  Electric Steering  225/65 R17              17  
+
+[1 rows x 58 columns]"
+12,213,https://www.auto-data.net/en/qvale-brand-89,qvale-mangusta-model-978,https://www.auto-data.net/en/qvale-mangusta-model-978,qvale-mangusta-generation-2073,https://www.auto-data.net/en/qvale-mangusta-generation-2073,qvale-mangusta-4.6-i-v8-32v-322hp-10144,https://www.auto-data.net/en/qvale-mangusta-4.6-i-v8-32v-322hp-10144,"   Brand     Model Generation  Modification (Engine) Start of production  \
+0  Qvale  Mangusta   Mangusta  4.6 i V8 32V (322 Hp)           1999 year   
+
+  End of production     Powertrain Architecture  Body type Seats Doors  ...  \
+0         2002 year  Internal Combustion engine  Cabriolet     2     2  ...   
+
+   Rear (Back) track  Drivetrain, brakes and suspension specs  \
+0  1590 mm  62.6 in.  Drivetrain, brakes and suspension specs   
+
+  Number of Gears (manual transmission) Front suspension Rear suspension  \
+0                                     5      Coil spring  Helical spring   
+
+       Front brakes       Rear brakes               Assisting systems  \
+0  Ventilated discs  Ventilated discs  ABS (Anti-lock braking system)   
+
+   Tires size Wheel rims size  
+0  225/45 R17              17  
+
+[1 rows x 53 columns]"

@@ -1,7 +1,112 @@
-,brands_url,models,models_url,generations,generations_url,modifications,modifications_url
-284,https://www.auto-data.net/en/xin-kai-brand-110,xin-kai-pickup-x3-model-1117,https://www.auto-data.net/en/xin-kai-pickup-x3-model-1117,xin-kai-pickup-x3-generation-2269,https://www.auto-data.net/en/xin-kai-pickup-x3-generation-2269,xin-kai-pickup-x3-2.2-i-105hp-10947,https://www.auto-data.net/en/xin-kai-pickup-x3-2.2-i-105hp-10947
-284,https://www.auto-data.net/en/xin-kai-brand-110,xin-kai-sr-v-x3-model-1118,https://www.auto-data.net/en/xin-kai-sr-v-x3-model-1118,xin-kai-sr-v-x3-generation-2270,https://www.auto-data.net/en/xin-kai-sr-v-x3-generation-2270,xin-kai-sr-v-x3-2.8-d-157hp-10949,https://www.auto-data.net/en/xin-kai-sr-v-x3-2.8-d-157hp-10949
-284,https://www.auto-data.net/en/xin-kai-brand-110,xin-kai-sr-v-x3-model-1118,https://www.auto-data.net/en/xin-kai-sr-v-x3-model-1118,xin-kai-sr-v-x3-generation-2270,https://www.auto-data.net/en/xin-kai-sr-v-x3-generation-2270,xin-kai-sr-v-x3-2.2i-105hp-10948,https://www.auto-data.net/en/xin-kai-sr-v-x3-2.2i-105hp-10948
-284,https://www.auto-data.net/en/xin-kai-brand-110,xin-kai-suv-x3-model-1119,https://www.auto-data.net/en/xin-kai-suv-x3-model-1119,xin-kai-suv-x3-generation-2271,https://www.auto-data.net/en/xin-kai-suv-x3-generation-2271,xin-kai-suv-x3-2.2-i-105hp-10950,https://www.auto-data.net/en/xin-kai-suv-x3-2.2-i-105hp-10950
-285,https://www.auto-data.net/en/xpeng-brand-266,xpeng-g3-model-2581,https://www.auto-data.net/en/xpeng-g3-model-2581,xpeng-g3-generation-6766,https://www.auto-data.net/en/xpeng-g3-generation-6766,xpeng-g3-47.6-kwh-197hp-electric-35097,https://www.auto-data.net/en/xpeng-g3-47.6-kwh-197hp-electric-35097
-285,https://www.auto-data.net/en/xpeng-brand-266,xpeng-g3-model-2581,https://www.auto-data.net/en/xpeng-g3-model-2581,xpeng-g3-generation-6766,https://www.auto-data.net/en/xpeng-g3-generation-6766,xpeng-g3-47.1-kwh-197hp-electric-35096,https://www.auto-data.net/en/xpeng-g3-47.1-kwh-197hp-electric-35096
+,Unnamed: 0,brands_url,models,models_url,generations,generations_url,modifications,modifications_url,dataframe
+0,284,https://www.auto-data.net/en/xin-kai-brand-110,xin-kai-pickup-x3-model-1117,https://www.auto-data.net/en/xin-kai-pickup-x3-model-1117,xin-kai-pickup-x3-generation-2269,https://www.auto-data.net/en/xin-kai-pickup-x3-generation-2269,xin-kai-pickup-x3-2.2-i-105hp-10947,https://www.auto-data.net/en/xin-kai-pickup-x3-2.2-i-105hp-10947,"     Brand      Model Generation Modification (Engine) Start of production  \
+0  Xin Kai  PICKUP X3  Pickup X3        2.2 i (105 Hp)           2003 year   
+
+  End of production     Powertrain Architecture Body type Seats Doors  ...  \
+0         2017 year  Internal Combustion engine   Pick-up     5     4  ...   
+
+        Drive wheel Number of Gears (manual transmission) Front suspension  \
+0  Rear wheel drive                                     5     Spring Strut   
+
+  Rear suspension Front brakes Rear brakes               Assisting systems  \
+0  Helical spring         Disc        Drum  ABS (Anti-lock braking system)   
+
+              Steering type  Tires size Wheel rims size  
+0  Steering rack and pinion  225/75 R15              15  
+
+[1 rows x 49 columns]"
+1,284,https://www.auto-data.net/en/xin-kai-brand-110,xin-kai-sr-v-x3-model-1118,https://www.auto-data.net/en/xin-kai-sr-v-x3-model-1118,xin-kai-sr-v-x3-generation-2270,https://www.auto-data.net/en/xin-kai-sr-v-x3-generation-2270,xin-kai-sr-v-x3-2.8-d-157hp-10949,https://www.auto-data.net/en/xin-kai-sr-v-x3-2.8-d-157hp-10949,"     Brand    Model Generation Modification (Engine) Start of production  \
+0  Xin Kai  SR-V X3    SR-V X3        2.8 D (157 Hp)           2003 year   
+
+  End of production     Powertrain Architecture         Body type Seats Doors  \
+0         2017 year  Internal Combustion engine  Off-road vehicle     5     5   
+
+   ...       Drive wheel Number of Gears (manual transmission)  \
+0  ...  Rear wheel drive                                     5   
+
+  Front suspension Rear suspension Front brakes Rear brakes  \
+0     Spring Strut  Helical spring         Disc        Drum   
+
+                Assisting systems             Steering type  Tires size  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion  225/75 R15   
+
+  Wheel rims size  
+0              15  
+
+[1 rows x 49 columns]"
+2,284,https://www.auto-data.net/en/xin-kai-brand-110,xin-kai-sr-v-x3-model-1118,https://www.auto-data.net/en/xin-kai-sr-v-x3-model-1118,xin-kai-sr-v-x3-generation-2270,https://www.auto-data.net/en/xin-kai-sr-v-x3-generation-2270,xin-kai-sr-v-x3-2.2i-105hp-10948,https://www.auto-data.net/en/xin-kai-sr-v-x3-2.2i-105hp-10948,"     Brand    Model Generation Modification (Engine) Start of production  \
+0  Xin Kai  SR-V X3    SR-V X3         2.2i (105 Hp)           2003 year   
+
+  End of production     Powertrain Architecture         Body type Seats Doors  \
+0         2017 year  Internal Combustion engine  Off-road vehicle     5     5   
+
+   ...       Drive wheel Number of Gears (manual transmission)  \
+0  ...  Rear wheel drive                                     5   
+
+  Front suspension Rear suspension Front brakes Rear brakes  \
+0     Spring Strut  Helical spring         Disc        Drum   
+
+                Assisting systems             Steering type  Tires size  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion  225/75 R15   
+
+  Wheel rims size  
+0              15  
+
+[1 rows x 49 columns]"
+3,284,https://www.auto-data.net/en/xin-kai-brand-110,xin-kai-suv-x3-model-1119,https://www.auto-data.net/en/xin-kai-suv-x3-model-1119,xin-kai-suv-x3-generation-2271,https://www.auto-data.net/en/xin-kai-suv-x3-generation-2271,xin-kai-suv-x3-2.2-i-105hp-10950,https://www.auto-data.net/en/xin-kai-suv-x3-2.2-i-105hp-10950,"     Brand   Model Generation Modification (Engine) Start of production  \
+0  Xin Kai  SUV X3     SUV X3        2.2 i (105 Hp)           2003 year   
+
+  End of production     Powertrain Architecture         Body type Seats Doors  \
+0         2017 year  Internal Combustion engine  Off-road vehicle     7     5   
+
+   ...       Drive wheel Number of Gears (manual transmission)  \
+0  ...  Rear wheel drive                                     5   
+
+  Front suspension Rear suspension Front brakes Rear brakes  \
+0     Spring Strut  Helical spring         Disc        Drum   
+
+                Assisting systems             Steering type  Tires size  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion  225/75 R15   
+
+  Wheel rims size  
+0              15  
+
+[1 rows x 49 columns]"
+4,285,https://www.auto-data.net/en/xpeng-brand-266,xpeng-g3-model-2581,https://www.auto-data.net/en/xpeng-g3-model-2581,xpeng-g3-generation-6766,https://www.auto-data.net/en/xpeng-g3-generation-6766,xpeng-g3-47.6-kwh-197hp-electric-35097,https://www.auto-data.net/en/xpeng-g3-47.6-kwh-197hp-electric-35097,"   Brand Model Generation       Modification (Engine) Start of production  \
+0  XPENG    G3         G3  47.6 kWh (197 Hp) Electric           2018 year   
+
+  Powertrain Architecture Body type Seats Doors  Performance specs  ...  \
+0  BEV (Electric Vehicle)       SUV     5     5  Performance specs  ...   
+
+   Drivetrain, brakes and suspension specs        Drive wheel  \
+0  Drivetrain, brakes and suspension specs  Front wheel drive   
+
+  Number of Gears (automatic transmission)            Front suspension  \
+0                                        1  Independent type McPherson   
+
+  Rear suspension      Front brakes       Rear brakes  \
+0         Torsion  Ventilated discs  Ventilated discs   
+
+                Assisting systems              Tires size Wheel rims size  
+0  ABS (Anti-lock braking system)  215/55 R17; 235/40 R19          17; 19  
+
+[1 rows x 47 columns]"
+5,285,https://www.auto-data.net/en/xpeng-brand-266,xpeng-g3-model-2581,https://www.auto-data.net/en/xpeng-g3-model-2581,xpeng-g3-generation-6766,https://www.auto-data.net/en/xpeng-g3-generation-6766,xpeng-g3-47.1-kwh-197hp-electric-35096,https://www.auto-data.net/en/xpeng-g3-47.1-kwh-197hp-electric-35096,"   Brand Model Generation       Modification (Engine) Start of production  \
+0  XPENG    G3         G3  47.1 kWh (197 Hp) Electric           2018 year   
+
+  Powertrain Architecture Body type Seats Doors  Performance specs  ...  \
+0  BEV (Electric Vehicle)       SUV     5     5  Performance specs  ...   
+
+   Drivetrain, brakes and suspension specs        Drive wheel  \
+0  Drivetrain, brakes and suspension specs  Front wheel drive   
+
+  Number of Gears (automatic transmission)            Front suspension  \
+0                                        1  Independent type McPherson   
+
+  Rear suspension      Front brakes       Rear brakes  \
+0         Torsion  Ventilated discs  Ventilated discs   
+
+                Assisting systems  Tires size Wheel rims size  
+0  ABS (Anti-lock braking system)  215/55 R17              17  
+
+[1 rows x 47 columns]"

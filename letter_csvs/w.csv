@@ -1,39 +1,653 @@
-,brands_url,models,models_url,generations,generations_url,modifications,modifications_url
-279,https://www.auto-data.net/en/w-motors-brand-218,w-motors-fenyr-model-2326,https://www.auto-data.net/en/w-motors-fenyr-model-2326,w-motors-fenyr-supersport-concept-generation-6444,https://www.auto-data.net/en/w-motors-fenyr-supersport-concept-generation-6444,,https://www.auto-data.net/en/nan
-279,https://www.auto-data.net/en/w-motors-brand-218,w-motors-fenyr-model-2326,https://www.auto-data.net/en/w-motors-fenyr-model-2326,w-motors-fenyr-supersport-generation-5973,https://www.auto-data.net/en/w-motors-fenyr-supersport-generation-5973,w-motors-fenyr-supersport-4.0-900hp-automatic-32100,https://www.auto-data.net/en/w-motors-fenyr-supersport-4.0-900hp-automatic-32100
-279,https://www.auto-data.net/en/w-motors-brand-218,w-motors-fenyr-model-2326,https://www.auto-data.net/en/w-motors-fenyr-model-2326,w-motors-fenyr-supersport-generation-5973,https://www.auto-data.net/en/w-motors-fenyr-supersport-generation-5973,w-motors-fenyr-supersport-3.8-800hp-automatic-33954,https://www.auto-data.net/en/w-motors-fenyr-supersport-3.8-800hp-automatic-33954
-279,https://www.auto-data.net/en/w-motors-brand-218,w-motors-lykan-model-2325,https://www.auto-data.net/en/w-motors-lykan-model-2325,w-motors-lykan-hypersport-generation-5971,https://www.auto-data.net/en/w-motors-lykan-hypersport-generation-5971,w-motors-lykan-hypersport-3.7-780hp-automatic-32096,https://www.auto-data.net/en/w-motors-lykan-hypersport-3.7-780hp-automatic-32096
-279,https://www.auto-data.net/en/w-motors-brand-218,w-motors-lykan-model-2325,https://www.auto-data.net/en/w-motors-lykan-model-2325,w-motors-lykan-hypersport-generation-5971,https://www.auto-data.net/en/w-motors-lykan-hypersport-generation-5971,w-motors-lykan-hypersport-3.7-780hp-32095,https://www.auto-data.net/en/w-motors-lykan-hypersport-3.7-780hp-32095
-280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-311-model-2877,https://www.auto-data.net/en/wartburg-311-model-2877,wartburg-311-3-coupe-generation-8458,https://www.auto-data.net/en/wartburg-311-3-coupe-generation-8458,,https://www.auto-data.net/en/nan
-280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-311-model-2877,https://www.auto-data.net/en/wartburg-311-model-2877,wartburg-311-generation-8170,https://www.auto-data.net/en/wartburg-311-generation-8170,wartburg-311-1.0-45hp-42792,https://www.auto-data.net/en/wartburg-311-1.0-45hp-42792
-280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-tourist-generation-2091,https://www.auto-data.net/en/wartburg-353-tourist-generation-2091,wartburg-353-tourist-1.3-58hp-10181,https://www.auto-data.net/en/wartburg-353-tourist-1.3-58hp-10181
-280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-tourist-generation-2091,https://www.auto-data.net/en/wartburg-353-tourist-generation-2091,wartburg-353-tourist-1.0-50hp-10179,https://www.auto-data.net/en/wartburg-353-tourist-1.0-50hp-10179
-280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-tourist-generation-2091,https://www.auto-data.net/en/wartburg-353-tourist-generation-2091,wartburg-353-tourist-1.0-50hp-10180,https://www.auto-data.net/en/wartburg-353-tourist-1.0-50hp-10180
-280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-tourist-generation-2091,https://www.auto-data.net/en/wartburg-353-tourist-generation-2091,wartburg-353-tourist-1.0-45hp-10178,https://www.auto-data.net/en/wartburg-353-tourist-1.0-45hp-10178
-280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-generation-2092,https://www.auto-data.net/en/wartburg-353-generation-2092,wartburg-353-1.3-58hp-10186,https://www.auto-data.net/en/wartburg-353-1.3-58hp-10186
-280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-generation-2092,https://www.auto-data.net/en/wartburg-353-generation-2092,wartburg-353-1.0-50hp-10185,https://www.auto-data.net/en/wartburg-353-1.0-50hp-10185
-280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-generation-2092,https://www.auto-data.net/en/wartburg-353-generation-2092,wartburg-353-1.0-45hp-10184,https://www.auto-data.net/en/wartburg-353-1.0-45hp-10184
-280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-generation-2092,https://www.auto-data.net/en/wartburg-353-generation-2092,wartburg-353-1.0-353-w-000-50hp-10182,https://www.auto-data.net/en/wartburg-353-1.0-353-w-000-50hp-10182
-281,https://www.auto-data.net/en/westfield-brand-100,westfield-westfield-model-1051,https://www.auto-data.net/en/westfield-westfield-model-1051,westfield-westfield-generation-2194,https://www.auto-data.net/en/westfield-westfield-generation-2194,westfield-westfield-4.0-i-v8-200hp-10814,https://www.auto-data.net/en/westfield-westfield-4.0-i-v8-200hp-10814
-281,https://www.auto-data.net/en/westfield-brand-100,westfield-westfield-model-1051,https://www.auto-data.net/en/westfield-westfield-model-1051,westfield-westfield-generation-2194,https://www.auto-data.net/en/westfield-westfield-generation-2194,westfield-westfield-1.8-i-16v-116hp-10813,https://www.auto-data.net/en/westfield-westfield-1.8-i-16v-116hp-10813
-282,https://www.auto-data.net/en/wey-brand-226,wey-p8-model-2364,https://www.auto-data.net/en/wey-p8-model-2364,wey-p8-concept-generation-6115,https://www.auto-data.net/en/wey-p8-concept-generation-6115,,https://www.auto-data.net/en/nan
-282,https://www.auto-data.net/en/wey-brand-226,wey-p8-model-2364,https://www.auto-data.net/en/wey-p8-model-2364,wey-p8-generation-6675,https://www.auto-data.net/en/wey-p8-generation-6675,wey-p8-2.0-t-340hp-plug-in-hybrid-awd-dct-34860,https://www.auto-data.net/en/wey-p8-2.0-t-340hp-plug-in-hybrid-awd-dct-34860
-282,https://www.auto-data.net/en/wey-brand-226,wey-s-model-2869,https://www.auto-data.net/en/wey-s-model-2869,wey-s-concept-generation-8137,https://www.auto-data.net/en/wey-s-concept-generation-8137,,https://www.auto-data.net/en/nan
-282,https://www.auto-data.net/en/wey-brand-226,wey-tank-300-model-2908,https://www.auto-data.net/en/wey-tank-300-model-2908,wey-tank-300-generation-8314,https://www.auto-data.net/en/wey-tank-300-generation-8314,wey-tank-300-2.0t-227hp-4wd-automatic-42818,https://www.auto-data.net/en/wey-tank-300-2.0t-227hp-4wd-automatic-42818
-282,https://www.auto-data.net/en/wey-brand-226,wey-vv5-model-2362,https://www.auto-data.net/en/wey-vv5-model-2362,wey-vv5-generation-6113,https://www.auto-data.net/en/wey-vv5-generation-6113,wey-vv5-2.0-turbo-197hp-awd-automatic-32682,https://www.auto-data.net/en/wey-vv5-2.0-turbo-197hp-awd-automatic-32682
-282,https://www.auto-data.net/en/wey-brand-226,wey-vv7-model-2363,https://www.auto-data.net/en/wey-vv7-model-2363,wey-vv7-gt-pro-generation-7361,https://www.auto-data.net/en/wey-vv7-gt-pro-generation-7361,,https://www.auto-data.net/en/nan
-282,https://www.auto-data.net/en/wey-brand-226,wey-vv7-model-2363,https://www.auto-data.net/en/wey-vv7-model-2363,wey-vv7-generation-6114,https://www.auto-data.net/en/wey-vv7-generation-6114,wey-vv7-s-2.0-turbo-234hp-awd-automatic-32684,https://www.auto-data.net/en/wey-vv7-s-2.0-turbo-234hp-awd-automatic-32684
-282,https://www.auto-data.net/en/wey-brand-226,wey-x-model-2870,https://www.auto-data.net/en/wey-x-model-2870,wey-x-concept-generation-8138,https://www.auto-data.net/en/wey-x-concept-generation-8138,,https://www.auto-data.net/en/nan
-282,https://www.auto-data.net/en/wey-brand-226,wey-xev-model-2414,https://www.auto-data.net/en/wey-xev-model-2414,wey-xev-concept-generation-6226,https://www.auto-data.net/en/wey-xev-concept-generation-6226,,https://www.auto-data.net/en/nan
-283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-gt-model-2164,https://www.auto-data.net/en/wiesmann-gt-model-2164,wiesmann-gt-mf5-generation-5065,https://www.auto-data.net/en/wiesmann-gt-mf5-generation-5065,wiesmann-gt-mf5-4.4-v8-555hp-automatic-25235,https://www.auto-data.net/en/wiesmann-gt-mf5-4.4-v8-555hp-automatic-25235
-283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-gt-model-2164,https://www.auto-data.net/en/wiesmann-gt-model-2164,wiesmann-gt-mf4-generation-5064,https://www.auto-data.net/en/wiesmann-gt-mf4-generation-5064,wiesmann-gt-mf4-s-4.0-v8-420hp-automatic-25254,https://www.auto-data.net/en/wiesmann-gt-mf4-s-4.0-v8-420hp-automatic-25254
-283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-gt-model-2164,https://www.auto-data.net/en/wiesmann-gt-model-2164,wiesmann-gt-mf4-generation-5064,https://www.auto-data.net/en/wiesmann-gt-mf4-generation-5064,wiesmann-gt-mf4-s-4.0-v8-420hp-25217,https://www.auto-data.net/en/wiesmann-gt-mf4-s-4.0-v8-420hp-25217
-283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-gt-model-2164,https://www.auto-data.net/en/wiesmann-gt-model-2164,wiesmann-gt-mf4-generation-5064,https://www.auto-data.net/en/wiesmann-gt-mf4-generation-5064,wiesmann-gt-mf4-4.4-v8-407hp-automatic-25359,https://www.auto-data.net/en/wiesmann-gt-mf4-4.4-v8-407hp-automatic-25359
-283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-mf5-generation-5063,https://www.auto-data.net/en/wiesmann-roadster-mf5-generation-5063,wiesmann-roadster-mf5-4.4-v8-555hp-automatic-25344,https://www.auto-data.net/en/wiesmann-roadster-mf5-4.4-v8-555hp-automatic-25344
-283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-mf4-generation-5062,https://www.auto-data.net/en/wiesmann-roadster-mf4-generation-5062,wiesmann-roadster-mf4-s-4.0-v8-420hp-automatic-25376,https://www.auto-data.net/en/wiesmann-roadster-mf4-s-4.0-v8-420hp-automatic-25376
-283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-mf4-generation-5062,https://www.auto-data.net/en/wiesmann-roadster-mf4-generation-5062,wiesmann-roadster-mf4-s-4.0-v8-420hp-25234,https://www.auto-data.net/en/wiesmann-roadster-mf4-s-4.0-v8-420hp-25234
-283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-mf4-generation-5062,https://www.auto-data.net/en/wiesmann-roadster-mf4-generation-5062,wiesmann-roadster-mf4-4.4-v8-407hp-automatic-25599,https://www.auto-data.net/en/wiesmann-roadster-mf4-4.4-v8-407hp-automatic-25599
-283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-mf3-generation-5061,https://www.auto-data.net/en/wiesmann-roadster-mf3-generation-5061,wiesmann-roadster-mf3-3.2i-24v-325hp-10855,https://www.auto-data.net/en/wiesmann-roadster-mf3-3.2i-24v-325hp-10855
-283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-mf3-generation-5061,https://www.auto-data.net/en/wiesmann-roadster-mf3-generation-5061,wiesmann-roadster-mf3-3.0i-24v-231hp-10856,https://www.auto-data.net/en/wiesmann-roadster-mf3-3.0i-24v-231hp-10856
-283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-generation-2214,https://www.auto-data.net/en/wiesmann-roadster-generation-2214,wiesmann-roadster-3.2i-24v-321hp-10854,https://www.auto-data.net/en/wiesmann-roadster-3.2i-24v-321hp-10854
-283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-generation-2214,https://www.auto-data.net/en/wiesmann-roadster-generation-2214,wiesmann-roadster-2.8i-24v-193hp-10853,https://www.auto-data.net/en/wiesmann-roadster-2.8i-24v-193hp-10853
+,Unnamed: 0,brands_url,models,models_url,generations,generations_url,modifications,modifications_url,dataframe
+0,279,https://www.auto-data.net/en/w-motors-brand-218,w-motors-fenyr-model-2326,https://www.auto-data.net/en/w-motors-fenyr-model-2326,w-motors-fenyr-supersport-concept-generation-6444,https://www.auto-data.net/en/w-motors-fenyr-supersport-concept-generation-6444,,https://www.auto-data.net/en/nan,"Empty DataFrame
+Columns: []
+Index: []"
+1,279,https://www.auto-data.net/en/w-motors-brand-218,w-motors-fenyr-model-2326,https://www.auto-data.net/en/w-motors-fenyr-model-2326,w-motors-fenyr-supersport-generation-5973,https://www.auto-data.net/en/w-motors-fenyr-supersport-generation-5973,w-motors-fenyr-supersport-4.0-900hp-automatic-32100,https://www.auto-data.net/en/w-motors-fenyr-supersport-4.0-900hp-automatic-32100,"      Brand  Model        Generation   Modification (Engine)  \
+0  W Motors  Fenyr  Fenyr SuperSport  4.0 (900 Hp) Automatic   
+
+   Start of production     Powertrain Architecture Body type Seats Doors  \
+0  November, 2015 year  Internal Combustion engine     Coupe     2     2   
+
+   Performance specs  ... Number of Gears (automatic transmission)  \
+0  Performance specs  ...                                    7 PDK   
+
+             Front suspension                                 Rear suspension  \
+0  Independent type McPherson  Independent, spring multi-link with stabilizer   
+
+       Front brakes       Rear brakes               Assisting systems  \
+0  Ventilated discs  Ventilated discs  ABS (Anti-lock braking system)   
+
+              Steering type     Power steering              Tires size  \
+0  Steering rack and pinion  Electric Steering  255/35 R20; 335/30 R21   
+
+         Wheel rims size  
+0  8.5J x 20; 12.5J x 21  
+
+[1 rows x 52 columns]"
+2,279,https://www.auto-data.net/en/w-motors-brand-218,w-motors-fenyr-model-2326,https://www.auto-data.net/en/w-motors-fenyr-model-2326,w-motors-fenyr-supersport-generation-5973,https://www.auto-data.net/en/w-motors-fenyr-supersport-generation-5973,w-motors-fenyr-supersport-3.8-800hp-automatic-33954,https://www.auto-data.net/en/w-motors-fenyr-supersport-3.8-800hp-automatic-33954,"      Brand  Model        Generation   Modification (Engine)  \
+0  W Motors  Fenyr  Fenyr SuperSport  3.8 (800 Hp) Automatic   
+
+  Start of production     Powertrain Architecture Body type Seats Doors  \
+0           2017 year  Internal Combustion engine     Coupe     2     2   
+
+   Performance specs  ... Number of Gears (automatic transmission)  \
+0  Performance specs  ...                                    7 PDK   
+
+             Front suspension                                 Rear suspension  \
+0  Independent type McPherson  Independent, spring multi-link with stabilizer   
+
+       Front brakes       Rear brakes               Assisting systems  \
+0  Ventilated discs  Ventilated discs  ABS (Anti-lock braking system)   
+
+              Steering type     Power steering                Tires size  \
+0  Steering rack and pinion  Electric Steering  255/35 ZR19; 335/30 ZR20   
+
+         Wheel rims size  
+0  8.5J x 19; 12.5J x 20  
+
+[1 rows x 57 columns]"
+3,279,https://www.auto-data.net/en/w-motors-brand-218,w-motors-lykan-model-2325,https://www.auto-data.net/en/w-motors-lykan-model-2325,w-motors-lykan-hypersport-generation-5971,https://www.auto-data.net/en/w-motors-lykan-hypersport-generation-5971,w-motors-lykan-hypersport-3.7-780hp-automatic-32096,https://www.auto-data.net/en/w-motors-lykan-hypersport-3.7-780hp-automatic-32096,"      Brand  Model        Generation   Modification (Engine)  \
+0  W Motors  Lykan  Lykan HyperSport  3.7 (780 Hp) Automatic   
+
+   Start of production End of production     Powertrain Architecture  \
+0  February, 2013 year         2017 year  Internal Combustion engine   
+
+  Body type Seats Doors  ...  \
+0     Coupe     2     2  ...   
+
+                             Drivetrain Architecture       Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Rear wheel drive   
+
+  Number of Gears (automatic transmission)            Front suspension  \
+0                                    7 PDK  Independent type McPherson   
+
+                                  Rear suspension      Front brakes  \
+0  Independent, spring multi-link with stabilizer  Ventilated discs   
+
+        Rear brakes               Assisting systems              Tires size  \
+0  Ventilated discs  ABS (Anti-lock braking system)  255/35 R19; 335/30 R20   
+
+         Wheel rims size  
+0  8.5J x 19; 12.5J x 20  
+
+[1 rows x 58 columns]"
+4,279,https://www.auto-data.net/en/w-motors-brand-218,w-motors-lykan-model-2325,https://www.auto-data.net/en/w-motors-lykan-model-2325,w-motors-lykan-hypersport-generation-5971,https://www.auto-data.net/en/w-motors-lykan-hypersport-generation-5971,w-motors-lykan-hypersport-3.7-780hp-32095,https://www.auto-data.net/en/w-motors-lykan-hypersport-3.7-780hp-32095,"      Brand  Model        Generation Modification (Engine)  \
+0  W Motors  Lykan  Lykan HyperSport          3.7 (780 Hp)   
+
+   Start of production End of production     Powertrain Architecture  \
+0  February, 2013 year         2017 year  Internal Combustion engine   
+
+  Body type Seats Doors  ...  \
+0     Coupe     2     2  ...   
+
+                             Drivetrain Architecture       Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Rear wheel drive   
+
+  Number of Gears (manual transmission)            Front suspension  \
+0                                     6  Independent type McPherson   
+
+                                  Rear suspension      Front brakes  \
+0  Independent, spring multi-link with stabilizer  Ventilated discs   
+
+        Rear brakes               Assisting systems              Tires size  \
+0  Ventilated discs  ABS (Anti-lock braking system)  255/35 R19; 335/30 R20   
+
+         Wheel rims size  
+0  8.5J x 19; 12.5J x 20  
+
+[1 rows x 58 columns]"
+5,280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-311-model-2877,https://www.auto-data.net/en/wartburg-311-model-2877,wartburg-311-3-coupe-generation-8458,https://www.auto-data.net/en/wartburg-311-3-coupe-generation-8458,,https://www.auto-data.net/en/nan,"Empty DataFrame
+Columns: []
+Index: []"
+6,280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-311-model-2877,https://www.auto-data.net/en/wartburg-311-model-2877,wartburg-311-generation-8170,https://www.auto-data.net/en/wartburg-311-generation-8170,wartburg-311-1.0-45hp-42792,https://www.auto-data.net/en/wartburg-311-1.0-45hp-42792,"      Brand Model Generation Modification (Engine) Start of production  \
+0  Wartburg   311        311           1.0 (45 Hp)           1962 year   
+
+  End of production     Powertrain Architecture Body type Seats Doors  ...  \
+0         1967 year  Internal Combustion engine     Sedan   4-5     4  ...   
+
+            Wheelbase  Drivetrain, brakes and suspension specs  \
+0  2450 mm  96.46 in.  Drivetrain, brakes and suspension specs   
+
+                             Drivetrain Architecture        Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Front wheel drive   
+
+  Number of Gears (manual transmission) Front suspension Rear suspension  \
+0                                     4      Leaf spring     Leaf spring   
+
+  Front brakes Rear brakes        Steering type  
+0         Drum        Drum  Worm-reduction unit  
+
+[1 rows x 49 columns]"
+7,280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-tourist-generation-2091,https://www.auto-data.net/en/wartburg-353-tourist-generation-2091,wartburg-353-tourist-1.3-58hp-10181,https://www.auto-data.net/en/wartburg-353-tourist-1.3-58hp-10181,"      Brand Model   Generation Modification (Engine) Start of production  \
+0  Wartburg   353  353 Tourist           1.3 (58 Hp)           1989 year   
+
+  End of production     Powertrain Architecture               Body type  \
+0         1991 year  Internal Combustion engine  Station wagon (estate)   
+
+   Performance specs          Fuel Type  Engine specs  Power  \
+0  Performance specs  Petrol (Gasoline)  Engine specs  58 Hp   
+
+            Engine aspiration  \
+0  Naturally aspirated engine   
+
+  (adsbygoogle = window.adsbygoogle || []).push({});  
+0  (adsbygoogle = window.adsbygoogle || []).push(...  "
+8,280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-tourist-generation-2091,https://www.auto-data.net/en/wartburg-353-tourist-generation-2091,wartburg-353-tourist-1.0-50hp-10179,https://www.auto-data.net/en/wartburg-353-tourist-1.0-50hp-10179,"      Brand Model   Generation Modification (Engine) Start of production  \
+0  Wartburg   353  353 Tourist           1.0 (50 Hp)           1975 year   
+
+  End of production     Powertrain Architecture               Body type Seats  \
+0         1989 year  Internal Combustion engine  Station wagon (estate)     5   
+
+  Doors  ...                            Drivetrain Architecture  \
+0     5  ...  The Internal combustion engine (ICE) drives th...   
+
+         Drive wheel Number of Gears (manual transmission) Front suspension  \
+0  Front wheel drive                                     4     Spring Strut   
+
+  Rear suspension Front brakes Rear brakes             Steering type  \
+0  Helical spring         Disc        Drum  Steering rack and pinion   
+
+   Tires size Wheel rims size  
+0  185/65 R13              13  
+
+[1 rows x 34 columns]"
+9,280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-tourist-generation-2091,https://www.auto-data.net/en/wartburg-353-tourist-generation-2091,wartburg-353-tourist-1.0-50hp-10180,https://www.auto-data.net/en/wartburg-353-tourist-1.0-50hp-10180,"      Brand Model   Generation Modification (Engine) Start of production  \
+0  Wartburg   353  353 Tourist           1.0 (50 Hp)           1969 year   
+
+  End of production     Powertrain Architecture               Body type  \
+0         1975 year  Internal Combustion engine  Station wagon (estate)   
+
+   Performance specs          Fuel Type  Engine specs  Power  \
+0  Performance specs  Petrol (Gasoline)  Engine specs  50 Hp   
+
+            Engine aspiration  \
+0  Naturally aspirated engine   
+
+  (adsbygoogle = window.adsbygoogle || []).push({});  
+0  (adsbygoogle = window.adsbygoogle || []).push(...  "
+10,280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-tourist-generation-2091,https://www.auto-data.net/en/wartburg-353-tourist-generation-2091,wartburg-353-tourist-1.0-45hp-10178,https://www.auto-data.net/en/wartburg-353-tourist-1.0-45hp-10178,"      Brand Model   Generation Modification (Engine) Start of production  \
+0  Wartburg   353  353 Tourist           1.0 (45 Hp)           1966 year   
+
+  End of production     Powertrain Architecture               Body type  \
+0         1969 year  Internal Combustion engine  Station wagon (estate)   
+
+   Performance specs          Fuel Type  Engine specs  Power  \
+0  Performance specs  Petrol (Gasoline)  Engine specs  45 Hp   
+
+            Engine aspiration  \
+0  Naturally aspirated engine   
+
+  (adsbygoogle = window.adsbygoogle || []).push({});  
+0  (adsbygoogle = window.adsbygoogle || []).push(...  "
+11,280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-generation-2092,https://www.auto-data.net/en/wartburg-353-generation-2092,wartburg-353-1.3-58hp-10186,https://www.auto-data.net/en/wartburg-353-1.3-58hp-10186,"      Brand Model Generation Modification (Engine) Start of production  \
+0  Wartburg   353        353           1.3 (58 Hp)           1988 year   
+
+  End of production     Powertrain Architecture Body type  Performance specs  \
+0         1991 year  Internal Combustion engine     Sedan  Performance specs   
+
+           Fuel Type  ... Number of cylinders           Engine aspiration  \
+0  Petrol (Gasoline)  ...                   4  Naturally aspirated engine   
+
+  (adsbygoogle = window.adsbygoogle || []).push({});  \
+0  (adsbygoogle = window.adsbygoogle || []).push(...   
+
+   Space, Volume and weights           Kerb Weight  \
+0  Space, Volume and weights  920 kg  2028.25 lbs.   
+
+                Fuel tank capacity  Dimensions               Length  \
+0  42 l  11.1 US gal | 9.24 UK gal  Dimensions  4220 mm  166.14 in.   
+
+                Width              Height  
+0  1640 mm  64.57 in.  1495 mm  58.86 in.  
+
+[1 rows x 31 columns]"
+12,280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-generation-2092,https://www.auto-data.net/en/wartburg-353-generation-2092,wartburg-353-1.0-50hp-10185,https://www.auto-data.net/en/wartburg-353-1.0-50hp-10185,"      Brand Model Generation Modification (Engine) Start of production  \
+0  Wartburg   353        353           1.0 (50 Hp)           1969 year   
+
+  End of production     Powertrain Architecture Body type Seats Doors  ...  \
+0         1975 year  Internal Combustion engine     Sedan     5     4  ...   
+
+               Height Minimum turning circle (turning diameter)  \
+0  1495 mm  58.86 in.                         10.2 m  33.46 ft.   
+
+   Drivetrain, brakes and suspension specs  \
+0  Drivetrain, brakes and suspension specs   
+
+                             Drivetrain Architecture        Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Front wheel drive   
+
+  Number of Gears (manual transmission) Front brakes Rear brakes  Tires size  \
+0                                     4         Disc        Drum  170/70 R13   
+
+  Wheel rims size  
+0              13  
+
+[1 rows x 45 columns]"
+13,280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-generation-2092,https://www.auto-data.net/en/wartburg-353-generation-2092,wartburg-353-1.0-45hp-10184,https://www.auto-data.net/en/wartburg-353-1.0-45hp-10184,"      Brand Model Generation Modification (Engine) Start of production  \
+0  Wartburg   353        353           1.0 (45 Hp)           1966 year   
+
+  End of production     Powertrain Architecture Body type Seats Doors  ...  \
+0         1969 year  Internal Combustion engine     Sedan     5     4  ...   
+
+    Rear (Back) track Minimum turning circle (turning diameter)  \
+0  1300 mm  51.18 in.                         10.2 m  33.46 ft.   
+
+   Drivetrain, brakes and suspension specs  \
+0  Drivetrain, brakes and suspension specs   
+
+                             Drivetrain Architecture        Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Front wheel drive   
+
+  Number of Gears (manual transmission) Front brakes Rear brakes  Tires size  \
+0                                     4         Disc        Drum  170/70 R13   
+
+  Wheel rims size  
+0              13  
+
+[1 rows x 50 columns]"
+14,280,https://www.auto-data.net/en/wartburg-brand-95,wartburg-353-model-996,https://www.auto-data.net/en/wartburg-353-model-996,wartburg-353-generation-2092,https://www.auto-data.net/en/wartburg-353-generation-2092,wartburg-353-1.0-353-w-000-50hp-10182,https://www.auto-data.net/en/wartburg-353-1.0-353-w-000-50hp-10182,"      Brand Model Generation    Modification (Engine) Start of production  \
+0  Wartburg   353        353  1.0 (353 W 000) (50 Hp)           1975 year   
+
+  End of production     Powertrain Architecture Body type Seats Doors  ...  \
+0         1988 year  Internal Combustion engine     Sedan     5     4  ...   
+
+                             Drivetrain Architecture        Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Front wheel drive   
+
+  Number of Gears (manual transmission) Front suspension      Rear suspension  \
+0                                     4        McPherson  Independent, spring   
+
+  Front brakes Rear brakes             Steering type  Tires size  \
+0         Disc        Drum  Steering rack and pinion  165/70 R13   
+
+  Wheel rims size  
+0              13  
+
+[1 rows x 36 columns]"
+15,281,https://www.auto-data.net/en/westfield-brand-100,westfield-westfield-model-1051,https://www.auto-data.net/en/westfield-westfield-model-1051,westfield-westfield-generation-2194,https://www.auto-data.net/en/westfield-westfield-generation-2194,westfield-westfield-4.0-i-v8-200hp-10814,https://www.auto-data.net/en/westfield-westfield-4.0-i-v8-200hp-10814,"       Brand      Model Generation Modification (Engine) Start of production  \
+0  Westfield  Westfield  Westfield     4.0 i V8 (200 Hp)           1995 year   
+
+  End of production     Powertrain Architecture  Body type Seats Doors  ...  \
+0         2001 year  Internal Combustion engine  Cabriolet     2     2  ...   
+
+                             Drivetrain Architecture       Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Rear wheel drive   
+
+  Number of Gears (manual transmission) Front suspension Rear suspension  \
+0                                     5      Coil spring  Helical spring   
+
+  Front brakes Rear brakes             Steering type  Tires size  \
+0         Disc        Disc  Steering rack and pinion  205/50 R15   
+
+  Wheel rims size  
+0              15  
+
+[1 rows x 56 columns]"
+16,281,https://www.auto-data.net/en/westfield-brand-100,westfield-westfield-model-1051,https://www.auto-data.net/en/westfield-westfield-model-1051,westfield-westfield-generation-2194,https://www.auto-data.net/en/westfield-westfield-generation-2194,westfield-westfield-1.8-i-16v-116hp-10813,https://www.auto-data.net/en/westfield-westfield-1.8-i-16v-116hp-10813,"       Brand      Model Generation Modification (Engine) Start of production  \
+0  Westfield  Westfield  Westfield    1.8 i 16V (116 Hp)           1998 year   
+
+  End of production     Powertrain Architecture  Body type Seats Doors  ...  \
+0         2001 year  Internal Combustion engine  Cabriolet     2     2  ...   
+
+                             Drivetrain Architecture       Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Rear wheel drive   
+
+  Number of Gears (manual transmission) Front suspension Rear suspension  \
+0                                     5      Coil spring  Helical spring   
+
+  Front brakes Rear brakes             Steering type  Tires size  \
+0         Disc        Disc  Steering rack and pinion  185/60 R15   
+
+  Wheel rims size  
+0              15  
+
+[1 rows x 57 columns]"
+17,282,https://www.auto-data.net/en/wey-brand-226,wey-p8-model-2364,https://www.auto-data.net/en/wey-p8-model-2364,wey-p8-concept-generation-6115,https://www.auto-data.net/en/wey-p8-concept-generation-6115,,https://www.auto-data.net/en/nan,"Empty DataFrame
+Columns: []
+Index: []"
+18,282,https://www.auto-data.net/en/wey-brand-226,wey-p8-model-2364,https://www.auto-data.net/en/wey-p8-model-2364,wey-p8-generation-6675,https://www.auto-data.net/en/wey-p8-generation-6675,wey-p8-2.0-t-340hp-plug-in-hybrid-awd-dct-34860,https://www.auto-data.net/en/wey-p8-2.0-t-340hp-plug-in-hybrid-awd-dct-34860,"  Brand Model Generation                  Modification (Engine)  \
+0   WEY    P8         P8  2.0 T (340 Hp) Plug-in Hybrid AWD DCT   
+
+  Start of production                 Powertrain Architecture Body type Seats  \
+0           2017 year  PHEV (Plug-in Hybrid Electric Vehicle)       SUV     5   
+
+  Doors  Performance specs  ... Number of Gears (automatic transmission)  \
+0     5  Performance specs  ...                                    6 DCT   
+
+                                 Front suspension         Rear suspension  \
+0  Independent, Spring McPherson, with stabilizer  Multi-link independent   
+
+       Front brakes       Rear brakes               Assisting systems  \
+0  Ventilated discs  Ventilated discs  ABS (Anti-lock braking system)   
+
+              Steering type     Power steering  Tires size Wheel rims size  
+0  Steering rack and pinion  Electric Steering  235/55 R20              20  
+
+[1 rows x 56 columns]"
+19,282,https://www.auto-data.net/en/wey-brand-226,wey-s-model-2869,https://www.auto-data.net/en/wey-s-model-2869,wey-s-concept-generation-8137,https://www.auto-data.net/en/wey-s-concept-generation-8137,,https://www.auto-data.net/en/nan,"Empty DataFrame
+Columns: []
+Index: []"
+20,282,https://www.auto-data.net/en/wey-brand-226,wey-tank-300-model-2908,https://www.auto-data.net/en/wey-tank-300-model-2908,wey-tank-300-generation-8314,https://www.auto-data.net/en/wey-tank-300-generation-8314,wey-tank-300-2.0t-227hp-4wd-automatic-42818,https://www.auto-data.net/en/wey-tank-300-2.0t-227hp-4wd-automatic-42818,"  Brand     Model Generation        Modification (Engine) Start of production  \
+0   WEY  Tank 300   Tank 300  2.0T (227 Hp) 4WD Automatic           2020 year   
+
+  End of production     Powertrain Architecture Body type Seats Doors  ...  \
+0         2021 year  Internal Combustion engine       SUV     5     5  ...   
+
+  Number of Gears (automatic transmission) Front suspension  \
+0                                        8  Double wishbone   
+
+          Rear suspension      Front brakes       Rear brakes  \
+0  Independent multi-link  Ventilated discs  Ventilated discs   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+      Power steering  Tires size Wheel rims size  
+0  Electric Steering  265/65 R17              17  
+
+[1 rows x 58 columns]"
+21,282,https://www.auto-data.net/en/wey-brand-226,wey-vv5-model-2362,https://www.auto-data.net/en/wey-vv5-model-2362,wey-vv5-generation-6113,https://www.auto-data.net/en/wey-vv5-generation-6113,wey-vv5-2.0-turbo-197hp-awd-automatic-32682,https://www.auto-data.net/en/wey-vv5-2.0-turbo-197hp-awd-automatic-32682,"  Brand Model Generation             Modification (Engine)  \
+0   WEY   VV5        VV5  2.0 Turbo (197 Hp) AWD Automatic   
+
+  Start of production     Powertrain Architecture Body type Seats Doors  \
+0           2017 year  Internal Combustion engine       SUV     5     5   
+
+   Performance specs  ...            Drive wheel  \
+0  Performance specs  ...  All wheel drive (4x4)   
+
+  Number of Gears (automatic transmission) Front suspension  \
+0                                        7        McPherson   
+
+          Rear suspension      Front brakes       Rear brakes  \
+0  Multi-link independent  Ventilated discs  Ventilated discs   
+
+              Steering type     Power steering              Tires size  \
+0  Steering rack and pinion  Electric Steering  235/55 R19; 245/45 R20   
+
+  Wheel rims size  
+0          19; 20  
+
+[1 rows x 44 columns]"
+22,282,https://www.auto-data.net/en/wey-brand-226,wey-vv7-model-2363,https://www.auto-data.net/en/wey-vv7-model-2363,wey-vv7-gt-pro-generation-7361,https://www.auto-data.net/en/wey-vv7-gt-pro-generation-7361,,https://www.auto-data.net/en/nan,"Empty DataFrame
+Columns: []
+Index: []"
+23,282,https://www.auto-data.net/en/wey-brand-226,wey-vv7-model-2363,https://www.auto-data.net/en/wey-vv7-model-2363,wey-vv7-generation-6114,https://www.auto-data.net/en/wey-vv7-generation-6114,wey-vv7-s-2.0-turbo-234hp-awd-automatic-32684,https://www.auto-data.net/en/wey-vv7-s-2.0-turbo-234hp-awd-automatic-32684,"  Brand Model Generation               Modification (Engine)  \
+0   WEY   VV7        VV7  S 2.0 Turbo (234 Hp) AWD Automatic   
+
+  Start of production     Powertrain Architecture Body type Seats Doors  \
+0           2017 year  Internal Combustion engine       SUV     5     5   
+
+   Performance specs  ... Ride height (ground clearance)  \
+0  Performance specs  ...               211 mm  8.31 in.   
+
+   Drivetrain, brakes and suspension specs            Drive wheel  \
+0  Drivetrain, brakes and suspension specs  All wheel drive (4x4)   
+
+  Number of Gears (automatic transmission)            Front suspension  \
+0                                        7  Independent type McPherson   
+
+          Rear suspension      Front brakes       Rear brakes  \
+0  Multi-link independent  Ventilated discs  Ventilated discs   
+
+              Steering type     Power steering  
+0  Steering rack and pinion  Electric Steering  
+
+[1 rows x 44 columns]"
+24,282,https://www.auto-data.net/en/wey-brand-226,wey-x-model-2870,https://www.auto-data.net/en/wey-x-model-2870,wey-x-concept-generation-8138,https://www.auto-data.net/en/wey-x-concept-generation-8138,,https://www.auto-data.net/en/nan,"Empty DataFrame
+Columns: []
+Index: []"
+25,282,https://www.auto-data.net/en/wey-brand-226,wey-xev-model-2414,https://www.auto-data.net/en/wey-xev-model-2414,wey-xev-concept-generation-6226,https://www.auto-data.net/en/wey-xev-concept-generation-6226,,https://www.auto-data.net/en/nan,"Empty DataFrame
+Columns: []
+Index: []"
+26,283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-gt-model-2164,https://www.auto-data.net/en/wiesmann-gt-model-2164,wiesmann-gt-mf5-generation-5065,https://www.auto-data.net/en/wiesmann-gt-mf5-generation-5065,wiesmann-gt-mf5-4.4-v8-555hp-automatic-25235,https://www.auto-data.net/en/wiesmann-gt-mf5-4.4-v8-555hp-automatic-25235,"      Brand Model Generation      Modification (Engine) Start of production  \
+0  Wiesmann    GT     GT MF5  4.4 V8 (555 Hp) Automatic           2009 year   
+
+  End of production     Powertrain Architecture Body type Seats Doors  ...  \
+0         2014 year  Internal Combustion engine     Coupe     2     2  ...   
+
+   Drivetrain, brakes and suspension specs  \
+0  Drivetrain, brakes and suspension specs   
+
+                             Drivetrain Architecture       Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Rear wheel drive   
+
+  Number of Gears (automatic transmission) Front suspension  Rear suspension  \
+0                                        6  Double wishbone  Double wishbone   
+
+       Front brakes               Assisting systems              Tires size  \
+0  Ventilated discs  ABS (Anti-lock braking system)  245/40 R19; 275/35 R19   
+
+          Wheel rims size  
+0  8.5J x 19; 10; 0J x 19  
+
+[1 rows x 56 columns]"
+27,283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-gt-model-2164,https://www.auto-data.net/en/wiesmann-gt-model-2164,wiesmann-gt-mf4-generation-5064,https://www.auto-data.net/en/wiesmann-gt-mf4-generation-5064,wiesmann-gt-mf4-s-4.0-v8-420hp-automatic-25254,https://www.auto-data.net/en/wiesmann-gt-mf4-s-4.0-v8-420hp-automatic-25254,"      Brand Model Generation        Modification (Engine) Start of production  \
+0  Wiesmann    GT     GT MF4  S 4.0 V8 (420 Hp) Automatic           2003 year   
+
+  End of production     Powertrain Architecture Body type Seats Doors  ...  \
+0         2014 year  Internal Combustion engine     Coupe     2     2  ...   
+
+   Drivetrain, brakes and suspension specs  \
+0  Drivetrain, brakes and suspension specs   
+
+                             Drivetrain Architecture       Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Rear wheel drive   
+
+  Number of Gears (automatic transmission) Front suspension  Rear suspension  \
+0                                        7  Double wishbone  Double wishbone   
+
+       Front brakes               Assisting systems  Tires size  \
+0  Ventilated discs  ABS (Anti-lock braking system)  245/45 R18   
+
+  Wheel rims size  
+0         8J x 18  
+
+[1 rows x 56 columns]"
+28,283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-gt-model-2164,https://www.auto-data.net/en/wiesmann-gt-model-2164,wiesmann-gt-mf4-generation-5064,https://www.auto-data.net/en/wiesmann-gt-mf4-generation-5064,wiesmann-gt-mf4-s-4.0-v8-420hp-25217,https://www.auto-data.net/en/wiesmann-gt-mf4-s-4.0-v8-420hp-25217,"      Brand Model Generation Modification (Engine) Start of production  \
+0  Wiesmann    GT     GT MF4     S 4.0 V8 (420 Hp)           2003 year   
+
+  End of production     Powertrain Architecture Body type Seats Doors  ...  \
+0         2014 year  Internal Combustion engine     Coupe     2     2  ...   
+
+   Drivetrain, brakes and suspension specs  \
+0  Drivetrain, brakes and suspension specs   
+
+                             Drivetrain Architecture       Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Rear wheel drive   
+
+  Number of Gears (manual transmission) Front suspension  Rear suspension  \
+0                                     6  Double wishbone  Double wishbone   
+
+       Front brakes               Assisting systems  Tires size  \
+0  Ventilated discs  ABS (Anti-lock braking system)  245/45 R18   
+
+  Wheel rims size  
+0         8J x 18  
+
+[1 rows x 56 columns]"
+29,283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-gt-model-2164,https://www.auto-data.net/en/wiesmann-gt-model-2164,wiesmann-gt-mf4-generation-5064,https://www.auto-data.net/en/wiesmann-gt-mf4-generation-5064,wiesmann-gt-mf4-4.4-v8-407hp-automatic-25359,https://www.auto-data.net/en/wiesmann-gt-mf4-4.4-v8-407hp-automatic-25359,"      Brand Model Generation      Modification (Engine) Start of production  \
+0  Wiesmann    GT     GT MF4  4.4 V8 (407 Hp) Automatic           2003 year   
+
+  End of production     Powertrain Architecture Body type Seats Doors  ...  \
+0         2014 year  Internal Combustion engine     Coupe     2     2  ...   
+
+   Drivetrain, brakes and suspension specs  \
+0  Drivetrain, brakes and suspension specs   
+
+                             Drivetrain Architecture       Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Rear wheel drive   
+
+  Number of Gears (automatic transmission) Front suspension  Rear suspension  \
+0                                        6  Double wishbone  Double wishbone   
+
+       Front brakes               Assisting systems  Tires size  \
+0  Ventilated discs  ABS (Anti-lock braking system)  245/45 R18   
+
+  Wheel rims size  
+0         8J x 18  
+
+[1 rows x 56 columns]"
+30,283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-mf5-generation-5063,https://www.auto-data.net/en/wiesmann-roadster-mf5-generation-5063,wiesmann-roadster-mf5-4.4-v8-555hp-automatic-25344,https://www.auto-data.net/en/wiesmann-roadster-mf5-4.4-v8-555hp-automatic-25344,"      Brand     Model    Generation      Modification (Engine)  \
+0  Wiesmann  Roadster  Roadster MF5  4.4 V8 (555 Hp) Automatic   
+
+  Start of production End of production     Powertrain Architecture Body type  \
+0           2009 year         2014 year  Internal Combustion engine  Roadster   
+
+  Seats Doors  ...  Drivetrain, brakes and suspension specs  \
+0     2     2  ...  Drivetrain, brakes and suspension specs   
+
+                             Drivetrain Architecture       Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Rear wheel drive   
+
+  Number of Gears (automatic transmission) Front suspension  Rear suspension  \
+0                                        6  Double wishbone  Double wishbone   
+
+       Front brakes               Assisting systems              Tires size  \
+0  Ventilated discs  ABS (Anti-lock braking system)  245/40 R19; 275/35 R19   
+
+          Wheel rims size  
+0  8.5J x 19; 10; 0J x 19  
+
+[1 rows x 54 columns]"
+31,283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-mf4-generation-5062,https://www.auto-data.net/en/wiesmann-roadster-mf4-generation-5062,wiesmann-roadster-mf4-s-4.0-v8-420hp-automatic-25376,https://www.auto-data.net/en/wiesmann-roadster-mf4-s-4.0-v8-420hp-automatic-25376,"      Brand     Model    Generation        Modification (Engine)  \
+0  Wiesmann  Roadster  Roadster MF4  S 4.0 V8 (420 Hp) Automatic   
+
+  Start of production End of production     Powertrain Architecture Body type  \
+0           2009 year         2014 year  Internal Combustion engine  Roadster   
+
+  Seats Doors  ...  Drivetrain, brakes and suspension specs  \
+0     2     2  ...  Drivetrain, brakes and suspension specs   
+
+                             Drivetrain Architecture       Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Rear wheel drive   
+
+  Number of Gears (automatic transmission) Front suspension  Rear suspension  \
+0                                        7  Double wishbone  Double wishbone   
+
+       Front brakes               Assisting systems  Tires size  \
+0  Ventilated discs  ABS (Anti-lock braking system)  245/45 R18   
+
+  Wheel rims size  
+0         8J x 18  
+
+[1 rows x 54 columns]"
+32,283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-mf4-generation-5062,https://www.auto-data.net/en/wiesmann-roadster-mf4-generation-5062,wiesmann-roadster-mf4-s-4.0-v8-420hp-25234,https://www.auto-data.net/en/wiesmann-roadster-mf4-s-4.0-v8-420hp-25234,"      Brand     Model    Generation Modification (Engine) Start of production  \
+0  Wiesmann  Roadster  Roadster MF4     S 4.0 V8 (420 Hp)           2009 year   
+
+  End of production     Powertrain Architecture Body type Seats Doors  ...  \
+0         2014 year  Internal Combustion engine  Roadster     2     2  ...   
+
+   Drivetrain, brakes and suspension specs  \
+0  Drivetrain, brakes and suspension specs   
+
+                             Drivetrain Architecture       Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Rear wheel drive   
+
+  Number of Gears (manual transmission) Front suspension  Rear suspension  \
+0                                     6  Double wishbone  Double wishbone   
+
+       Front brakes               Assisting systems  Tires size  \
+0  Ventilated discs  ABS (Anti-lock braking system)  245/45 R18   
+
+  Wheel rims size  
+0         8J x 18  
+
+[1 rows x 54 columns]"
+33,283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-mf4-generation-5062,https://www.auto-data.net/en/wiesmann-roadster-mf4-generation-5062,wiesmann-roadster-mf4-4.4-v8-407hp-automatic-25599,https://www.auto-data.net/en/wiesmann-roadster-mf4-4.4-v8-407hp-automatic-25599,"      Brand     Model    Generation      Modification (Engine)  \
+0  Wiesmann  Roadster  Roadster MF4  4.4 V8 (407 Hp) Automatic   
+
+  Start of production End of production     Powertrain Architecture Body type  \
+0           2009 year         2014 year  Internal Combustion engine  Roadster   
+
+  Seats Doors  ...  Drivetrain, brakes and suspension specs  \
+0     2     2  ...  Drivetrain, brakes and suspension specs   
+
+                             Drivetrain Architecture       Drive wheel  \
+0  The Internal combustion engine (ICE) drives th...  Rear wheel drive   
+
+  Number of Gears (automatic transmission) Front suspension  Rear suspension  \
+0                                        6  Double wishbone  Double wishbone   
+
+       Front brakes               Assisting systems  Tires size  \
+0  Ventilated discs  ABS (Anti-lock braking system)  245/45 R18   
+
+  Wheel rims size  
+0         8J x 18  
+
+[1 rows x 54 columns]"
+34,283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-mf3-generation-5061,https://www.auto-data.net/en/wiesmann-roadster-mf3-generation-5061,wiesmann-roadster-mf3-3.2i-24v-325hp-10855,https://www.auto-data.net/en/wiesmann-roadster-mf3-3.2i-24v-325hp-10855,"      Brand     Model    Generation Modification (Engine) Start of production  \
+0  Wiesmann  Roadster  Roadster MF3     3.2i 24V (325 Hp)           2005 year   
+
+  End of production     Powertrain Architecture Body type Seats Doors  ...  \
+0         2014 year  Internal Combustion engine  Roadster     2     2  ...   
+
+  Number of Gears (manual transmission) Front suspension  \
+0                                     6     Spring Strut   
+
+         Rear suspension      Front brakes Rear brakes  \
+0  Transverse stabilizer  Ventilated discs        Disc   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+       Power steering  Tires size Wheel rims size  
+0  Hydraulic Steering  215/50 R17              17  
+
+[1 rows x 58 columns]"
+35,283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-mf3-generation-5061,https://www.auto-data.net/en/wiesmann-roadster-mf3-generation-5061,wiesmann-roadster-mf3-3.0i-24v-231hp-10856,https://www.auto-data.net/en/wiesmann-roadster-mf3-3.0i-24v-231hp-10856,"      Brand     Model    Generation Modification (Engine) Start of production  \
+0  Wiesmann  Roadster  Roadster MF3     3.0i 24V (231 Hp)           2005 year   
+
+  End of production     Powertrain Architecture Body type Seats Doors  ...  \
+0         2014 year  Internal Combustion engine  Roadster     2     2  ...   
+
+  Number of Gears (manual transmission) Front suspension  \
+0                                     5     Spring Strut   
+
+         Rear suspension      Front brakes Rear brakes  \
+0  Transverse stabilizer  Ventilated discs        Disc   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+       Power steering  Tires size Wheel rims size  
+0  Hydraulic Steering  215/50 R17              17  
+
+[1 rows x 60 columns]"
+36,283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-generation-2214,https://www.auto-data.net/en/wiesmann-roadster-generation-2214,wiesmann-roadster-3.2i-24v-321hp-10854,https://www.auto-data.net/en/wiesmann-roadster-3.2i-24v-321hp-10854,"      Brand     Model Generation Modification (Engine) Start of production  \
+0  Wiesmann  Roadster   Roadster     3.2i 24V (321 Hp)           1993 year   
+
+  End of production     Powertrain Architecture Body type Seats Doors  ...  \
+0         2005 year  Internal Combustion engine  Roadster     2     2  ...   
+
+  Number of Gears (manual transmission) Front suspension  \
+0                                     6     Spring Strut   
+
+         Rear suspension      Front brakes Rear brakes  \
+0  Transverse stabilizer  Ventilated discs        Disc   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+       Power steering  Tires size Wheel rims size  
+0  Hydraulic Steering  215/50 R17              17  
+
+[1 rows x 58 columns]"
+37,283,https://www.auto-data.net/en/wiesmann-brand-105,wiesmann-roadster-model-1068,https://www.auto-data.net/en/wiesmann-roadster-model-1068,wiesmann-roadster-generation-2214,https://www.auto-data.net/en/wiesmann-roadster-generation-2214,wiesmann-roadster-2.8i-24v-193hp-10853,https://www.auto-data.net/en/wiesmann-roadster-2.8i-24v-193hp-10853,"      Brand     Model Generation Modification (Engine) Start of production  \
+0  Wiesmann  Roadster   Roadster     2.8i 24V (193 Hp)           1993 year   
+
+  End of production     Powertrain Architecture Body type Seats Doors  ...  \
+0         2005 year  Internal Combustion engine  Roadster     2     2  ...   
+
+  Number of Gears (manual transmission) Front suspension  \
+0                                     5     Spring Strut   
+
+         Rear suspension      Front brakes Rear brakes  \
+0  Transverse stabilizer  Ventilated discs        Disc   
+
+                Assisting systems             Steering type  \
+0  ABS (Anti-lock braking system)  Steering rack and pinion   
+
+       Power steering  Tires size Wheel rims size  
+0  Hydraulic Steering  215/50 R17              17  
+
+[1 rows x 58 columns]"
