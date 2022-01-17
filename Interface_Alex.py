@@ -57,7 +57,8 @@ st.markdown(
 )
 
 #importing the googlesheet document named fuel prices
-gc = gspread.service_account(filename='C:\Users\Utilizador\Documents\Streamlit app experiment\beev-335814-4e72d6b41e21S.json')
+# C:\Users\Utilizador\Documents\GitHub\BEEV\Interface_Alex.py
+gc = gspread.service_account(filename='../../Streamlitexp/beev-335814-4e72d6b41e21.json')
 fuel_prices_url = 'https://docs.google.com/spreadsheets/d/1M_e1ENe40v-G_HYYH7YTZT5yPMoxgk36FFNamtg12f8/edit?usp=sharing'
 sht4 = gc.open_by_url(fuel_prices_url)
 #sht4.sheet1
