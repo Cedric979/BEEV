@@ -104,7 +104,7 @@ regions = list(title_tax_cv['Region'].unique())
 
 
 ### start streamlit
-image = Image.open('BEEV_image.png')
+image = Image.open(path_list[-5])
 st.image(image)
 st.title("Let's check which EV cars would suit to you")
 #value_one = st.text_area("text box")
