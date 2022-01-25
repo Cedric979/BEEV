@@ -1,9 +1,10 @@
+from importlib.resources import path
 import numpy as np
 import pandas as pd
 import streamlit as st
 import string
 from PIL import Image
-
+from pathlib import Path # addition to check files in docker image
 #LIBRARIES
 import numpy as np # linear algebra
 import pandas as pd # data processing
@@ -30,13 +31,15 @@ import random as rd
 import gspread
 
 #global link1
-
+p = Path('.')
+path_list = list(p.glob('**/*'))
+st.text(path_list)
 #Changing the background with an image that has to be in the same folder
 import base64
-main_bg = "st_back_main3.jpeg"
+main_bg = path_list[-1]#"st_back_main3.jpeg"
 main_bg_ext = "jpeg"
 
-side_bg = "st_back_slider.jpeg"
+side_bg = path_list[-2]#"st_back_slider.jpeg"
 side_bg_ext = "jpeg"
 
 st.markdown(
@@ -57,7 +60,6 @@ st.markdown(
 )
 
 #importing the googlesheet document named fuel prices
-# C:\Users\Utilizador\Documents\GitHub\BEEV\Interface_Alex.py
 gc = gspread.service_account(filename='../../Streamlitexp/beev-335814-4e72d6b41e21.json')
 fuel_prices_url = 'https://docs.google.com/spreadsheets/d/1M_e1ENe40v-G_HYYH7YTZT5yPMoxgk36FFNamtg12f8/edit?usp=sharing'
 sht4 = gc.open_by_url(fuel_prices_url)
