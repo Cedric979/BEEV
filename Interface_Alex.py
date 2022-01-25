@@ -70,7 +70,7 @@ elec_price = float(fuel_prices[fuel_prices['Fuel type'] == 'Electricity']['Price
 
 
 #Code for EV DF
-df = pd.read_csv("Beev Electric Vehicle Specs Data.csv")
+df = pd.read_csv(path_list[-4])
 df['Main Price'].fillna(62000.0, inplace = True)
 df['Range (km)'].fillna(235.0, inplace = True)
 df_new = pd.DataFrame(zip(df['Full Name'],df['Main Price'],df['Range (km)'], df['Category'],df['Useable Battery Capacity']))
