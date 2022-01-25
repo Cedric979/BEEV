@@ -78,11 +78,11 @@ st.markdown(
 
 ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
 #Building the Data for fuel prices and elec price for next calculation
-fuel_prices = pd.read_csv('fuel_prices_db')
+fuel_prices = pd.read_csv(path_list[-5])
 elec_price = float(fuel_prices[fuel_prices['Fuel type'] == 'Electricity']['Price France (€/litres) - KWh'])
 
 #Building the list of regions for the selectbox
-title_tax_cv = pd.read_csv('title_tax_cv_db')
+title_tax_cv = pd.read_csv(path_list[-6])
 regions = list(title_tax_cv['Region'].unique())
 
 ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
