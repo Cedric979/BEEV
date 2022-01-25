@@ -1,3 +1,4 @@
+from importlib.resources import path
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -31,13 +32,14 @@ import gspread
 
 #global link1
 p = Path('.')
-st.text(list(p.glob('**/*')))
+path_list = list(p.glob('**/*'))
+st.text(path_list)
 #Changing the background with an image that has to be in the same folder
 import base64
-main_bg = "st_back_main3.jpeg"
+main_bg = path_list[-1]#"st_back_main3.jpeg"
 main_bg_ext = "jpeg"
 
-side_bg = "st_back_slider.jpeg"
+side_bg = path_list[-2]#"st_back_slider.jpeg"
 side_bg_ext = "jpeg"
 
 st.markdown(
