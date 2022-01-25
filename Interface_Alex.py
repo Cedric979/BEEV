@@ -33,10 +33,10 @@ import gspread
 
 #Changing the background with an image that has to be in the same folder
 import base64
-main_bg = "st_back_main3.jpeg"
+main_bg = "../app/st_back_main3.jpeg"
 main_bg_ext = "jpeg"
 
-side_bg = "st_back_slider.jpeg"
+side_bg = "../app/st_back_slider.jpeg"
 side_bg_ext = "jpeg"
 
 st.markdown(
