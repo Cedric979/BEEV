@@ -142,10 +142,10 @@ if st.sidebar.button("Click here to actualize the data with the googlesheet docu
     
 #Asking the user the Price and the Range
 # Add a slider to the sidebar:    
-range_slider = st.sidebar.slider('Select a desired range in Kilometers',200, 800, (250))
-price_slider = st.sidebar.slider('Select a desired price for the EV car',10000, 100000, (15000))
+range_slider = st.sidebar.slider('Select a desired range in Kilometers',200, 800, (250),step=50)
+price_slider = st.sidebar.slider('Select a desired price for the EV car',10000, 100000, (15000),step=2500)
 duration_slider = st.sidebar.slider('Select a desired duration for leasing or keeping EV car in months',1, 72, (12))
-km_slider = st.sidebar.slider('Select Km done per year',1000, 100000, (10000))
+km_slider = st.sidebar.slider('Select Km done per year',1000, 100000, (10000),step=1000)
 
 #Define the validation button
 if st.button('Get EV Cars recommendation'):
