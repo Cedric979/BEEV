@@ -104,8 +104,8 @@ df_filtered['cost/100Km (€)'] = df_filtered[['Range (km)','Useable Battery Cap
 df_filtered['Price with Incentive'] = df_filtered['Main Price'].apply(lambda item: item - 6000)
 
 ### start streamlit
-#image = Image.open('BEEV_image.png')
-#st.image(image)
+image = Image.open('BEEV_image.png')
+st.image(image)
 st.title("Let's check which EV cars would suit to you")
 #value_one = st.text_area("text box")
 
