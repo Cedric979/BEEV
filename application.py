@@ -44,10 +44,10 @@ import Interface2
 import streamlit as st
 
 PAGES = {
-    "B2C": Interface2,
-    "B2B": Interface
+    "GEV Car": Interface2,
+    "Manual features selection": Interface
 }
-st.sidebar.title('Navigation between B2B & B2C')
+st.sidebar.title('Navigation between GEV Car and Manual features selection')
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 page = PAGES[selection]
 page.app()

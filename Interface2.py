@@ -1,16 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-#Cristina code to check if i can browse through directories to save the result of the solution
-#import os
-#import streamlit as st
-#filelist=[]
-#for root, dirs, files in os.walk("your folder directory"):
-#      for file in files:
-#             filename=os.path.join(root, file)
-#             filelist.append(filename)
-#st.write(filelist)
-
 def app():
     import numpy as np
     import pandas as pd
@@ -22,29 +9,58 @@ def app():
     #LIBRARIES
     import numpy as np # linear algebra
     import pandas as pd # data processing
-    #Graphics
-    #import matplotlib.pyplot as plt
-    #import seaborn as sns
-    #KNeighbors
     from sklearn.neighbors import NearestNeighbors
     #Scalers
     from sklearn import preprocessing
-    from sklearn.preprocessing import StandardScaler, MinMaxScaler
-    #Data selection
-    from sklearn.model_selection import train_test_split
-    from sklearn.model_selection import GridSearchCV
-    from sklearn.model_selection import RandomizedSearchCV
-    from sklearn.decomposition import PCA
-    #METRICS
-    from sklearn.model_selection import cross_val_score
-    from sklearn.metrics import precision_score, recall_score,accuracy_score
-    from sklearn.metrics import mean_squared_error
     #RANDOM
     import random as rd
     #IMPORTING LIBRAY TO GET GOOGLE SPREADSHEETS
     import gspread
     #Defining gc to be able to read the googlesheet files
     gc = gspread.service_account(filename='../../Wild_Code_School/keys/beev-335814-edfca510cf50.json')
+
+    #Condition to access the updating button
+    password = st.text_input('If you want to update the data with the google sheet documents please enter the password', max_chars=10)
+    if password == 'Semra':
+        ############################ loadind & Saving the DATA FROM GOOGLE SHEET DOCUMENTS##############################################
+
+        #Adding a button to the sidebar to be able to manually actualize the data from the googlesheet files
+        if st.button("Click here to actualize the data with the googlesheet documents"):
+            #importing the googlesheet document named fuel prices
+            fuel_prices_url = 'https://docs.google.com/spreadsheets/d/1M_e1ENe40v-G_HYYH7YTZT5yPMoxgk36FFNamtg12f8/edit?usp=sharing'
+            sht4 = gc.open_by_url(fuel_prices_url)
+            #sht4.sheet1
+            worksheet = sht4.sheet1
+            fuel_prices = pd.DataFrame(worksheet.get_all_records())
+            fuel_prices.to_csv('fuel_prices_db',header=True, index=False)
+
+            #Getting the title_tax_cv and build the list of regions for the choice in the interface
+            title_tax_cv_url = "https://docs.google.com/spreadsheets/d/1cOj98R9fGT89rG4-TxAPIgOrvDbrzxlLPd4Y5mUBD0g/edit?usp=sharing"
+            sht1 = gc.open_by_url(title_tax_cv_url)
+            worksheet = sht1.sheet1
+            #Building the DF
+            title_tax_cv = pd.DataFrame(worksheet.get_all_records())
+            title_tax_cv.to_csv('title_tax_cv_db',header=True, index=False)
+
+            #importing the googlesheet document named BONUS/MALUS 2022
+            bonus_malus_url = "https://docs.google.com/spreadsheets/d/1RDIMbTGE3TBU4SXbRNKiqKQFakf0grVGKKLfu9L9dS4/edit?usp=sharing"
+            sht1 = gc.open_by_url(bonus_malus_url)
+            worksheet = sht1.sheet1
+            #Building the DF
+            bonus_malus = pd.DataFrame(worksheet.get_all_records())
+            bonus_malus.to_csv('bonus_malus_db',header=True, index=False)
+
+            #importing the googlesheet document named maintenance costs
+            maintenance_costs_url = "https://docs.google.com/spreadsheets/d/1Hlhp4ubS-JFgYYx1S9oeL5A_011sSxvKzWiuS3bLqV8/edit?usp=sharing"
+            sht1 = gc.open_by_url(maintenance_costs_url)
+            worksheet = sht1.sheet1
+            #Building the DF
+            maintenance_costs = pd.DataFrame(worksheet.get_all_records())
+            maintenance_costs.to_csv('maintenance_costs_db',header=True, index=False)
+
+
+        ############################ loadind & Saving the DATA FROM GOOGLE SHEET DOCUMENTS##############################################
+
 
     #Changing the background with an image that has to be in the same folder
     import base64
@@ -71,6 +87,12 @@ def app():
         unsafe_allow_html=True
     )
 
+    ### start streamlit
+    image = Image.open('BEEV_image.png')
+    st.image(image)
+    st.title("Let's check which GEV car do you own or want to do the comparison with")
+
+
     ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
     #Building the Data for fuel prices and elec price for next calculation
     fuel_prices = pd.read_csv('fuel_prices_db')
@@ -80,7 +102,38 @@ def app():
     title_tax_cv = pd.read_csv('title_tax_cv_db')
     regions = list(title_tax_cv['Region'].unique())
 
+    #Building the Data for bonus_malus
+    bonus_malus = pd.read_csv('bonus_malus_db')
+    #regions = list(title_tax_cv['Region'].unique())
+
+    #Building the Data for maintenance_costs
+    maintenance_costs = pd.read_csv('maintenance_costs_db')
+    #regions = list(title_tax_cv['Region'].unique())
+
     ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
+
+    #Code for GEV_BEEV data frame
+    df_gev_beev = pd.read_csv("df_gev_beev.csv")
+    brand_choice = list(df_gev_beev['Brand'].unique())
+    brand_choosen = st.selectbox("Please select your GEV car's brand",brand_choice)
+    model_choice = list(df_gev_beev['Model'][df_gev_beev['Brand'] == brand_choosen].unique())
+    model_choosen = st.selectbox("Please select your GEV car's model",model_choice)
+    c1 = df_gev_beev['Brand'] == brand_choosen
+    c2 = df_gev_beev['Model'] == model_choosen
+    engine_choice = list(df_gev_beev['Modification (Engine)'][c1&c2].unique())
+    engine_choosen = st.selectbox("Please select your GEV car's engine",engine_choice)
+    c3 = df_gev_beev['Modification (Engine)'] == engine_choosen
+    GEV_carprice_choosen = st.slider('Select your GEV car price',10000, 100000, (15000),step=2500)
+    price_slider = GEV_carprice_choosen
+    GEV_car_category = df_gev_beev['Body type'].iloc[df_gev_beev['Body type'][c1&c2&c3].index[0]]
+    GEV_car_possession = st.slider('Select your estimated GEV car time of possession in months',1, 120, (12))
+    duration_slider = GEV_car_possession
+    GEV_car_km_slider = st.slider('Select Km done per year with your GEV',1000, 100000, (10000),step=1000)
+    km_slider = GEV_car_km_slider
+
+    GEV_car_range = 400 ### To change when DF is ok with range calculated
+
+    st.write(brand_choosen, model_choosen, engine_choosen, GEV_car_category, GEV_car_km_slider) 
 
     #Code for EV DF
     df = pd.read_csv("Beev Electric Vehicle Specs Data.csv")
@@ -95,57 +148,45 @@ def app():
     df_model['Range (Km)'] = df_model['Range (Km)'].astype(int)
     df_model['cost/100Km (€)'] = df_model[['Range (Km)','Useable Battery Capacity']].apply(lambda item: (item[1]/item[0])*100*elec_price, axis = 1)
     #Building the categories for the choice in selectbox
-    categories = list(df['Category'].unique())
-    categories.insert(0,"ALL")
+    EV_car_categories = list(df['Category'].unique())
+    EV_car_categories.insert(0,"ALL")
+    EV_car_categories.insert(0,"Same as my GEV car")
 
     #DF Filtered
     df_filtered = df[['Full Name', 'Model', 'Brand','Range (km)','Battery Capacity (kW)', 'Useable Battery Capacity','Category','Government Incentive Category for Help','Vehicle Consumption (Wh)','Charging Time 7,4 kW','Charging Time 11 kW','Main Price']].copy()
     df_filtered['cost/100Km (€)'] = df_filtered[['Range (km)','Useable Battery Capacity']].apply(lambda item: (item[1]/item[0])*100*elec_price, axis = 1)
     df_filtered['Price with Incentive'] = df_filtered['Main Price'].apply(lambda item: item - 6000)
 
-    ### start streamlit
-    #image = Image.open('BEEV_image.png')
-    #st.image(image)
-    st.title("Let's check which EV cars would suit to you")
-    #value_one = st.text_area("text box")
+
+    st.title("Let's select together some points necessary to calculate precisely the TCO")
 
     #Defining the selectbox
-    label1 = "please select the category of the car you would like"
-    category_choosen = st.selectbox(label1,categories)
+    label1 = "please select the category of the EV car you would like"
+    category_choosen = st.selectbox(label1,EV_car_categories)
+    if category_choosen == "Same as my GEV car":
+        category_choosen = GEV_car_category
+    else: category_choosen = category_choosen
+    #st.write(category_choosen)
+
     #Defining the selectbox for the region ########### be careful need to add the DF and the regions variable before here
     label2 = "please select the region you are from"
     region_choosen = st.selectbox(label2,regions)
 
-    #st.write(category_choosen)
+    #Defining the range selection for the EV car
+    range_choice = st.radio(
+         "Do you want to select the range of your actual GEV car ?",
+         ('Yes', 'No'))
+    if range_choice == 'No':
+        range_slider = st.slider('Select a desired range in Kilometers for the EV car',200, 800, (250),step=50)
+    else: range_slider = GEV_car_range
 
-    ############################ loadind & Saving the DATA FROM GOOGLE SHEET DOCUMENTS##############################################
-
-    #Adding a button to the sidebar to be able to manually actualize the data from the googlesheet files
-    if st.sidebar.button("Click here to actualize the data with the googlesheet documents"):
-        #importing the googlesheet document named fuel prices
-        fuel_prices_url = 'https://docs.google.com/spreadsheets/d/1M_e1ENe40v-G_HYYH7YTZT5yPMoxgk36FFNamtg12f8/edit?usp=sharing'
-        sht4 = gc.open_by_url(fuel_prices_url)
-        #sht4.sheet1
-        worksheet = sht4.sheet1
-        fuel_prices = pd.DataFrame(worksheet.get_all_records())
-        fuel_prices.to_csv('fuel_prices_db',header=True, index=False)
-
-        #Getting the title_tax_cv and build the list of regions for the choice in the interface
-        title_tax_cv_url = "https://docs.google.com/spreadsheets/d/1cOj98R9fGT89rG4-TxAPIgOrvDbrzxlLPd4Y5mUBD0g/edit?usp=sharing"
-        sht1 = gc.open_by_url(title_tax_cv_url)
-        worksheet = sht1.sheet1
-        #Building the DF
-        title_tax_cv = pd.DataFrame(worksheet.get_all_records())
-        title_tax_cv.to_csv('title_tax_cv_db',header=True, index=False)
-
-    ############################ loadind & Saving the DATA FROM GOOGLE SHEET DOCUMENTS##############################################
 
     #Asking the user the Price and the Range
     # Add a slider to the sidebar:    
-    range_slider = st.sidebar.slider('Select a desired range in Kilometers',200, 800, (250),step=50)
-    price_slider = st.sidebar.slider('Select a desired price for the EV car',10000, 100000, (15000),step=2500)
-    duration_slider = st.sidebar.slider('Select a desired duration for leasing or keeping EV car in months',1, 72, (12))
-    km_slider = st.sidebar.slider('Select Km done per year',1000, 100000, (10000),step=1000)
+    #range_slider = st.sidebar.slider('Select a desired range in Kilometers',200, 800, (250),step=50)
+    #price_slider = st.sidebar.slider('Select a desired price for the EV car',10000, 100000, (15000),step=2500)
+    #duration_slider = st.sidebar.slider('Select a desired duration for leasing or keeping EV car in months',1, 72, (12))
+    #km_slider = st.sidebar.slider('Select Km done per year',1000, 100000, (10000),step=1000)
 
     #Define the validation button
     if st.button('Get EV Cars recommendation'):
