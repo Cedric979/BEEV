@@ -42,6 +42,7 @@ st.image(image)
 import Interface
 import Interface2
 import streamlit as st
+
 PAGES = {
     "B2C": Interface2,
     "B2B": Interface
@@ -50,3 +51,5 @@ st.sidebar.title('Navigation between B2B & B2C')
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 page = PAGES[selection]
 page.app()
+
+
