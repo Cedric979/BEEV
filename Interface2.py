@@ -125,13 +125,14 @@ def app():
     c3 = df_gev_beev['Modification (Engine)'] == engine_choosen
     GEV_carprice_choosen = st.slider('Select your GEV car price',10000, 100000, (15000),step=2500)
     price_slider = GEV_carprice_choosen
+    EV_index = df_gev_beev['Body type'][c1&c2&c3].index[0]
     GEV_car_category = df_gev_beev['Body type'].iloc[df_gev_beev['Body type'][c1&c2&c3].index[0]]
     GEV_car_possession = st.slider('Select your estimated GEV car time of possession in months',1, 120, (12))
     duration_slider = GEV_car_possession
     GEV_car_km_slider = st.slider('Select Km done per year with your GEV',1000, 100000, (10000),step=1000)
     km_slider = GEV_car_km_slider
 
-    GEV_car_range = 400 ### To change when DF is ok with range calculated
+    GEV_car_range = df_gev_beev['Range (km)'].iloc[df_gev_beev['Body type'][c1&c2&c3].index[0]] ### To change when DF is ok with range calculated
 
     st.write(brand_choosen, model_choosen, engine_choosen, GEV_car_category, GEV_car_km_slider) 
 
@@ -213,9 +214,13 @@ def app():
         df_TCO['TCO_duration'] = df_TCO[['title_cost (€)','consumption_cost (month)','maintenance_cost (month)']].apply(lambda item: item[0] + item[1]*duration_slider + item[2]*duration_slider,axis=1)
         #Formating the result with choosen number (float)
         df_TCO.style.format({'Price (€)': '{:.0f}', 'Range (Km)': '{:.0f}', 'Price with Incentive (€)': '{:.0f}', 'cost/100Km (€)':'{:.0f}','TCO_year':'{:.1f}', 'TCO_duration': '{:.1f}'})
-        st.write(df_TCO[['Range (Km)','Category','Price with Incentive (€)','TCO_year','TCO_duration']])
-        result = df_TCO[['Range (Km)','Category','Price with Incentive (€)','TCO_year','TCO_duration']]
-
+        st.title("Please find below the TCO for the EV recommended cars")
+        st.write(df_TCO[['Range (Km)','Category','Price with Incentive (€)','TCO_year','TCO_duration','title_cost (€)','consumption_cost (month)']])
+        result = df_TCO[['Range (Km)','Category','Price with Incentive (€)','TCO_year','TCO_duration','title_cost (€)','consumption_cost (month)']]
+        st.title("Please find below the TCO for your GEV car")
+        #st.write(df_gev_beev.iloc[EV_index])
+        
+        
     ############################################### SAVING THE RESULT ###################################################    
         #Defining the date to add in the files names
         today = datetime.datetime.now().strftime('%d-%m-%Y')
