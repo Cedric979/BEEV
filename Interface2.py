@@ -97,6 +97,8 @@ def app():
     #Building the Data for fuel prices and elec price for next calculation
     fuel_prices = pd.read_csv('fuel_prices_db')
     elec_price = float(fuel_prices[fuel_prices['Fuel type'] == 'Electricity']['Price France (€/litres) - KWh'])
+    petrol_price = float(fuel_prices[fuel_prices['Fuel type'] == 'Regular gasoline']['Price France (€/litres) - KWh'])
+    diesel_price = float(fuel_prices[fuel_prices['Fuel type'] == 'Diesel']['Price France (€/litres) - KWh'])
 
     #Building the list of regions for the selectbox
     title_tax_cv = pd.read_csv('title_tax_cv_db')
@@ -104,16 +106,33 @@ def app():
 
     #Building the Data for bonus_malus
     bonus_malus = pd.read_csv('bonus_malus_db')
+    bonus_malus['Malus (€)'] = bonus_malus['Malus (€)'].apply(lambda item: item.replace(' ','') if type(item) == str else item)
+    bonus_malus['Malus (€)'] = bonus_malus['Malus (€)'].astype(int)
+    def malus_calculation(item):
+        malus = 0
+        if item < bonus_malus['g / km'].min():
+            malus = 0
+        elif item > bonus_malus['g / km'].max():
+            malus = bonus_malus['Malus (€)'].max()
+        else :
+            malus_index = bonus_malus['Malus (€)'][bonus_malus['g / km'] == item].index[0]       
+            malus = bonus_malus['Malus (€)'].iloc[malus_index]
+        return malus
+
     #regions = list(title_tax_cv['Region'].unique())
 
     #Building the Data for maintenance_costs
     maintenance_costs = pd.read_csv('maintenance_costs_db')
+    def maint_cost_coef(item):
+        if item in list(maintenance_costs['Brand'].value_counts().keys()):
+            return maintenance_costs['Average Gas engine (€/km)'].iloc[maintenance_costs[maintenance_costs['Brand'] == item].index[0]]
+        else: return round(maintenance_costs['Average Gas engine (€/km)'].mean(),2)
     #regions = list(title_tax_cv['Region'].unique())
 
     ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
 
     #Code for GEV_BEEV data frame
-    df_gev_beev = pd.read_csv("df_gev_beev.csv")
+    df_gev_beev = pd.read_csv("df_gev_beev2.csv")
     brand_choice = list(df_gev_beev['Brand'].unique())
     brand_choosen = st.selectbox("Please select your GEV car's brand",brand_choice)
     model_choice = list(df_gev_beev['Model'][df_gev_beev['Brand'] == brand_choosen].unique())
@@ -125,15 +144,20 @@ def app():
     c3 = df_gev_beev['Modification (Engine)'] == engine_choosen
     GEV_carprice_choosen = st.slider('Select your GEV car price',10000, 100000, (15000),step=2500)
     price_slider = GEV_carprice_choosen
-    EV_index = df_gev_beev['Body type'][c1&c2&c3].index[0]
-    GEV_car_category = df_gev_beev['Body type'].iloc[df_gev_beev['Body type'][c1&c2&c3].index[0]]
+    EV_index = df_gev_beev['Category'][c1&c2&c3].index[0]
+    GEV_car_category = df_gev_beev['Category'].iloc[df_gev_beev['Category'][c1&c2&c3].index[0]]
     GEV_car_possession = st.slider('Select your estimated GEV car time of possession in months',1, 120, (12))
     duration_slider = GEV_car_possession
     GEV_car_km_slider = st.slider('Select Km done per year with your GEV',1000, 100000, (10000),step=1000)
     km_slider = GEV_car_km_slider
+    GEV_car_range = df_gev_beev['Range (km)'].iloc[df_gev_beev['Category'][c1&c2&c3].index[0]]
+    
+    #Adding calculated columns
+    df_gev_beev['Malus (€)'] = df_gev_beev['CO2 emissions (g/km)'].dropna().apply(lambda item: malus_calculation(int(item)) if item != 'N/A' else 'N/A')
+    df_gev_beev['fuel_cost/100Km (€)'] = df_gev_beev[['Fuel Type','Fuel consumption - combined (l/100km)']].apply(lambda item: round(item[1]*petrol_price,2) if item[0] == 'Petrol (Gasoline)' else round(item[1]*diesel_price,2) if item[0] == 'Diesel' else 'nope', axis = 1)
+    df_gev_beev['maint_cost/100Km (€)'] = df_gev_beev['Brand'].apply(lambda item: maint_cost_coef(item)/10)
 
-    GEV_car_range = df_gev_beev['Range (km)'].iloc[df_gev_beev['Body type'][c1&c2&c3].index[0]] ### To change when DF is ok with range calculated
-
+    
     st.write(brand_choosen, model_choosen, engine_choosen, GEV_car_category, GEV_car_km_slider) 
 
     #Code for EV DF
@@ -147,7 +171,7 @@ def app():
     df_model['Price (€)'] = df_model['Price (€)'].astype(int)
     df_model['Price with Incentive (€)'] = df_model['Price with Incentive (€)'].astype(int)
     df_model['Range (Km)'] = df_model['Range (Km)'].astype(int)
-    df_model['cost/100Km (€)'] = df_model[['Range (Km)','Useable Battery Capacity']].apply(lambda item: (item[1]/item[0])*100*elec_price, axis = 1)
+    df_model['elec_cost/100Km (€)'] = df_model[['Range (Km)','Useable Battery Capacity']].apply(lambda item: (item[1]/item[0])*100*elec_price, axis = 1)
     #Building the categories for the choice in selectbox
     EV_car_categories = list(df['Category'].unique())
     EV_car_categories.insert(0,"ALL")
@@ -155,7 +179,7 @@ def app():
 
     #DF Filtered
     df_filtered = df[['Full Name', 'Model', 'Brand','Range (km)','Battery Capacity (kW)', 'Useable Battery Capacity','Category','Government Incentive Category for Help','Vehicle Consumption (Wh)','Charging Time 7,4 kW','Charging Time 11 kW','Main Price']].copy()
-    df_filtered['cost/100Km (€)'] = df_filtered[['Range (km)','Useable Battery Capacity']].apply(lambda item: (item[1]/item[0])*100*elec_price, axis = 1)
+    df_filtered['elec_cost/100Km (€)'] = df_filtered[['Range (km)','Useable Battery Capacity']].apply(lambda item: (item[1]/item[0])*100*elec_price, axis = 1)
     df_filtered['Price with Incentive'] = df_filtered['Main Price'].apply(lambda item: item - 6000)
 
 
@@ -204,21 +228,31 @@ def app():
             result = distanceKNN_cars.kneighbors([[price_slider,range_slider]], 5, return_distance = False)
 
         #st.write(df_model[['Full Name', 'Price (€)','Range (Km)','Category','Price with Incentive (€)']].iloc[result[0]].set_index('Full Name'))
-        #Building the TCO
-        df_TCO = df_model[['Full Name', 'Price (€)','Range (Km)','Category','Price with Incentive (€)','cost/100Km (€)']].iloc[result[0]].set_index('Full Name').copy()
-        df_TCO['title_cost (€)'] = df_TCO['cost/100Km (€)'].apply(lambda item: title_tax_cv[title_tax_cv['Region'] == region_choosen]['Title Cost (€ / CV)']*1)
-        df_TCO['consumption_cost (month)'] = df_TCO['cost/100Km (€)'].apply(lambda item: item/100*km_slider/12)
-        df_TCO['maintenance_cost (month)'] = df_TCO['cost/100Km (€)'].apply(lambda item: km_slider/12*0.0208)
+        
+        #Building the TCO for EV
+        df_TCO = df_model[['Full Name', 'Price (€)','Range (Km)','Category','Price with Incentive (€)','elec_cost/100Km (€)']].iloc[result[0]].set_index('Full Name').copy()
+        df_TCO['title_cost (€)'] = df_TCO['elec_cost/100Km (€)'].apply(lambda item: title_tax_cv[title_tax_cv['Region'] == region_choosen]['Title Cost (€ / CV)']*1)
+        df_TCO['consumption_cost (month)'] = df_TCO['elec_cost/100Km (€)'].apply(lambda item: item/100*km_slider/12)
+        df_TCO['maintenance_cost (month)'] = df_TCO['elec_cost/100Km (€)'].apply(lambda item: km_slider/12*0.0208)
         df_TCO['TCO_month'] = df_TCO[['title_cost (€)','consumption_cost (month)','maintenance_cost (month)']].apply(lambda item: item[0] + item[1] + item[2],axis=1)
         df_TCO['TCO_year'] = df_TCO[['title_cost (€)','consumption_cost (month)','maintenance_cost (month)']].apply(lambda item: item[0] + item[1]*12 + item[2]*12,axis=1)
         df_TCO['TCO_duration'] = df_TCO[['title_cost (€)','consumption_cost (month)','maintenance_cost (month)']].apply(lambda item: item[0] + item[1]*duration_slider + item[2]*duration_slider,axis=1)
         #Formating the result with choosen number (float)
-        df_TCO.style.format({'Price (€)': '{:.0f}', 'Range (Km)': '{:.0f}', 'Price with Incentive (€)': '{:.0f}', 'cost/100Km (€)':'{:.0f}','TCO_year':'{:.1f}', 'TCO_duration': '{:.1f}'})
+        df_TCO.style.format({'Price (€)': '{:.0f}', 'Range (Km)': '{:.0f}', 'Price with Incentive (€)': '{:.0f}', 'elec_cost/100Km (€)':'{:.0f}','TCO_year':'{:.1f}', 'TCO_duration': '{:.1f}'})
+        #Adding the title of the DF below
         st.title("Please find below the TCO for the EV recommended cars")
         st.write(df_TCO[['Range (Km)','Category','Price with Incentive (€)','TCO_year','TCO_duration','title_cost (€)','consumption_cost (month)']])
         result = df_TCO[['Range (Km)','Category','Price with Incentive (€)','TCO_year','TCO_duration','title_cost (€)','consumption_cost (month)']]
+        
+        #Building the TCO for GEV
+        df_gev_TCO = pd.DataFrame(df_gev_beev.iloc[EV_index]).T
+        
+        #df_gev_TCO['Malus (€)'] = df_gev_TCO['CO2 emissions (g/km)'].apply(lambda item: malus_calculation(int(item)) if item != 'N/A' else 'N/A')
+        
         st.title("Please find below the TCO for your GEV car")
-        #st.write(df_gev_beev.iloc[EV_index])
+        df_gev_selected = pd.DataFrame(df_gev_beev[['Brand', 'Model', 'Modification (Engine)','Fuel Type','Category','Range (km)','Malus (€)','fuel_cost/100Km (€)','maint_cost/100Km (€)']].iloc[EV_index]).T
+        df_gev_selected.style.format({'Malus (€)': '{:.0f}', 'fuel_cost/100Km (€)': '{:.0f}', 'maint_cost/100Km (€)': '{:.0f}'})
+        st.write(df_gev_selected)
         
         
     ############################################### SAVING THE RESULT ###################################################    
