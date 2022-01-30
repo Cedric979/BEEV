@@ -123,6 +123,18 @@ def app():
     #Building the list of regions for the selectbox
     title_tax_cv = pd.read_csv('title_tax_cv_db')
     regions = list(title_tax_cv['Region'].unique())
+    
+    #Building the Data for maintenance_costs
+    maintenance_costs = pd.read_csv('maintenance_costs_db')
+    def maint_cost_coef(item):
+        if item in list(maintenance_costs['Brand'].value_counts().keys()):
+            return maintenance_costs['Average Gas engine (€/km)'].iloc[maintenance_costs[maintenance_costs['Brand'] == item].index[0]]/10000
+        else: return round(maintenance_costs['Average Gas engine (€/km)'].mean()/10000,2)
+        
+    def EV_maint_cost_coef(item):
+        if item in list(maintenance_costs['Brand'].value_counts().keys()):
+            return maintenance_costs['Average EV (€/km)'].iloc[maintenance_costs[maintenance_costs['Brand'] == item].index[0]]/10000
+        else: return round(maintenance_costs['Average EV (€/km)'].mean()/10000,2)
 
     ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
 
@@ -186,17 +198,19 @@ def app():
 
         #st.write(df_model[['Full Name', 'Price (€)','Range (Km)','Category','Price with Incentive (€)']].iloc[result[0]].set_index('Full Name'))
         #Building the TCO
-        df_TCO = df_model[['Full Name', 'Price (€)','Range (Km)','Category','Price with Incentive (€)','cost/100Km (€)']].iloc[result[0]].set_index('Full Name').copy()
+        df_TCO = df_model[['Full Name', 'Price (€)','Range (Km)','Category','Price with Incentive (€)','cost/100Km (€)']].iloc[result[0]]#.set_index('Full Name').copy()
         df_TCO['title_cost (€)'] = df_TCO['cost/100Km (€)'].apply(lambda item: title_tax_cv[title_tax_cv['Region'] == region_choosen]['Title Cost (€ / CV)']*1)
         df_TCO['consumption_cost (month)'] = df_TCO['cost/100Km (€)'].apply(lambda item: item/100*km_slider/12)
-        df_TCO['maintenance_cost (month)'] = df_TCO['cost/100Km (€)'].apply(lambda item: km_slider/12*0.0208)
+        #df_TCO['maintenance_cost (month)'] = df_TCO['cost/100Km (€)'].apply(lambda item: km_slider/12*0.0208)
+        df_TCO['maintenance_cost (month)'] = df_TCO['Full Name'].apply(lambda item: (EV_maint_cost_coef(item.split()[0]))*km_slider/12)#*0.0208)
         df_TCO['TCO_month'] = df_TCO[['title_cost (€)','consumption_cost (month)','maintenance_cost (month)']].apply(lambda item: item[0] + item[1] + item[2],axis=1)
         df_TCO['TCO_year'] = df_TCO[['title_cost (€)','consumption_cost (month)','maintenance_cost (month)']].apply(lambda item: item[0] + item[1]*12 + item[2]*12,axis=1)
         df_TCO['TCO_duration'] = df_TCO[['title_cost (€)','consumption_cost (month)','maintenance_cost (month)']].apply(lambda item: item[0] + item[1]*duration_slider + item[2]*duration_slider,axis=1)
         #Formating the result with choosen number (float)
         df_TCO.style.format({'Price (€)': '{:.0f}', 'Range (Km)': '{:.0f}', 'Price with Incentive (€)': '{:.0f}', 'cost/100Km (€)':'{:.0f}','TCO_year':'{:.1f}', 'TCO_duration': '{:.1f}'})
-        st.write(df_TCO[['Range (Km)','Category','Price with Incentive (€)','TCO_year','TCO_duration']])
-        result = df_TCO[['Range (Km)','Category','Price with Incentive (€)','TCO_year','TCO_duration']]
+        result = df_TCO[['Full Name','Range (Km)','Category','Price with Incentive (€)','TCO_year','TCO_duration']].set_index('Full Name').copy()
+        st.write(result)#df_TCO[['Range (Km)','Category','Price with Incentive (€)','TCO_year','TCO_duration']])
+
 
     ############################################### SAVING THE RESULT ###################################################    
         #Defining the date to add in the files names
