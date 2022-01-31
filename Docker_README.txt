@@ -1,10 +1,9 @@
-Here I will explain how to create the contianer/app on Docker. This will only be required to do one time.
+Here I will explain how to create the container/app on Docker. This will only be required to do one time.
 PLEASE READ UNTIL THE END
 
-Before extract files
 
 
-1 - Download and install Docker: https://www.docker.com/products/docker-desktop (Make sure to install with your corresponding OS)
+1 - Download and install Docker: https://www.docker.com/products/docker-desktop(Make sure to install with your corresponding OS)
 
 
 2 - Create a new folder anywhere in your computer.
