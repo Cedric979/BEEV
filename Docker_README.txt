@@ -4,7 +4,7 @@ PLEASE READ UNTIL THE END
 
 
 1 - Download and install Docker: https://www.docker.com/products/docker-desktop(Make sure to install with your corresponding OS)
-    After installation, open Docker
+    After installation, open Docker and leave it running
 
 
 2 - Create a new folder anywhere in your computer.
