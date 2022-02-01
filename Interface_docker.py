@@ -1,16 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-#Cristina code to check if i can browse through directories to save the result of the solution
-#import os
-#import streamlit as st
-#filelist=[]
-#for root, dirs, files in os.walk("your folder directory"):
-#      for file in files:
-#             filename=os.path.join(root, file)
-#             filelist.append(filename)
-#st.write(filelist)
-
 def app():
     import numpy as np
     import pandas as pd
@@ -44,6 +31,10 @@ def app():
     #IMPORTING LIBRAY TO GET GOOGLE SPREADSHEETS
     import gspread
     #Defining gc to be able to read the googlesheet files
+
+    p = Path('.')
+    path_list = list(p.glob('**/*'))
+    st.text(path_list)
     gc = gspread.service_account(filename='../../Wild_Code_School/keys/beev-335814-edfca510cf50.json')
 
     #Condition to access the updating button
