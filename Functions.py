@@ -3,6 +3,7 @@
 
 # %%
 #Function to get the models inside each brand
+from Libraries import *
 def model_of_each_brand(brand_url):
     models_list = []
     html2 = requests.get(brand_url, headers={'User-Agent': navigator})
