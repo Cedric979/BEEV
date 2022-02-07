@@ -150,7 +150,7 @@ def app():
     price_slider = GEV_carprice_choosen
     EV_index = df_gev_beev['Category'][c1&c2&c3].index[0]
     GEV_car_category = df_gev_beev['Category'].iloc[df_gev_beev['Category'][c1&c2&c3].index[0]]
-    GEV_car_possession = st.slider('How long do you plan on keeping your GEV car ?',1, 120, (12))
+    GEV_car_possession = st.slider('How long do you plan on keeping your GEV car (in months) ?',1, 120, (12))
     duration_slider = GEV_car_possession
     GEV_car_km_slider = st.slider("How many Km per year do you think you'll be doing ?",1000, 100000, (10000),step=1000)
     km_slider = GEV_car_km_slider
