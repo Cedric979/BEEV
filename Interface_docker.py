@@ -2,6 +2,9 @@ from Libraries import *
 from Functions import maint_cost_coef,EV_maint_cost_coef
 def app():
     #Defining gc to be able to read the googlesheet files
+    p = Path('.')
+    path_list = list(p.glob('**/*'))
+    st.text(path_list)
     gc = gspread.service_account(filename='../../Wild_Code_School/keys/beev-335814-edfca510cf50.json')
 
     #Condition to access the updating button
