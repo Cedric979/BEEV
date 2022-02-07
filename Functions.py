@@ -27,7 +27,7 @@ def modifications_of_each_generation(gen_url):
     html4 = requests.get(gen_url, headers={'User-Agent': navigator})
     soup4 = BeautifulSoup(html4.text, 'html.parser')
     mods = soup4.find_all('table', {'class' : 'carlist'}) 
-    gens_list_final = re.findall('en/(\S+)', str(mods))~
+    gens_list_final = re.findall('en/(\S+)', str(mods))
 
 
 #Getting the specifications for each car
