@@ -1,4 +1,5 @@
 from Libraries import *
+from Functions import maint_cost_coef,EV_maint_cost_coef
 def app():
     #Defining gc to be able to read the googlesheet files
     gc = gspread.service_account(filename='../../Wild_Code_School/keys/beev-335814-edfca510cf50.json')
@@ -83,15 +84,15 @@ def app():
     
     #Building the Data for maintenance_costs
     maintenance_costs = pd.read_csv('maintenance_costs_db')
-    def maint_cost_coef(item):
-        if item in list(maintenance_costs['Brand'].value_counts().keys()):
-            return maintenance_costs['Average Gas engine (€/km)'].iloc[maintenance_costs[maintenance_costs['Brand'] == item].index[0]]/10000
-        else: return round(maintenance_costs['Average Gas engine (€/km)'].mean()/10000,2)
+    #def maint_cost_coef(item):
+     #   if item in list(maintenance_costs['Brand'].value_counts().keys()):
+     #       return maintenance_costs['Average Gas engine (€/km)'].iloc[maintenance_costs[maintenance_costs['Brand'] == item].index[0]]/10000
+     #   else: return round(maintenance_costs['Average Gas engine (€/km)'].mean()/10000,2)
         
-    def EV_maint_cost_coef(item):
-        if item in list(maintenance_costs['Brand'].value_counts().keys()):
-            return maintenance_costs['Average EV (€/km)'].iloc[maintenance_costs[maintenance_costs['Brand'] == item].index[0]]/10000
-        else: return round(maintenance_costs['Average EV (€/km)'].mean()/10000,2)
+    #def EV_maint_cost_coef(item):
+     #   if item in list(maintenance_costs['Brand'].value_counts().keys()):
+      #      return maintenance_costs['Average EV (€/km)'].iloc[maintenance_costs[maintenance_costs['Brand'] == item].index[0]]/10000
+       # else: return round(maintenance_costs['Average EV (€/km)'].mean()/10000,2)
 
     ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
 

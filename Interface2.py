@@ -1,4 +1,5 @@
 from Libraries import *
+from Functions import malus_calculation, maint_cost_coef, EV_maint_cost_coef
 def app():
     
     #Defining gc to be able to read the googlesheet files
@@ -90,31 +91,31 @@ def app():
     regions = list(title_tax_cv['Region'].unique())
 
     #Building the Data for bonus_malus
-    bonus_malus = pd.read_csv('bonus_malus_db')
-    bonus_malus['Malus (€)'] = bonus_malus['Malus (€)'].apply(lambda item: item.replace(' ','') if type(item) == str else item)
-    bonus_malus['Malus (€)'] = bonus_malus['Malus (€)'].astype(int)
-    def malus_calculation(item):
-        malus = 0
-        if item < bonus_malus['g / km'].min():
-            malus = 0
-        elif item > bonus_malus['g / km'].max():
-            malus = bonus_malus['Malus (€)'].max()
-        else :
-            malus_index = bonus_malus['Malus (€)'][bonus_malus['g / km'] == item].index[0]       
-            malus = bonus_malus['Malus (€)'].iloc[malus_index]
-        return malus
+    #bonus_malus = pd.read_csv('bonus_malus_db')
+    #bonus_malus['Malus (€)'] = bonus_malus['Malus (€)'].apply(lambda item: item.replace(' ','') if type(item) == str else item)
+    #bonus_malus['Malus (€)'] = bonus_malus['Malus (€)'].astype(int)
+    #def malus_calculation(item):
+      #  malus = 0
+     #   if item < bonus_malus['g / km'].min():
+    #        malus = 0
+    #    elif item > bonus_malus['g / km'].max():
+    #        malus = bonus_malus['Malus (€)'].max()
+    #    else :
+    #        malus_index = bonus_malus['Malus (€)'][bonus_malus['g / km'] == item].index[0]       
+    #        malus = bonus_malus['Malus (€)'].iloc[malus_index]
+    #    return malus
 
     #Building the Data for maintenance_costs
     maintenance_costs = pd.read_csv('maintenance_costs_db')
-    def maint_cost_coef(item):
-        if item in list(maintenance_costs['Brand'].value_counts().keys()):
-            return maintenance_costs['Average Gas engine (€/km)'].iloc[maintenance_costs[maintenance_costs['Brand'] == item].index[0]]/10000
-        else: return round(maintenance_costs['Average Gas engine (€/km)'].mean()/10000,2)
+    #def maint_cost_coef(item):
+    #    if item in list(maintenance_costs['Brand'].value_counts().keys()):
+    #        return maintenance_costs['Average Gas engine (€/km)'].iloc[maintenance_costs[maintenance_costs['Brand'] == item].index[0]]/10000
+    #    else: return round(maintenance_costs['Average Gas engine (€/km)'].mean()/10000,2)
         
-    def EV_maint_cost_coef(item):
-        if item in list(maintenance_costs['Brand'].value_counts().keys()):
-            return maintenance_costs['Average EV (€/km)'].iloc[maintenance_costs[maintenance_costs['Brand'] == item].index[0]]/10000
-        else: return round(maintenance_costs['Average EV (€/km)'].mean()/10000,2)
+    #def EV_maint_cost_coef(item):
+    #    if item in list(maintenance_costs['Brand'].value_counts().keys()):
+    #        return maintenance_costs['Average EV (€/km)'].iloc[maintenance_costs[maintenance_costs['Brand'] == item].index[0]]/10000
+    #    else: return round(maintenance_costs['Average EV (€/km)'].mean()/10000,2)
         
 
     ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
