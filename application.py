@@ -1,10 +1,10 @@
-import numpy as np
-import pandas as pd
-import streamlit as st
-import string
-from PIL import Image
-import datetime
-
+#import numpy as np
+#import pandas as pd
+#import streamlit as st
+#import string
+#from PIL import Image
+#import datetime
+import Libraries
 
 #Changing the background with an image that has to be in the same folder
 import base64
@@ -34,10 +34,7 @@ st.markdown(
 
 ### start streamlit
 image = Image.open('BEEV_image.png')
-st.image(image)
-#st.title("Navigation between the 2 solutions")
-
-    
+st.image(image)    
 #app.py
 import Interface
 import Interface2

@@ -1,48 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-#Cristina code to check if i can browse through directories to save the result of the solution
-#import os
-#import streamlit as st
-#filelist=[]
-#for root, dirs, files in os.walk("your folder directory"):
-#      for file in files:
-#             filename=os.path.join(root, file)
-#             filelist.append(filename)
-#st.write(filelist)
-
 def app():
-    import numpy as np
-    import pandas as pd
-    import streamlit as st
-    import string
-    from PIL import Image
-    import datetime
-
-    #LIBRARIES
-    import numpy as np # linear algebra
-    import pandas as pd # data processing
-    #Graphics
-    #import matplotlib.pyplot as plt
-    #import seaborn as sns
-    #KNeighbors
-    from sklearn.neighbors import NearestNeighbors
-    #Scalers
-    from sklearn import preprocessing
-    from sklearn.preprocessing import StandardScaler, MinMaxScaler
-    #Data selection
-    from sklearn.model_selection import train_test_split
-    from sklearn.model_selection import GridSearchCV
-    from sklearn.model_selection import RandomizedSearchCV
-    from sklearn.decomposition import PCA
-    #METRICS
-    from sklearn.model_selection import cross_val_score
-    from sklearn.metrics import precision_score, recall_score,accuracy_score
-    from sklearn.metrics import mean_squared_error
-    #RANDOM
-    import random as rd
-    #IMPORTING LIBRAY TO GET GOOGLE SPREADSHEETS
-    import gspread
+    
     #Defining gc to be able to read the googlesheet files
     gc = gspread.service_account(filename='../../Wild_Code_School/keys/beev-335814-edfca510cf50.json')
 
