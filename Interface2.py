@@ -187,10 +187,10 @@ def app():
     df_filtered['Price with Incentive'] = df_filtered['Main Price'].apply(lambda item: item - 6000)
 
 
-    st.title("Let's select together some points necessary to calculate precisely the TCO")
+    st.title("Let's select together some parameters to calculate precisely the TCO")
 
     #Defining the selectbox
-    label1 = "please select the category of the EV car you would like"
+    label1 = "please select the category of the EV car you would like to have"
     category_choosen = st.selectbox(label1,EV_car_categories)
     if category_choosen == "Same as my GEV car":
         category_choosen = GEV_car_category
