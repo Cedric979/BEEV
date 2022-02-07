@@ -1,42 +1,22 @@
-{
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "import numpy as np\n",
-    "import pandas as pd\n",
-    "import streamlit as st\n",
-    "import string\n",
-    "from PIL import Image\n",
-    "import datetime\n",
-    "import random as rd\n",
-    "import re\n",
-    "import statistics\n",
-    "import matplotlib.pyplot as plt\n",
-    "import seaborn as sns\n",
-    "from sklearn.neighbors import NearestNeighbors\n",
-    "from sklearn import preprocessing\n",
-    "from sklearn.preprocessing import StandardScaler, MinMaxScaler\n",
-    "import gspread\n",
-    "from bs4 import BeautifulSoup\n",
-    "from random import randint\n",
-    "from time import sleep\n",
-    "from io import StringIO\n",
-    "import base64\n",
-    "import Interface\n",
-    "import Interface2"
-   ]
-  }
- ],
- "metadata": {
-  "language_info": {
-   "name": "python"
-  },
-  "orig_nbformat": 4
- },
- "nbformat": 4,
- "nbformat_minor": 2
-}
+import numpy as np
+import pandas as pd
+import streamlit as st
+import string
+from PIL import Image
+import datetime
+import random as rd
+import re
+import statistics
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.neighbors import NearestNeighbors
+from sklearn import preprocessing
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
+import gspread
+from bs4 import BeautifulSoup
+from random import randint
+from time import sleep
+from io import StringIO
+import base64
+import Interface
+import Interface2
