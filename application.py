@@ -1,13 +1,5 @@
-#import numpy as np
-#import pandas as pd
-#import streamlit as st
-#import string
-#from PIL import Image
-#import datetime
-import Libraries
-
+from Libraries import *
 #Changing the background with an image that has to be in the same folder
-import base64
 main_bg = "st_back_main3.jpeg"
 main_bg_ext = "jpeg"
 
@@ -31,14 +23,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
 ### start streamlit
 image = Image.open('BEEV_image.png')
 st.image(image)    
-#app.py
-import Interface
-import Interface2
-import streamlit as st
 
 PAGES = {
     "GEV car selection": Interface2,

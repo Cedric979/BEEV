@@ -1,22 +1,6 @@
+from Libraries import *
 def app():
-    import numpy as np
-    import pandas as pd
-    import streamlit as st
-    import string
-    from PIL import Image
-    import datetime
-    import seaborn as sns
-
-    #LIBRARIES
-    import numpy as np # linear algebra
-    import pandas as pd # data processing
-    from sklearn.neighbors import NearestNeighbors
-    #Scalers
-    from sklearn import preprocessing
-    #RANDOM
-    import random as rd
-    #IMPORTING LIBRAY TO GET GOOGLE SPREADSHEETS
-    import gspread
+    
     #Defining gc to be able to read the googlesheet files
     gc = gspread.service_account(filename='../../Wild_Code_School/keys/beev-335814-edfca510cf50.json')
 
