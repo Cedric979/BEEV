@@ -4,6 +4,9 @@
 # %%
 #Function to get the models inside each brand
 from Libraries import *
+bonus_malus = pd.read_csv('bonus_malus_db')
+bonus_malus['Malus (€)'] = bonus_malus['Malus (€)'].apply(lambda item: item.replace(' ','') if type(item) == str else item)
+bonus_malus['Malus (€)'] = bonus_malus['Malus (€)'].astype(int)
 def model_of_each_brand(brand_url):
     models_list = []
     html2 = requests.get(brand_url, headers={'User-Agent': navigator})
