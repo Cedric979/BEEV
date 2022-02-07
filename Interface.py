@@ -52,7 +52,7 @@ def app():
         ############################ loadind & Saving the DATA FROM GOOGLE SHEET DOCUMENTS##############################################
 
         #Adding a button to the sidebar to be able to manually actualize the data from the googlesheet files
-        if st.sidebar.button("Click here to actualize the data with the googlesheet documents"):
+        if st.button("Click here to update"):
             #importing the googlesheet document named fuel prices
             fuel_prices_url = 'https://docs.google.com/spreadsheets/d/1M_e1ENe40v-G_HYYH7YTZT5yPMoxgk36FFNamtg12f8/edit?usp=sharing'
             sht4 = gc.open_by_url(fuel_prices_url)
@@ -162,14 +162,14 @@ def app():
     ### start streamlit
     image = Image.open('BEEV_image.png')
     st.image(image)
-    st.title("Let's check which EV cars would suit to you")
+    st.title("Manual features selection for EV car")
     #value_one = st.text_area("text box")
 
     #Defining the selectbox
-    label1 = "please select the category of the car you would like"
+    label1 = "Select the category of the car you would like"
     category_choosen = st.selectbox(label1,categories)
     #Defining the selectbox for the region ########### be careful need to add the DF and the regions variable before here
-    label2 = "please select the region you are from"
+    label2 = "Select the region you are living in"
     region_choosen = st.selectbox(label2,regions)
 
     #st.write(category_choosen)
@@ -177,10 +177,10 @@ def app():
     
     #Asking the user the Price and the Range
     # Add a slider to the sidebar:    
-    range_slider = st.sidebar.slider('Select a desired range in Kilometers',200, 800, (250),step=50)
-    price_slider = st.sidebar.slider('Select a desired price for the EV car',10000, 100000, (15000),step=2500)
-    duration_slider = st.sidebar.slider('Select a desired duration for leasing or keeping EV car in months',1, 72, (12))
-    km_slider = st.sidebar.slider('Select Km done per year',1000, 100000, (10000),step=1000)
+    range_slider = st.slider('Select a desired range (Kilometers that can be done with full charge)',200, 800, (250),step=50)
+    price_slider = st.slider('How much are you planning to pay for your EV car ?',10000, 100000, (15000),step=2500)
+    duration_slider = st.slider('How long do you plan on keeping your EV car (in months) ?',1, 120, (12))
+    km_slider = st.slider("How many Km per year do you think you'll be doing ?",1000, 100000, (10000),step=1000)
 
     #Define the validation button
     if st.button('Get EV Cars recommendation'):
