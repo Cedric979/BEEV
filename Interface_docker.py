@@ -1,40 +1,7 @@
+from Libraries import *
+from Functions import maint_cost_coef,EV_maint_cost_coef
 def app():
-    import numpy as np
-    import pandas as pd
-    import streamlit as st
-    import string
-    from PIL import Image
-    import datetime
-
-    #LIBRARIES
-    import numpy as np # linear algebra
-    import pandas as pd # data processing
-    #Graphics
-    #import matplotlib.pyplot as plt
-    #import seaborn as sns
-    #KNeighbors
-    from sklearn.neighbors import NearestNeighbors
-    #Scalers
-    from sklearn import preprocessing
-    from sklearn.preprocessing import StandardScaler, MinMaxScaler
-    #Data selection
-    from sklearn.model_selection import train_test_split
-    from sklearn.model_selection import GridSearchCV
-    from sklearn.model_selection import RandomizedSearchCV
-    from sklearn.decomposition import PCA
-    #METRICS
-    from sklearn.model_selection import cross_val_score
-    from sklearn.metrics import precision_score, recall_score,accuracy_score
-    from sklearn.metrics import mean_squared_error
-    #RANDOM
-    import random as rd
-    #IMPORTING LIBRAY TO GET GOOGLE SPREADSHEETS
-    import gspread
     #Defining gc to be able to read the googlesheet files
-
-    p = Path('.')
-    path_list = list(p.glob('**/*'))
-    st.text(path_list)
     gc = gspread.service_account(filename='../../Wild_Code_School/keys/beev-335814-edfca510cf50.json')
 
     #Condition to access the updating button
@@ -43,7 +10,7 @@ def app():
         ############################ loadind & Saving the DATA FROM GOOGLE SHEET DOCUMENTS##############################################
 
         #Adding a button to the sidebar to be able to manually actualize the data from the googlesheet files
-        if st.sidebar.button("Click here to actualize the data with the googlesheet documents"):
+        if st.button("Click here to update"):
             #importing the googlesheet document named fuel prices
             fuel_prices_url = 'https://docs.google.com/spreadsheets/d/1M_e1ENe40v-G_HYYH7YTZT5yPMoxgk36FFNamtg12f8/edit?usp=sharing'
             sht4 = gc.open_by_url(fuel_prices_url)
@@ -117,15 +84,15 @@ def app():
     
     #Building the Data for maintenance_costs
     maintenance_costs = pd.read_csv('maintenance_costs_db')
-    def maint_cost_coef(item):
-        if item in list(maintenance_costs['Brand'].value_counts().keys()):
-            return maintenance_costs['Average Gas engine (€/km)'].iloc[maintenance_costs[maintenance_costs['Brand'] == item].index[0]]/10000
-        else: return round(maintenance_costs['Average Gas engine (€/km)'].mean()/10000,2)
+    #def maint_cost_coef(item):
+     #   if item in list(maintenance_costs['Brand'].value_counts().keys()):
+     #       return maintenance_costs['Average Gas engine (€/km)'].iloc[maintenance_costs[maintenance_costs['Brand'] == item].index[0]]/10000
+     #   else: return round(maintenance_costs['Average Gas engine (€/km)'].mean()/10000,2)
         
-    def EV_maint_cost_coef(item):
-        if item in list(maintenance_costs['Brand'].value_counts().keys()):
-            return maintenance_costs['Average EV (€/km)'].iloc[maintenance_costs[maintenance_costs['Brand'] == item].index[0]]/10000
-        else: return round(maintenance_costs['Average EV (€/km)'].mean()/10000,2)
+    #def EV_maint_cost_coef(item):
+     #   if item in list(maintenance_costs['Brand'].value_counts().keys()):
+      #      return maintenance_costs['Average EV (€/km)'].iloc[maintenance_costs[maintenance_costs['Brand'] == item].index[0]]/10000
+       # else: return round(maintenance_costs['Average EV (€/km)'].mean()/10000,2)
 
     ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
 
@@ -153,14 +120,14 @@ def app():
     ### start streamlit
     image = Image.open('BEEV_image.png')
     st.image(image)
-    st.title("Let's check which EV cars would suit to you")
+    st.title("Manual features selection for EV car")
     #value_one = st.text_area("text box")
 
     #Defining the selectbox
-    label1 = "please select the category of the car you would like"
+    label1 = "Select the category of the car you would like"
     category_choosen = st.selectbox(label1,categories)
     #Defining the selectbox for the region ########### be careful need to add the DF and the regions variable before here
-    label2 = "please select the region you are from"
+    label2 = "Select the region you are living in"
     region_choosen = st.selectbox(label2,regions)
 
     #st.write(category_choosen)
@@ -168,10 +135,10 @@ def app():
     
     #Asking the user the Price and the Range
     # Add a slider to the sidebar:    
-    range_slider = st.sidebar.slider('Select a desired range in Kilometers',200, 800, (250),step=50)
-    price_slider = st.sidebar.slider('Select a desired price for the EV car',10000, 100000, (15000),step=2500)
-    duration_slider = st.sidebar.slider('Select a desired duration for leasing or keeping EV car in months',1, 72, (12))
-    km_slider = st.sidebar.slider('Select Km done per year',1000, 100000, (10000),step=1000)
+    range_slider = st.slider('Select a desired range (Kilometers that can be done with full charge)',200, 800, (250),step=50)
+    price_slider = st.slider('How much are you planning to pay for your EV car ?',10000, 100000, (15000),step=2500)
+    duration_slider = st.slider('How long do you plan on keeping your EV car (in months) ?',1, 120, (12))
+    km_slider = st.slider("How many Km per year do you think you'll be doing ?",1000, 100000, (10000),step=1000)
 
     #Define the validation button
     if st.button('Get EV Cars recommendation'):
