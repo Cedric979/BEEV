@@ -26,7 +26,7 @@ def app():
         ############################ loadind & Saving the DATA FROM GOOGLE SHEET DOCUMENTS##############################################
 
         #Adding a button to the sidebar to be able to manually actualize the data from the googlesheet files
-        if st.button("Click here to actualize the data with the googlesheet documents"):
+        if st.button("Click here to update"):
             #importing the googlesheet document named fuel prices
             fuel_prices_url = 'https://docs.google.com/spreadsheets/d/1M_e1ENe40v-G_HYYH7YTZT5yPMoxgk36FFNamtg12f8/edit?usp=sharing'
             sht4 = gc.open_by_url(fuel_prices_url)
@@ -91,7 +91,7 @@ def app():
     ### start streamlit
     image = Image.open('BEEV_image.png')
     st.image(image)
-    st.title("Let's check which GEV car do you own or want to do the comparison with")
+    st.title("GEV car selection")
 
 
     ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
@@ -138,21 +138,21 @@ def app():
     #Code for GEV_BEEV data frame
     df_gev_beev = pd.read_csv("df_gev_beev2.csv")
     brand_choice = list(df_gev_beev['Brand'].unique())
-    brand_choosen = st.selectbox("Please select your GEV car's brand",brand_choice)
+    brand_choosen = st.selectbox("Select your GEV car's brand",brand_choice)
     model_choice = list(df_gev_beev['Model'][df_gev_beev['Brand'] == brand_choosen].unique())
-    model_choosen = st.selectbox("Please select your GEV car's model",model_choice)
+    model_choosen = st.selectbox("Select your GEV car's model",model_choice)
     c1 = df_gev_beev['Brand'] == brand_choosen
     c2 = df_gev_beev['Model'] == model_choosen
     engine_choice = list(df_gev_beev['Modification (Engine)'][c1&c2].unique())
-    engine_choosen = st.selectbox("Please select your GEV car's engine",engine_choice)
+    engine_choosen = st.selectbox("Select your GEV car's engine",engine_choice)
     c3 = df_gev_beev['Modification (Engine)'] == engine_choosen
-    GEV_carprice_choosen = st.slider('Select your GEV car price',10000, 100000, (15000),step=2500)
+    GEV_carprice_choosen = st.slider('How much did you pay or are you planning to pay for your GEV car ?',10000, 100000, (15000),step=2500)
     price_slider = GEV_carprice_choosen
     EV_index = df_gev_beev['Category'][c1&c2&c3].index[0]
     GEV_car_category = df_gev_beev['Category'].iloc[df_gev_beev['Category'][c1&c2&c3].index[0]]
-    GEV_car_possession = st.slider('Select your estimated GEV car time of possession in months',1, 120, (12))
+    GEV_car_possession = st.slider('How long do you plan on keeping your GEV car ?',1, 120, (12))
     duration_slider = GEV_car_possession
-    GEV_car_km_slider = st.slider('Select Km done per year with your GEV',1000, 100000, (10000),step=1000)
+    GEV_car_km_slider = st.slider("How many Km per year do you think you'll be doing ?",1000, 100000, (10000),step=1000)
     km_slider = GEV_car_km_slider
     GEV_car_range = df_gev_beev['Range (km)'].iloc[df_gev_beev['Category'][c1&c2&c3].index[0]]
     
@@ -162,7 +162,7 @@ def app():
     #df_gev_beev['maint_cost/100Km (€)'] = df_gev_beev['Brand'].apply(lambda item: maint_cost_coef(item)/10)
 
     
-    st.write(brand_choosen, model_choosen, engine_choosen, GEV_car_category, GEV_car_km_slider) 
+    #st.write(brand_choosen, model_choosen, engine_choosen, GEV_car_category, GEV_car_km_slider) 
 
     #Code for EV DF
     df = pd.read_csv("Beev Electric Vehicle Specs Data.csv")
@@ -187,10 +187,10 @@ def app():
     df_filtered['Price with Incentive'] = df_filtered['Main Price'].apply(lambda item: item - 6000)
 
 
-    st.title("Let's select together some parameters to calculate precisely the TCO")
+    #st.title("Let's select together some parameters to calculate precisely the TCO")
 
     #Defining the selectbox
-    label1 = "please select the category of the EV car you would like to have"
+    label1 = "Select the category of the EV car you would like to have"
     category_choosen = st.selectbox(label1,EV_car_categories)
     if category_choosen == "Same as my GEV car":
         category_choosen = GEV_car_category
@@ -198,12 +198,12 @@ def app():
     #st.write(category_choosen)
 
     #Defining the selectbox for the region ########### be careful need to add the DF and the regions variable before here
-    label2 = "please select the region you are from"
+    label2 = "Select the region you are from"
     region_choosen = st.selectbox(label2,regions)
 
     #Defining the range selection for the EV car
     range_choice = st.radio(
-         "Do you want to select the range of your actual GEV car ?",
+         "Do you want your EV car range to be the same as your GEV car ?",
          ('Yes', 'No'))
     if range_choice == 'No':
         range_slider = st.slider('Select a desired range in Kilometers for the EV car',200, 800, (250),step=50)
@@ -218,7 +218,7 @@ def app():
     #km_slider = st.sidebar.slider('Select Km done per year',1000, 100000, (10000),step=1000)
 
     #Define the validation button
-    if st.button('Get EV Cars recommendation'):
+    if st.button('Get EV cars recommendation'):
         df_model.style.format({'Price (€)': '{:.0f}', 'Range (Km)': '{:.0f}', 'Price with Incentive (€)': '{:.0f}'})
 
         if category_choosen != "ALL":
@@ -245,7 +245,7 @@ def app():
         #Formating the result with choosen number (float)
         df_TCO.style.format({'Price (€)': '{:.0f}', 'Range (Km)': '{:.0f}', 'Price with Incentive (€)': '{:.0f}', 'elec_cost/100Km (€)':'{:.0f}','TCO_year':'{:.1f}', 'TCO_duration': '{:.1f}'})
         #Adding the title of the DF below
-        st.title("Please find below the TCO for the EV recommended cars")
+        st.title("Total Cost of Ownership for the recommended EV cars")
         result = df_TCO[['Full Name','Category','Range (Km)','Price with Incentive (€)','TCO_year','TCO_duration','title_cost (€)','consumption_cost (month)','maintenance_cost (month)']].set_index('Full Name').copy()
         st.write(result)#df_TCO[['Full Name','Range (Km)','Category','Price with Incentive (€)','TCO_year','TCO_duration','title_cost (€)','consumption_cost (month)']].set_index('Full Name').copy()
         
@@ -264,7 +264,7 @@ def app():
         df_gev_TCO['TCO_year'] = df_gev_TCO[['title_cost (€)','consumption_cost (month)','maintenance_cost (month)','Malus (€)']].apply(lambda item: item[0] + item[1]*12 + item[2]*12 + item[3],axis=1)
         df_gev_TCO['TCO_duration'] = df_gev_TCO[['title_cost (€)','consumption_cost (month)','maintenance_cost (month)','Malus (€)']].apply(lambda item: item[0] + item[1]*duration_slider + item[2]*duration_slider + item[3],axis=1)
         df_gev_TCO['Price (€)'] = price_slider
-        st.title("Please find below the TCO for your GEV car")
+        st.title("Total Cost of Ownership for your GEV car")
         df_gev_selected = df_gev_TCO[['Brand', 'Model', 'Modification (Engine)','Fuel Type','Category','Range (km)','Price (€)','Malus (€)','TCO_year','TCO_duration','consumption_cost (month)','maintenance_cost (month)','title_cost (€)']]#.iloc[EV_index]).T  #df_gev_TCO instead of beev thus pd.DataFrame( removed
         df_gev_selected.style.format({'Malus (€)': '{:.0f}', 'fuel_cost/100Km (€)': '{:.0f}', 'maint_cost/100Km (€)': '{:.0f}'})
         st.write(df_gev_selected)
@@ -308,7 +308,7 @@ def app():
               "EV": range(int(df_TCO['Price with Incentive (€)'].iloc[0]),
                           int(df_TCO['Price with Incentive (€)'].iloc[0])+11*int(df_TCO['TCO_year'].iloc[0]),
                           int(df_TCO['TCO_year'].iloc[0]))})
-        st.title("Please find below the TCO comparison between the first EV recommended and your GEV car along 10 years")
+        st.title("TCO comparison between the first EV recommendation and your GEV car for 10 years duration")
         st.line_chart(chart_data)
         
         #st.write(sns.scatterplot(x=range(0,11) ,y=(range(int(df_gev_TCO['Price (€)']),int(df_gev_TCO['Price (€)'])+11*int(df_gev_TCO['TCO_year']),int(df_gev_TCO['TCO_year'])))))
