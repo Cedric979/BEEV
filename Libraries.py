@@ -6,9 +6,9 @@ from PIL import Image
 import datetime
 import random as rd
 import re
+import requests
 import statistics
 import matplotlib.pyplot as plt
-import seaborn as sns
 from sklearn.neighbors import NearestNeighbors
 from sklearn import preprocessing
 from sklearn.preprocessing import StandardScaler, MinMaxScaler

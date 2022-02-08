@@ -15,17 +15,17 @@ def app():
       ############################ loadind & Saving the DATA FROM GOOGLE SHEET DOCUMENTS##################################
    
     #Loading BEEV image
-    image = Image.open('BEEV_image.png')
-    st.image(image)
+    # image = Image.open('BEEV_image.png')
+    # st.image(image)
     #Application title
     st.title("Manual features selection for EV car")
 
     #Changing the background with an image that has to be in the same folder
     import base64
-    main_bg = "st_back_main3.jpeg"
+    main_bg = path_list[-1]
     main_bg_ext = "jpeg"
 
-    side_bg = "st_back_slider.jpeg"
+    side_bg = path_list[-2]
     side_bg_ext = "jpeg"
 
     st.markdown(
@@ -47,10 +47,10 @@ def app():
 
     ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
     #Building the Data for fuel prices and elec price for next calculation
-    fuel_prices = pd.read_csv('fuel_prices_db')
+    fuel_prices = pd.read_csv(path_list[-5])
     elec_price = float(fuel_prices[fuel_prices['Fuel type'] == 'Electricity']['Price France (€/litres) - KWh'])
     #Building the list of regions for the selectbox
-    title_tax_cv = pd.read_csv('title_tax_cv_db')
+    title_tax_cv = pd.read_csv(path_list[-6])
     regions = list(title_tax_cv['Region'].unique())
     #Building the Data for maintenance_costs
     maintenance_costs = pd.read_csv('maintenance_costs_db')
@@ -58,7 +58,7 @@ def app():
     ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
 
     #Code for EV DF
-    df = pd.read_csv("Beev Electric Vehicle Specs Data.csv")
+    df = pd.read_csv(path_list[-4])
     df['Main Price'].fillna(62000.0, inplace = True)
     df['Range (km)'].fillna(235.0, inplace = True)
     df_model = pd.DataFrame(zip(df['Full Name'],df['Main Price'],df['Range (km)'], df['Category'],df['Useable Battery Capacity']))

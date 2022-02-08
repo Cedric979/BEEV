@@ -16,17 +16,17 @@ def app():
         ############################ loadind & Saving the DATA FROM GOOGLE SHEET DOCUMENTS###################################
     
     #Load BEEV image
-    image = Image.open('BEEV_image.png')
-    st.image(image)
+    # image = Image.open('BEEV_image.png')
+    # st.image(image)
     #Application title
     st.title("GEV car selection")
 
     #Changing the background with an image that has to be in the same folder
     import base64
-    main_bg = "st_back_main3.jpeg"
+    main_bg = path_list[-1]
     main_bg_ext = "jpeg"
 
-    side_bg = "st_back_slider.jpeg"
+    side_bg = path_list[-2]
     side_bg_ext = "jpeg"
 
     st.markdown(
@@ -49,24 +49,24 @@ def app():
     
     ############################ DATA FROM GOOGLE SHEET DOCUMENTS ##############################################
     #Building the Data for fuel prices and elec price for next calculation
-    fuel_prices = pd.read_csv('fuel_prices_db')
+    fuel_prices = pd.read_csv(path_list[-5])
     elec_price = float(fuel_prices[fuel_prices['Fuel type'] == 'Electricity']['Price France (€/litres) - KWh'])
     petrol_price = float(fuel_prices[fuel_prices['Fuel type'] == 'Regular gasoline']['Price France (€/litres) - KWh'])
     diesel_price = float(fuel_prices[fuel_prices['Fuel type'] == 'Diesel']['Price France (€/litres) - KWh'])
 
     #Building the list of regions for the selectbox
-    title_tax_cv = pd.read_csv('title_tax_cv_db')
+    title_tax_cv = pd.read_csv(path_list[-6])
     regions = list(title_tax_cv['Region'].unique())
 
     #Building the Data for maintenance costs
-    maintenance_costs = pd.read_csv('maintenance_costs_db')
+    maintenance_costs = pd.read_csv(path_list[-8])
     #Building the Data for bonus_malus
-    bonus_malus = pd.read_csv('bonus_malus_db')
+    bonus_malus = pd.read_csv(path_list[-7])
     
     ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
 
     #Code for GEV_BEEV data frame
-    df_gev_beev = pd.read_csv("df_gev_beev2.csv")
+    df_gev_beev = pd.read_csv(path_list[-9])
     brand_choice = list(df_gev_beev['Brand'].unique())
     brand_choosen = st.selectbox("Select your GEV car's brand",brand_choice)
     model_choice = list(df_gev_beev['Model'][df_gev_beev['Brand'] == brand_choosen].unique())
@@ -87,7 +87,7 @@ def app():
     GEV_car_range = df_gev_beev['Range (km)'].iloc[df_gev_beev['Category'][c1&c2&c3].index[0]]
   
     #Code for EV DF
-    df = pd.read_csv("Beev Electric Vehicle Specs Data.csv")
+    df = pd.read_csv(path_list[-4])
     df['Main Price'].fillna(62000.0, inplace = True)
     df['Range (km)'].fillna(235.0, inplace = True)
     df_model = pd.DataFrame(zip(df['Full Name'],df['Main Price'],df['Range (km)'], df['Category'],df['Useable Battery Capacity']))
