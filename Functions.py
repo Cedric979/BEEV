@@ -177,6 +177,21 @@ def malus_calculation(item):
     else :
         malus_index = bonus_malus['Malus (€)'][bonus_malus['g / km'] == item].index[0]       
         malus = bonus_malus['Malus (€)'].iloc[malus_index]
-        return malus
+    return malus
 
+### Updating the values from the google sheet documents and replacing the DF used in the code    
+#List of url to read
+url_dico = {'fuel_prices': 'https://docs.google.com/spreadsheets/d/1M_e1ENe40v-G_HYYH7YTZT5yPMoxgk36FFNamtg12f8/edit?usp=sharing',
+           'title_tax_cv': "https://docs.google.com/spreadsheets/d/1cOj98R9fGT89rG4-TxAPIgOrvDbrzxlLPd4Y5mUBD0g/edit?usp=sharing",
+           'bonus_malus': "https://docs.google.com/spreadsheets/d/1RDIMbTGE3TBU4SXbRNKiqKQFakf0grVGKKLfu9L9dS4/edit?usp=sharing",
+           'maintenance_costs': "https://docs.google.com/spreadsheets/d/1Hlhp4ubS-JFgYYx1S9oeL5A_011sSxvKzWiuS3bLqV8/edit?usp=sharing"}
+
+gc = gspread.service_account(filename='../../Wild_Code_School/keys/beev-335814-edfca510cf50.json')#The json key has to be defined by a google account in google API platform accessible here 'https://console.developers.google.com/'
+def load_df(url_dico = url_dico):
+    for key, url in url_dico.items():
+        sht1 = gc.open_by_url(url)
+        worksheet = sht1.sheet1
+        name = key
+        name = pd.DataFrame(worksheet.get_all_records())
+        name.to_csv(key+'_db',header=True, index=False)
 
