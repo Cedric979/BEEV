@@ -1,7 +1,9 @@
 from Libraries import *
 from Functions import malus_calculation, maint_cost_coef, EV_maint_cost_coef, load_df
 def app():
-    
+    p = Path('.')
+    path_list = list(p.glob('**/*'))
+    st.text(path_list)
     #Condition to access the updating button
     password = st.text_input('If you want to update the data with the google sheet documents please enter the password', max_chars=10)
     if password == 'Semra':
