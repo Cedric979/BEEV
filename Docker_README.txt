@@ -12,13 +12,13 @@ PLEASE READ UNTIL THE END
 
 
 3 - Open the terminal in your computer and navigate to your folder(inside the terminal)
-    You can also just open the terminal at the folder. 
+    You can also just open the terminal at the folder path. 
     Regardless, when you are at the correct path, run the following command line:
 
     docker build -t streamlit_beev:latest .
 
     INCLUDE the dot at the end
-    Wait for it to finish running(can take up to some minutes).
+    Wait for it to finish running(can take some time).
 
     LEAVE THE TERMINAL OPEN!
 
@@ -45,4 +45,4 @@ PLEASE READ UNTIL THE END
     
     After this, whenever you want to run you need only to:
     - Open Docker Desktop and click on Containers/apps
-    - Hover over the correct container and click on 'Start' and then 'Open in Browser'
+    - Hover over the correct container and click on 'Start', wait a bit, and then click 'Open in Browser'
