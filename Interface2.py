@@ -213,5 +213,3 @@ def app():
         st.title("TCO comparison between the first EV recommendation and your GEV car for 10 years duration")
         st.line_chart(chart_data)
         
-        #st.write(sns.scatterplot(x=range(0,11) ,y=(range(int(df_gev_TCO['Price (€)']),int(df_gev_TCO['Price (€)'])+11*int(df_gev_TCO['TCO_year']),int(df_gev_TCO['TCO_year'])))))
-        #st.write(sns.scatterplot(x=range(0,11) ,y=(range(int(df_TCO['Price with Incentive (€)'].iloc[0]),int(df_TCO['Price with Incentive (€)'].iloc[0])+11*int(df_TCO['TCO_year'].iloc[0]),int(df_TCO['TCO_year'].iloc[0])))))
