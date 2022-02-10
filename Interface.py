@@ -124,7 +124,7 @@ def app():
         #Saving the result
         st.download_button(
              label="Download result as CSV",
-             data=result.to_csv().encode('utf-8'),
+             data=result.to_csv(sep = ';').encode('utf-8'),
              file_name='ev_car_recommendation_'+today+'.csv',
              mime='text/csv',
          )
@@ -132,7 +132,7 @@ def app():
         #Saving the parameters
         st.download_button(
              label="Download parameters as CSV",
-             data=parameters.to_csv().encode('utf-8'),
+             data=parameters.to_csv(sep = ';').encode('utf-8'),
              file_name='parameters_car_recommendation_'+today+'.csv',
              mime='text/csv',
          )    

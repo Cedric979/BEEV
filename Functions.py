@@ -186,7 +186,7 @@ url_dico = {'fuel_prices': 'https://docs.google.com/spreadsheets/d/1M_e1ENe40v-G
            'bonus_malus': "https://docs.google.com/spreadsheets/d/1RDIMbTGE3TBU4SXbRNKiqKQFakf0grVGKKLfu9L9dS4/edit?usp=sharing",
            'maintenance_costs': "https://docs.google.com/spreadsheets/d/1Hlhp4ubS-JFgYYx1S9oeL5A_011sSxvKzWiuS3bLqV8/edit?usp=sharing"}
 
-gc = gspread.service_account(filename='../../Wild_Code_School/keys/beev-335814-edfca510cf50.json')#The json key has to be defined by a google account in google API platform accessible here 'https://console.developers.google.com/'
+gc = gspread.service_account(filename='../BEEV/beev-335814-4e72d6b41e21.json')#The json key has to be defined by a google account in google API platform accessible here 'https://console.developers.google.com/'
 def load_df(url_dico = url_dico):
     for key, url in url_dico.items():
         sht1 = gc.open_by_url(url)
