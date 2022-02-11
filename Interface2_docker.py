@@ -158,7 +158,7 @@ def app():
         #Building the TCO for GEV
         df_gev_TCO = pd.DataFrame(df_gev_beev.iloc[EV_index]).T
         #Calculating columns for the TCO
-        df_gev_TCO['Malus (€)'] = df_gev_TCO['CO2 emissions (g/km)'].dropna().apply(lambda item: malus_calculation(int(item)) if item != 'N/A' else 'N/A')
+        df_gev_TCO['Malus (€)'] = df_gev_TCO['CO2 emissions (g/km)'].dropna().apply(lambda item: malus_calculation(int(item),path_list) if item != 'N/A' else 'N/A')
         df_gev_TCO['fuel_cost/100Km (€)'] = df_gev_TCO[['Fuel Type','Fuel consumption - combined (l/100km)']].apply(lambda item: round(item[1]*petrol_price,2) if item[0] == 'Petrol (Gasoline)' else round(item[1]*diesel_price,2) if item[0] == 'Diesel' else round(item[1]*petrol_price*0.8,2), axis = 1)
         df_gev_TCO['maint_cost/100Km (€)'] = df_gev_TCO['Brand'].apply(lambda item: maint_cost_coef(item)*100)
         df_gev_TCO['title_cost (€)'] = df_gev_TCO['CV'].apply(lambda item: title_tax_cv[title_tax_cv['Region'] == region_choosen]['Title Cost (€ / CV)']*item)
