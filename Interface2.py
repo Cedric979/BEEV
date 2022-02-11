@@ -168,7 +168,7 @@ def app():
         df_gev_TCO['TCO_duration'] = df_gev_TCO[['title_cost (€)','consumption_cost (month)','maintenance_cost (month)','Malus (€)']].apply(lambda item: item[0] + item[1]*duration_slider + item[2]*duration_slider + item[3],axis=1)
         df_gev_TCO['Price (€)'] = price_slider
         st.title("Total Cost of Ownership for your GEV car")
-        df_gev_selected = df_gev_TCO[['Brand', 'Model', 'Modification (Engine)','Fuel Type','Category','Range (km)','Price (€)','Malus (€)','TCO_year','TCO_duration','consumption_cost (month)','maintenance_cost (month)','title_cost (€)']]#.iloc[EV_index]).T  #df_gev_TCO instead of beev thus pd.DataFrame( removed
+        df_gev_selected = df_gev_TCO[['Brand', 'Model', 'Modification (Engine)','Fuel Type','Category','Range (km)','Price (€)','Malus (€)','TCO_year','TCO_duration','consumption_cost (month)','maintenance_cost (month)','title_cost (€)']].set_index('Brand').copy()#.iloc[EV_index]).T  #df_gev_TCO instead of beev thus pd.DataFrame( removed
         df_gev_selected.style.format({'Malus (€)': '{:.0f}', 'fuel_cost/100Km (€)': '{:.0f}', 'maint_cost/100Km (€)': '{:.0f}'})
         st.write(df_gev_selected)
               
