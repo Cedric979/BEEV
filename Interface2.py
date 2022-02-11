@@ -196,7 +196,7 @@ def app():
         #Saving the GEV DataFrame with TCO costs
         st.download_button(
              label="Download GEV TCO as CSV",
-             data=df_gev_selected.to_csv().encode('utf-8'),
+             data=df_gev_selected.to_csv(sep = ';').encode('utf-8'),
              file_name='gev_car_TCO_'+today+'.csv',
              mime='text/csv',
          )    
