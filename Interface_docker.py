@@ -1,9 +1,6 @@
 from Libraries import *
 from Functions import maint_cost_coef, EV_maint_cost_coef, load_df
 def app():
-    p = Path('.')
-    path_list = list(p.glob('**/*'))
-    st.text(path_list)
     #Condition to access the updating button
     password = st.text_input('If you want to update the data with the google sheet documents please enter the password', max_chars=10)
     if password == 'Semra':
@@ -15,17 +12,17 @@ def app():
       ############################ loadind & Saving the DATA FROM GOOGLE SHEET DOCUMENTS##################################
    
     #Loading BEEV image
-    image = Image.open(path_list[-10])
+    image = Image.open('./app/BEEV_image.png')
     st.image(image)
     #Application title
     st.title("Manual features selection for EV car")
 
     #Changing the background with an image that has to be in the same folder
     import base64
-    main_bg = path_list[-1]
+    main_bg = './app/st_back_main3.jpeg'
     main_bg_ext = "jpeg"
 
-    side_bg = path_list[-2]
+    side_bg = './app/st_back_slider.jpeg'
     side_bg_ext = "jpeg"
 
     st.markdown(
@@ -47,18 +44,18 @@ def app():
 
     ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
     #Building the Data for fuel prices and elec price for next calculation
-    fuel_prices = pd.read_csv(path_list[-5])
+    fuel_prices = pd.read_csv('./app/fuel_prices_db')
     elec_price = float(fuel_prices[fuel_prices['Fuel type'] == 'Electricity']['Price France (€/litres) - KWh'])
     #Building the list of regions for the selectbox
-    title_tax_cv = pd.read_csv(path_list[-6])
+    title_tax_cv = pd.read_csv('./app/title_tax_cv_db')
     regions = list(title_tax_cv['Region'].unique())
     #Building the Data for maintenance_costs
-    maintenance_costs = pd.read_csv('maintenance_costs_db')
+    maintenance_costs = pd.read_csv('./app/maintenance_costs_db')
     
     ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
 
     #Code for EV DF
-    df = pd.read_csv(path_list[-4])
+    df = pd.read_csv('./app/Beev_Electric_Vehicle_Specs_Data.csv')
     df['Main Price'].fillna(62000.0, inplace = True)
     df['Range (km)'].fillna(235.0, inplace = True)
     df_model = pd.DataFrame(zip(df['Full Name'],df['Main Price'],df['Range (km)'], df['Category'],df['Useable Battery Capacity']))

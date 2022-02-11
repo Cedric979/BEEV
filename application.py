@@ -1,14 +1,12 @@
 from Libraries import *
 import Interface_docker
 import Interface2_docker
-p = Path('.')
-path_list = list(p.glob('**/*'))
 #Changing the background with an image that has to be in the same folder
 import base64
-main_bg = path_list[-1]
+main_bg = './app/st_back_main3.jpeg'
 main_bg_ext = "jpeg"
 
-side_bg = path_list[-2]
+side_bg = './app/st_back_slider.jpeg'
 side_bg_ext = "jpeg"
 
 st.markdown(
@@ -29,7 +27,7 @@ st.markdown(
 )
 
 ### start streamlit
-image = Image.open(path_list[-10])
+image = Image.open('./app/BEEV_image.png')
 st.image(image)    
 
 PAGES = {

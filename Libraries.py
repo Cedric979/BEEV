@@ -18,5 +18,4 @@ from random import randint
 from time import sleep
 from io import StringIO
 from PIL import Image
-from pathlib import Path
 import base64

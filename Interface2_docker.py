@@ -1,9 +1,6 @@
 from Libraries import *
 from Functions import malus_calculation, maint_cost_coef, EV_maint_cost_coef, load_df
 def app():
-    p = Path('.')
-    path_list = list(p.glob('**/*'))
-    st.text(path_list)
     #Condition to access the updating button
     password = st.text_input('If you want to update the data with the google sheet documents please enter the password', max_chars=10)
     if password == 'Semra':
@@ -16,17 +13,17 @@ def app():
         ############################ loadind & Saving the DATA FROM GOOGLE SHEET DOCUMENTS###################################
     
     #Load BEEV image
-    image = Image.open(path_list[-10])
+    image = Image.open('./app/BEEV_image.png')
     st.image(image)
     #Application title
     st.title("GEV car selection")
 
     #Changing the background with an image that has to be in the same folder
     import base64
-    main_bg = path_list[-1]
+    main_bg = './app/st_back_main3.jpeg'
     main_bg_ext = "jpeg"
 
-    side_bg = path_list[-2]
+    side_bg = './app/st_back_slider.jpeg'
     side_bg_ext = "jpeg"
 
     st.markdown(
@@ -49,24 +46,24 @@ def app():
     
     ############################ DATA FROM GOOGLE SHEET DOCUMENTS ##############################################
     #Building the Data for fuel prices and elec price for next calculation
-    fuel_prices = pd.read_csv(path_list[-5])
+    fuel_prices = pd.read_csv('./app/fuel_prices_db')
     elec_price = float(fuel_prices[fuel_prices['Fuel type'] == 'Electricity']['Price France (€/litres) - KWh'])
     petrol_price = float(fuel_prices[fuel_prices['Fuel type'] == 'Regular gasoline']['Price France (€/litres) - KWh'])
     diesel_price = float(fuel_prices[fuel_prices['Fuel type'] == 'Diesel']['Price France (€/litres) - KWh'])
 
     #Building the list of regions for the selectbox
-    title_tax_cv = pd.read_csv(path_list[-6])
+    title_tax_cv = pd.read_csv('./app/title_tax_cv_db')
     regions = list(title_tax_cv['Region'].unique())
 
     #Building the Data for maintenance costs
-    maintenance_costs = pd.read_csv(path_list[-8])
+    maintenance_costs = pd.read_csv('./app/maintenance_costs_db')
     #Building the Data for bonus_malus
-    bonus_malus = pd.read_csv(path_list[-7])
+    bonus_malus = pd.read_csv('./app/bonus_malus_db')
     
     ############################DATA FROM GOOGLE SHEET DOCUMENTS##############################################
 
     #Code for GEV_BEEV data frame
-    df_gev_beev = pd.read_csv(path_list[-9])
+    df_gev_beev = pd.read_csv('./app/df_gev_beev2.csv')
     brand_choice = list(df_gev_beev['Brand'].unique())
     brand_choosen = st.selectbox("Select your GEV car's brand",brand_choice)
     model_choice = list(df_gev_beev['Model'][df_gev_beev['Brand'] == brand_choosen].unique())
@@ -87,7 +84,7 @@ def app():
     GEV_car_range = df_gev_beev['Range (km)'].iloc[df_gev_beev['Category'][c1&c2&c3].index[0]]
   
     #Code for EV DF
-    df = pd.read_csv(path_list[-4])
+    df = pd.read_csv('./app/Beev_Electric_Vehicle_Specs_Data.csv')
     df['Main Price'].fillna(62000.0, inplace = True)
     df['Range (km)'].fillna(235.0, inplace = True)
     df_model = pd.DataFrame(zip(df['Full Name'],df['Main Price'],df['Range (km)'], df['Category'],df['Useable Battery Capacity']))
@@ -158,7 +155,7 @@ def app():
         #Building the TCO for GEV
         df_gev_TCO = pd.DataFrame(df_gev_beev.iloc[EV_index]).T
         #Calculating columns for the TCO
-        df_gev_TCO['Malus (€)'] = df_gev_TCO['CO2 emissions (g/km)'].dropna().apply(lambda item: malus_calculation(int(item),path_list) if item != 'N/A' else 'N/A')
+        df_gev_TCO['Malus (€)'] = df_gev_TCO['CO2 emissions (g/km)'].dropna().apply(lambda item: malus_calculation(int(item)) if item != 'N/A' else 'N/A')
         df_gev_TCO['fuel_cost/100Km (€)'] = df_gev_TCO[['Fuel Type','Fuel consumption - combined (l/100km)']].apply(lambda item: round(item[1]*petrol_price,2) if item[0] == 'Petrol (Gasoline)' else round(item[1]*diesel_price,2) if item[0] == 'Diesel' else round(item[1]*petrol_price*0.8,2), axis = 1)
         df_gev_TCO['maint_cost/100Km (€)'] = df_gev_TCO['Brand'].apply(lambda item: maint_cost_coef(item)*100)
         df_gev_TCO['title_cost (€)'] = df_gev_TCO['CV'].apply(lambda item: title_tax_cv[title_tax_cv['Region'] == region_choosen]['Title Cost (€ / CV)']*item)
