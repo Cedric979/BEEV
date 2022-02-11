@@ -1,4 +1,6 @@
 from Libraries import *
+import Interface_docker
+import Interface2_docker
 p = Path('.')
 path_list = list(p.glob('**/*'))
 #Changing the background with an image that has to be in the same folder
@@ -31,8 +33,8 @@ image = Image.open(path_list[-10])
 st.image(image)    
 
 PAGES = {
-    "GEV car selection": Interface2,
-    "Manual features selection": Interface
+    "GEV car selection": Interface2_docker,
+    "Manual features selection": Interface_docker
 }
 st.sidebar.title('How would you like to select your features ?')
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))

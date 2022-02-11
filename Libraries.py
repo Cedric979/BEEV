@@ -18,7 +18,5 @@ from random import randint
 from time import sleep
 from io import StringIO
 from PIL import Image
-import base64
-import Interface
-import Interface2
 from pathlib import Path
+import base64
