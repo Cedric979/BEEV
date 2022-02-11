@@ -1,57 +1,4 @@
 # %% [markdown]
-# ## **Web Scraping**
-
-# %%
-#Function to get the models inside each brand
-from Libraries import *
-bonus_malus = pd.read_csv('bonus_malus_db')
-bonus_malus['Malus (€)'] = bonus_malus['Malus (€)'].apply(lambda item: item.replace(' ','') if type(item) == str else item)
-bonus_malus['Malus (€)'] = bonus_malus['Malus (€)'].astype(int)
-def model_of_each_brand(brand_url):
-    models_list = []
-    html2 = requests.get(brand_url, headers={'User-Agent': navigator})
-    soup2 = BeautifulSoup(html2.text, 'html.parser')
-    models = soup2.find_all('a', {'class' : 'modeli'}) 
-    models_list_final = re.findall('en/(\S+)', str(models))
-    return [x[:-1] for x in models_list_final]
-
-
-#Creating function to scrap the generation names for each models
-def generation_of_each_model(model_url):
-    gens_list = []
-    html3 = requests.get(model_url, headers={'User-Agent': navigator})
-    soup3 = BeautifulSoup(html3.text, 'html.parser')
-    gens = soup3.find_all('a', {'class' : 'position'}) 
-    gens_list_final = re.findall('en/(\S+)', str(gens))
-    return [x[:-1] for x in gens_list_final]
-
-#Creating a function to scrap for the modifications of each generation
-def modifications_of_each_generation(gen_url):
-    mods_list = []
-    html4 = requests.get(gen_url, headers={'User-Agent': navigator})
-    soup4 = BeautifulSoup(html4.text, 'html.parser')
-    mods = soup4.find_all('table', {'class' : 'carlist'}) 
-    gens_list_final = re.findall('en/(\S+)', str(mods))
-
-
-#Getting the specifications for each car
-def specifications_of_each_car(mods_url):
-    if mods_url[-3:] == 'nan':
-        return pd.DataFrame()
-    else:
-        specs = pd.read_html(mods_url)
-        if len(specs)>=2:
-            i=1
-        elif len(specs)==1:
-            return specs[0].drop_duplicates().T.reset_index(drop =True)
-        else:
-            return pd.DataFrame()
-        specs = specs[i].drop_duplicates()
-        specs.rename(columns = {'General information' : ''}, inplace = True)
-        specs.set_index([''], inplace = True)
-        return specs.T.reset_index(drop =True)
-
-# %% [markdown]
 # ## **Final dataframe**
 
 # %%
@@ -168,6 +115,7 @@ def EV_maint_cost_coef(item):
 # ### Interface 2
 
 # %%
+#Calculating the taxes for the CO2 emission
 def malus_calculation(item):
     malus = 0
     if item < bonus_malus['g / km'].min():
@@ -177,21 +125,6 @@ def malus_calculation(item):
     else :
         malus_index = bonus_malus['Malus (€)'][bonus_malus['g / km'] == item].index[0]       
         malus = bonus_malus['Malus (€)'].iloc[malus_index]
-    return malus
+        return malus
 
-### Updating the values from the google sheet documents and replacing the DF used in the code    
-#List of url to read
-url_dico = {'fuel_prices': 'https://docs.google.com/spreadsheets/d/1M_e1ENe40v-G_HYYH7YTZT5yPMoxgk36FFNamtg12f8/edit?usp=sharing',
-           'title_tax_cv': "https://docs.google.com/spreadsheets/d/1cOj98R9fGT89rG4-TxAPIgOrvDbrzxlLPd4Y5mUBD0g/edit?usp=sharing",
-           'bonus_malus': "https://docs.google.com/spreadsheets/d/1RDIMbTGE3TBU4SXbRNKiqKQFakf0grVGKKLfu9L9dS4/edit?usp=sharing",
-           'maintenance_costs': "https://docs.google.com/spreadsheets/d/1Hlhp4ubS-JFgYYx1S9oeL5A_011sSxvKzWiuS3bLqV8/edit?usp=sharing"}
-
-gc = gspread.service_account(filename='../BEEV/beev-335814-4e72d6b41e21.json')#The json key has to be defined by a google account in google API platform accessible here 'https://console.developers.google.com/'
-def load_df(url_dico = url_dico):
-    for key, url in url_dico.items():
-        sht1 = gc.open_by_url(url)
-        worksheet = sht1.sheet1
-        name = key
-        name = pd.DataFrame(worksheet.get_all_records())
-        name.to_csv(key+'_db',header=True, index=False)
 
