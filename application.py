@@ -20,8 +20,8 @@ st.markdown(
 )
 
 ### start streamlit
-image = Image.open('./app/BEEV_image.png')
-st.image(image)    
+# image = Image.open('./app/BEEV_image.png')
+# st.image(image)    
 
 PAGES = {
     "GEV car selection": Interface2_docker,
