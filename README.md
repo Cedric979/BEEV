@@ -27,10 +27,10 @@ This allowed us to create the interface with the prediction model that does a re
 
 For the completion of this project we used the following tools:
 
--Python (for coding)
--Streamlit (to build the interface)
--Github (to easily share the folders and files)
--Docker (to deploy the app and send it to the client, so they don't have to install code-related programs)
+- Python (for coding)
+- Streamlit (to build the interface)
+- Github (to easily share the folders and files)
+- Docker (to deploy the app and send it to the client, so they don't have to install code-related programs)
 
 
 NOTICE: For all these googlesheet, all the columns must have a name and all float values must be with a point and not a comma.
