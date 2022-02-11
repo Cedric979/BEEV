@@ -1,9 +1,12 @@
 from Libraries import *
+p = Path('.')
+path_list = list(p.glob('**/*'))
 #Changing the background with an image that has to be in the same folder
-main_bg = "st_back_main3.jpeg"
+import base64
+main_bg = path_list[-1]
 main_bg_ext = "jpeg"
 
-side_bg = "st_back_slider.jpeg"
+side_bg = path_list[-2]
 side_bg_ext = "jpeg"
 
 st.markdown(
@@ -24,7 +27,7 @@ st.markdown(
 )
 
 ### start streamlit
-image = Image.open('BEEV_image.png')
+image = Image.open(path_list[-10])
 st.image(image)    
 
 PAGES = {

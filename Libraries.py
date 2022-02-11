@@ -17,6 +17,7 @@ from bs4 import BeautifulSoup
 from random import randint
 from time import sleep
 from io import StringIO
+from PIL import Image
 import base64
 import Interface
 import Interface2

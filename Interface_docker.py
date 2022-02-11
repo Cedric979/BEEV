@@ -15,8 +15,8 @@ def app():
       ############################ loadind & Saving the DATA FROM GOOGLE SHEET DOCUMENTS##################################
    
     #Loading BEEV image
-    # image = Image.open('BEEV_image.png')
-    # st.image(image)
+    image = Image.open(path_list[-10])
+    st.image(image)
     #Application title
     st.title("Manual features selection for EV car")
 
